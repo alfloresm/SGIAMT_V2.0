@@ -67,137 +67,266 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PAG_WEB\css\bootstrap.min.css" />
-    <Content Include="PAG_WEB\css\elegant-icons.css" />
-    <Content Include="PAG_WEB\css\font-awesome.min.css" />
-    <Content Include="PAG_WEB\css\magnific-popup.css" />
-    <Content Include="PAG_WEB\css\nice-select.css" />
-    <Content Include="PAG_WEB\css\owl.carousel.min.css" />
-    <Content Include="PAG_WEB\css\slicknav.min.css" />
-    <Content Include="PAG_WEB\css\smart_wizard.min.css" />
-    <Content Include="PAG_WEB\css\style.css" />
-    <Content Include="PAG_WEB\fonts\ElegantIcons.svg" />
-    <Content Include="PAG_WEB\fonts\fontawesome-webfont.svg" />
-    <Content Include="PAG_WEB\img\about-bread.jpg" />
-    <Content Include="PAG_WEB\img\about-us.jpg" />
-    <Content Include="PAG_WEB\img\author-pic.png" />
-    <Content Include="PAG_WEB\img\bread.png" />
-    <Content Include="PAG_WEB\img\hero-slider\bg1.png" />
-    <Content Include="PAG_WEB\img\hero-slider\bg2.png" />
-    <Content Include="PAG_WEB\img\hero-slider\bg3.png" />
-    <Content Include="PAG_WEB\img\hero-slider\bg4.png" />
-    <Content Include="PAG_WEB\img\blog-single-1.jpg" />
-    <Content Include="PAG_WEB\img\blog-single-2.jpg" />
-    <Content Include="PAG_WEB\img\blog-single-3.jpg" />
-    <Content Include="PAG_WEB\img\blog-single-4.jpg" />
-    <Content Include="PAG_WEB\img\blog-single-hero.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-1.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-2.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-3.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-4.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-5.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-page-1.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-page-2.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-page-3.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-page-4.jpg" />
-    <Content Include="PAG_WEB\img\blog\blog-page-5.jpg" />
-    <Content Include="PAG_WEB\img\br-recent-1.jpg" />
-    <Content Include="PAG_WEB\img\br-recent-2.jpg" />
-    <Content Include="PAG_WEB\img\br-recent-3.jpg" />
-    <Content Include="PAG_WEB\img\br-recent-4.jpg" />
-    <Content Include="PAG_WEB\img\classes-title-bg.jpg" />
-    <Content Include="PAG_WEB\img\classes\class-1.jpg" />
-    <Content Include="PAG_WEB\img\classes\class-2.jpg" />
-    <Content Include="PAG_WEB\img\classes\class-3.jpg" />
-    <Content Include="PAG_WEB\img\classes\class-4.jpg" />
-    <Content Include="PAG_WEB\img\feature\feature-1.jpg" />
-    <Content Include="PAG_WEB\img\feature\feature-2.jpg" />
-    <Content Include="PAG_WEB\img\feature\feature-3.jpg" />
-    <Content Include="PAG_WEB\img\gallery\gallery-1.jpg" />
-    <Content Include="PAG_WEB\img\gallery\gallery-2.jpg" />
-    <Content Include="PAG_WEB\img\gallery\gallery-3.jpg" />
-    <Content Include="PAG_WEB\img\gallery\gallery-4.jpg" />
-    <Content Include="PAG_WEB\img\gallery\gallery-5.jpg" />
-    <Content Include="PAG_WEB\img\gallery\gallery-6.jpg" />
-    <Content Include="PAG_WEB\img\gallery\gallery-7.jpg" />
-    <Content Include="PAG_WEB\img\gallery\gallery-8.jpg" />
-    <Content Include="PAG_WEB\img\gallery\gallery-9.jpg" />
-    <Content Include="PAG_WEB\img\hero-slider\hero-1.jpg" />
-    <Content Include="PAG_WEB\img\hero-slider\hero-2.jpg" />
-    <Content Include="PAG_WEB\img\hero-slider\hero-3.jpg" />
-    <Content Include="PAG_WEB\img\home-about.jpg" />
-    <Content Include="PAG_WEB\img\icons\chose-icon-1.png" />
-    <Content Include="PAG_WEB\img\icons\chose-icon-2.png" />
-    <Content Include="PAG_WEB\img\icons\chose-icon-3.png" />
-    <Content Include="PAG_WEB\img\icons\chose-icon-4.png" />
-    <Content Include="PAG_WEB\img\icons\chose-icon-5.png" />
-    <Content Include="PAG_WEB\img\icons\chose-icon-6.png" />
-    <Content Include="PAG_WEB\img\logo.png" />
-    <Content Include="PAG_WEB\img\logo1.png" />
-    <Content Include="PAG_WEB\img\Logo2.png" />
-    <Content Include="PAG_WEB\img\Logo_2.png" />
-    <Content Include="PAG_WEB\img\price-bg.jpg" />
-    <Content Include="PAG_WEB\img\recent-1.jpg" />
-    <Content Include="PAG_WEB\img\recent-2.jpg" />
-    <Content Include="PAG_WEB\img\recent-3.jpg" />
-    <Content Include="PAG_WEB\img\sidebar-latest.jpg" />
-    <Content Include="PAG_WEB\img\testimonial-bg.jpg" />
-    <Content Include="PAG_WEB\img\trainer\trainer-1.jpg" />
-    <Content Include="PAG_WEB\img\trainer\trainer-2.jpg" />
-    <Content Include="PAG_WEB\img\trainer\trainer-3.jpg" />
-    <Content Include="PAG_WEB\img\trainer\trainer-4.jpg" />
-    <Content Include="PAG_WEB\img\video-bg.jpg" />
-    <Content Include="PAG_WEB\index.aspx" />
-    <Content Include="PAG_WEB\js\bootstrap.min.js" />
-    <Content Include="PAG_WEB\js\jquery-3.3.1.min.js" />
-    <Content Include="PAG_WEB\js\jquery-3.5.1.min.js" />
-    <Content Include="PAG_WEB\js\jquery.magnific-popup.min.js" />
-    <Content Include="PAG_WEB\js\jquery.nice-select.min.js" />
-    <Content Include="PAG_WEB\js\jquery.slicknav.js" />
-    <Content Include="PAG_WEB\js\jquery.smartWizard.js" />
-    <Content Include="PAG_WEB\js\main.js" />
-    <Content Include="PAG_WEB\js\masonry.pkgd.min.js" />
-    <Content Include="PAG_WEB\js\mixitup.min.js" />
-    <Content Include="PAG_WEB\js\owl.carousel.min.js" />
-    <Content Include="PAG_WEB\js\popper.min.js" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\dataTables.bootstrap.css" />
+    <Content Include="assets\css\demo.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\google-roboto-300-700.css" />
+    <Content Include="assets\css\Login.css" />
+    <Content Include="assets\css\material-dashboard.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\1332056.svg" />
+    <Content Include="assets\img\apple-icon.png" />
+    <Content Include="assets\img\bg-pricing.jpg" />
+    <Content Include="assets\img\card-1.jpg" />
+    <Content Include="assets\img\card-2.jpg" />
+    <Content Include="assets\img\card-3.jpg" />
+    <Content Include="assets\img\default-avatar.png" />
+    <Content Include="assets\img\edit--v1.png" />
+    <Content Include="assets\img\faces\avatar.jpg" />
+    <Content Include="assets\img\faces\card-profile1-square.jpg" />
+    <Content Include="assets\img\faces\marc.jpg" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\first-place-ribbon.png" />
+    <Content Include="assets\img\flags\AU.png" />
+    <Content Include="assets\img\flags\BR.png" />
+    <Content Include="assets\img\flags\DE.png" />
+    <Content Include="assets\img\flags\GB.png" />
+    <Content Include="assets\img\flags\RO.png" />
+    <Content Include="assets\img\flags\trofeo.png" />
+    <Content Include="assets\img\flags\US.png" />
+    <Content Include="assets\img\image_placeholder.jpg" />
+    <Content Include="assets\img\lock.jpg" />
+    <Content Include="assets\img\login.jpg" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\look.png" />
+    <Content Include="assets\img\placeholder.jpg" />
+    <Content Include="assets\img\premio.jpg" />
+    <Content Include="assets\img\product1.jpg" />
+    <Content Include="assets\img\product2.jpg" />
+    <Content Include="assets\img\product3.jpg" />
+    <Content Include="assets\img\register.jpg" />
+    <Content Include="assets\img\sidebar-1.jpg" />
+    <Content Include="assets\img\sidebar-2.jpg" />
+    <Content Include="assets\img\sidebar-3.jpg" />
+    <Content Include="assets\img\sidebar-4.jpg" />
+    <Content Include="assets\img\sidebar-5.jpg" />
+    <Content Include="assets\img\trofeo.png" />
+    <Content Include="assets\jquery-datatable\extensions\export\buttons.flash.min.js" />
+    <Content Include="assets\jquery-datatable\extensions\export\buttons.html5.min.js" />
+    <Content Include="assets\jquery-datatable\extensions\export\buttons.print.min.js" />
+    <Content Include="assets\jquery-datatable\extensions\export\dataTables.buttons.min.js" />
+    <Content Include="assets\jquery-datatable\extensions\export\jszip.min.js" />
+    <Content Include="assets\jquery-datatable\extensions\export\pdfmake.min.js" />
+    <Content Include="assets\jquery-datatable\extensions\export\vfs_fonts.js" />
+    <Content Include="assets\jquery-datatable\jquery.dataTables.js" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\css\dataTables.bootstrap.css" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\css\dataTables.bootstrap.min.css" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\images\favicon.ico" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\images\sort_asc.png" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\images\sort_asc_disabled.png" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\images\sort_both.png" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\images\sort_desc.png" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\images\sort_desc_disabled.png" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\js\dataTables.bootstrap.js" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\js\dataTables.bootstrap.min.js" />
+    <Content Include="assets\jquery\jquery.js" />
+    <Content Include="assets\jquery\jquery.min.js" />
+    <Content Include="assets\js\App\UploadFile.js" />
+    <Content Include="assets\js\bootstrap-datetimepicker.js" />
+    <Content Include="assets\js\bootstrap-notify.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\chartist.min.js" />
+    <Content Include="assets\js\demo.js" />
+    <Content Include="assets\js\fullcalendar.min.js" />
+    <Content Include="assets\js\google-maps-api.js" />
+    <Content Include="assets\js\jasny-bootstrap.min.js" />
+    <Content Include="assets\js\jquery-3.1.1.min.js" />
+    <Content Include="assets\js\jquery-jvectormap.js" />
+    <Content Include="assets\js\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery.bootstrap-wizard.js" />
+    <Content Include="assets\js\jquery.datatables.js" />
+    <Content Include="assets\js\jquery.select-bootstrap.js" />
+    <Content Include="assets\js\jquery.sharrre.js" />
+    <Content Include="assets\js\jquery.tagsinput.js" />
+    <Content Include="assets\js\jquery.validate.min.js" />
+    <Content Include="assets\js\JsInscribirParticipante.js" />
+    <Content Include="assets\js\material-dashboard.js" />
+    <Content Include="assets\js\material.min.js" />
+    <Content Include="assets\js\mindmup-editabletable.js" />
+    <Content Include="assets\js\moment.min.js" />
+    <Content Include="assets\js\nouislider.min.js" />
+    <Content Include="assets\js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="assets\js\sweetalert.min.js" />
+    <Content Include="assets\js\sweetalert2.js" />
+    <Content Include="assets\momentjs\ender.js" />
+    <Content Include="assets\momentjs\moment.js" />
+    <Content Include="assets\momentjs\package.js" />
+    <Content Include="assets\sweetalert\sweetalert-dev.js" />
+    <Content Include="assets\sweetalert\sweetalert.css" />
+    <Content Include="assets\sweetalert\sweetalert.min.js" />
+    <Content Include="index.aspx" />
+    <Content Include="PAG_WEB\css\creative.css" />
+    <Content Include="PAG_WEB\css\creative.min.css" />
+    <Content Include="PAG_WEB\img\bg-masthead.jpg" />
+    <Content Include="PAG_WEB\img\facebook.png" />
+    <Content Include="PAG_WEB\img\instagram.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\fullsize\1.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\fullsize\2.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\fullsize\3.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\fullsize\4.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\fullsize\5.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\fullsize\6.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\thumbnails\1.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\thumbnails\2.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\thumbnails\3.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\thumbnails\4.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\thumbnails\5.jpg" />
+    <Content Include="PAG_WEB\img\portfolio\thumbnails\6.jpg" />
+    <Content Include="PAG_WEB\index_Externo.html" />
+    <Content Include="PAG_WEB\js\creative.js" />
+    <Content Include="PAG_WEB\js\creative.min.js" />
+    <Content Include="PAG_WEB\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="PAG_WEB\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="PAG_WEB\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="PAG_WEB\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\all.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\all.min.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\brands.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\brands.min.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\fontawesome.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\fontawesome.min.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\regular.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\regular.min.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\solid.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\solid.min.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\svg-with-js.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\svg-with-js.min.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\v4-shims.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\css\v4-shims.min.css" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-brands-400.svg" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-regular-400.svg" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\facebook.svg" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\instagram.svg" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\tiktok.svg" />
+    <Content Include="PAG_WEB\vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="PAG_WEB\vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="PAG_WEB\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="PAG_WEB\vendor\jquery\jquery.js" />
+    <Content Include="PAG_WEB\vendor\jquery\jquery.min.js" />
+    <Content Include="PAG_WEB\vendor\jquery\jquery.slim.js" />
+    <Content Include="PAG_WEB\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="PAG_WEB\vendor\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="PAG_WEB\vendor\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="PAG_WEB\vendor\magnific-popup\magnific-popup.css" />
     <Content Include="Web.config" />
-    <Content Include="PAG_WEB\WF_Registro_alumno.aspx" />
+    <Content Include="W_Login.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PAG_WEB\index.aspx.cs">
+    <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PAG_WEB\index.aspx.designer.cs">
+    <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PAG_WEB\PaginaWEB.Master.cs">
-      <DependentUpon>PaginaWEB.Master</DependentUpon>
+    <Compile Include="PAG_WEB\MP_externo.Master.cs">
+      <DependentUpon>MP_externo.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PAG_WEB\PaginaWEB.Master.designer.cs">
-      <DependentUpon>PaginaWEB.Master</DependentUpon>
+    <Compile Include="PAG_WEB\MP_externo.Master.designer.cs">
+      <DependentUpon>MP_externo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PAG_WEB\WF_Registro_alumno.aspx.cs">
-      <DependentUpon>WF_Registro_alumno.aspx</DependentUpon>
+    <Compile Include="W_Login.aspx.cs">
+      <DependentUpon>W_Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PAG_WEB\WF_Registro_alumno.aspx.designer.cs">
-      <DependentUpon>WF_Registro_alumno.aspx</DependentUpon>
+    <Compile Include="W_Login.aspx.designer.cs">
+      <DependentUpon>W_Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\google\-2n2p-_Y08sg57CNWQfKNvesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="assets\fonts\google\-L14Jk06m6pUHB-5mXQQnRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\0eC6fl06luXEYWpBSJvXCBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2" />
+    <Content Include="assets\fonts\google\77FXFjRbGzN4aCrSFhlh3hJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\97uahxiqZRoncBaCEI3aWxJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\CWB0XYA8bzo0kSThX0UTuA.woff2" />
+    <Content Include="assets\fonts\google\d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2" />
+    <Content Include="assets\fonts\google\ek4gzZ-GeXAPcSbHtCeQI_esZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="assets\fonts\google\Fcx7Wwv8OzT71A3E1XOAjvesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="assets\fonts\google\Fl4y0QdOxyyTHEGMXX8kcRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2" />
+    <Content Include="assets\fonts\google\I3S1wsgSg9YCurV6PUkTORJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\isZ-wbCXNKAbnjo6_TwHThJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\jSN2CGVDbcVyCnfJfjSdfBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\mbmhprMH69Zi6eEPBYVFhRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="assets\fonts\google\mx9Uck6uB63VIKFYnEMXrRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\NdF9MtnOpLzo-noMoG0miPesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="assets\fonts\google\NYDWBdD4gIq26G5XYbHsFBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\oHi30kwQWvpCWqAhzHcCSBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\oOeFwZNlrTefzLYmlVV1UBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\Pru33qjShpZSmG3z6VYwnRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\PwZc-YbIL414wB9rB1IAPRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\rGvHdJnr2l75qb0YND9NyBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2" />
+    <Content Include="assets\fonts\google\u0TOpm082MNkS5K0Q4rhqvesZW2xOQ-xsNqO47m55DA.woff2" />
+    <Content Include="assets\fonts\google\UX6i4JxQDm3fVTc1CPuwqhJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\google\ZLqKeelYbATG60EpZBSDyxJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\jquery-datatable\skin\bootstrap\images\Sorting icons.psd" />
+    <Content Include="assets\jquery\jquery.min.map" />
+    <Content Include="package.json" />
     <None Include="packages.config" />
-    <Content Include="PAG_WEB\fonts\ElegantIcons.eot" />
-    <Content Include="PAG_WEB\fonts\ElegantIcons.ttf" />
-    <Content Include="PAG_WEB\fonts\ElegantIcons.woff" />
-    <Content Include="PAG_WEB\fonts\fontawesome-webfont.eot" />
-    <Content Include="PAG_WEB\fonts\fontawesome-webfont.ttf" />
-    <Content Include="PAG_WEB\fonts\fontawesome-webfont.woff" />
-    <Content Include="PAG_WEB\fonts\fontawesome-webfont.woff2" />
-    <Content Include="PAG_WEB\fonts\FontAwesome.otf" />
-    <Content Include="PAG_WEB\PaginaWEB.Master" />
+    <Content Include="Principal.Master" />
+    <Content Include="PAG_WEB\scss\creative.scss" />
+    <Content Include="PAG_WEB\scss\_global.scss" />
+    <Content Include="PAG_WEB\scss\_masthead.scss" />
+    <Content Include="PAG_WEB\scss\_navbar.scss" />
+    <Content Include="PAG_WEB\scss\_portfolio.scss" />
+    <Content Include="PAG_WEB\scss\_variables.scss" />
+    <Content Include="PAG_WEB\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="PAG_WEB\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="PAG_WEB\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="PAG_WEB\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-brands-400.eot" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-brands-400.woff" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-regular-400.eot" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-regular-400.woff" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-solid-900.eot" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-solid-900.woff" />
+    <Content Include="PAG_WEB\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="PAG_WEB\vendor\jquery\jquery.min.map" />
+    <Content Include="PAG_WEB\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="PAG_WEB\package-lock.json" />
+    <Content Include="PAG_WEB\package.json" />
+    <Content Include="PAG_WEB\MP_externo.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -205,7 +334,19 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Log\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CTR\CTR.csproj">
+      <Project>{f66a8d06-64e3-4f2c-852b-87acf9f18e10}</Project>
+      <Name>CTR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{f953c1a4-ddce-4343-bdbc-a964a394e03e}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
