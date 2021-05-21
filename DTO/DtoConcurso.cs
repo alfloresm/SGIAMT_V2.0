@@ -14,6 +14,6 @@ namespace DTO
         public DateTime DTC_FechaConcurso { get; set; }
         public double DC_PrecioSeriado { get; set; }
         public double DC_PrecioNovel { get; set; }
-        public int FK_IEC_IdEstado { get; set; }
+        public string VC_Estado { get; set; }
     }
 }
