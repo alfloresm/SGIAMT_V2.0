@@ -41,13 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DtoAsistencia.cs" />
+    <Compile Include="DtoCategoriaAlumno.cs" />
+    <Compile Include="DtoClase.cs" />
+    <Compile Include="DtoConceptoPago.cs" />
+    <Compile Include="DtoConcursoParticipado.cs" />
+    <Compile Include="DtoDia.cs" />
+    <Compile Include="DtoDiaXHora.cs" />
+    <Compile Include="DtoHora.cs" />
     <Compile Include="DtoMarinera.cs" />
+    <Compile Include="DtoNivel.cs" />
+    <Compile Include="DtoPago.cs" />
+    <Compile Include="DtoProfesor.cs" />
+    <Compile Include="DtoProgreso.cs" />
     <Compile Include="DtoPuntaje.cs" />
     <Compile Include="DtoCategoria.cs" />
     <Compile Include="DtoConcurso.cs" />
     <Compile Include="DtoInscripcion.cs" />
     <Compile Include="DtoTanda.cs" />
+    <Compile Include="DtoTipoUsuario.cs" />
+    <Compile Include="DtoUsuario.cs" />
     <Compile Include="DtoUsuarioModalidadTanda.cs" />
+    <Compile Include="DtoUsuarioXConcursoParticipado.cs" />
     <Compile Include="DtoUsuarioxModalidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
