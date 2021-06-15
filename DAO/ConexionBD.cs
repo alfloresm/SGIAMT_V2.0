@@ -14,7 +14,7 @@ namespace DAO
             get
             {
                 //ale
-                return @"data source=ALE\SQLEXPRESS; initial catalog=BD_SGIAMTv1; integrated security=SSPI;";
+                return @"data source=ALEPC; initial catalog=BD_SGIAMTv1; integrated security=SSPI;";
                 //karla
                 //return @"data source=DESKTOP-NEB97S6; initial catalog=BD_SGIAMTv1; integrated security=SSPI;";
             }
