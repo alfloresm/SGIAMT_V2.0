@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTR", "CTR\CTR.csproj", "{F66A8D06-64E3-4F2C-852B-87ACF9F18E10}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SCRIPT_BD", "SCRIPT_BD", "{5FA3D02E-3F1E-41FA-A6DD-68FADC13FC82}"
+	ProjectSection(SolutionItems) = preProject
+		D:\TESIS\BD_SGIAMT_v3.sql = D:\TESIS\BD_SGIAMT_v3.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
