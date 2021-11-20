@@ -8,7 +8,7 @@ namespace DTO
 {
     public class DtoUsuario
     {
-        public string PK_IU_DNI { get; set; }
+        public string PK_VU_DNI { get; set; }
         public string VU_Nombre { get; set; }
         public string VU_APaterno { get; set; }
         public string VU_AMaterno { get; set; }

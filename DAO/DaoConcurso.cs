@@ -29,5 +29,70 @@ namespace DAO
             conexion.Close();
             return dtconcurso;
         }
+        public void RegistrarConcurso(DtoConcurso objConcurso)
+        {
+
+            SqlCommand command = new SqlCommand("SP_Registrar_Concurso", conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@nombre", objConcurso.VC_NombreCon);
+            command.Parameters.AddWithValue("@direccion", objConcurso.VC_LugarCon);
+            command.Parameters.AddWithValue("@fechac", objConcurso.DTC_FechaConcurso);
+            command.Parameters.AddWithValue("@cantS", objConcurso.DC_PrecioSeriado);
+            command.Parameters.AddWithValue("@cantN", objConcurso.DC_PrecioNovel);
+
+            conexion.Open();
+            command.ExecuteNonQuery();
+            conexion.Close();
+        }
+        public void ActualizarConcurso(DtoConcurso objConcurso)
+        {
+
+            SqlCommand command = new SqlCommand("SP_Actualizar_Concurso", conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", objConcurso.PK_IC_IdConcurso);
+            command.Parameters.AddWithValue("@nombre", objConcurso.VC_NombreCon);
+            command.Parameters.AddWithValue("@direccion", objConcurso.VC_LugarCon);
+            command.Parameters.AddWithValue("@fechac", objConcurso.DTC_FechaConcurso);
+            command.Parameters.AddWithValue("@cantS", objConcurso.DC_PrecioSeriado);
+            command.Parameters.AddWithValue("@cantN", objConcurso.DC_PrecioNovel);
+            command.Parameters.AddWithValue("@est", objConcurso.VC_Estado);
+            conexion.Open();
+            command.ExecuteNonQuery();
+            conexion.Close();
+        }
+        public void ObtenerConcurso(DtoConcurso objConcurso)
+        {
+            SqlCommand command = new SqlCommand("SP_Obtener_Concurso", conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", objConcurso.PK_IC_IdConcurso);
+            DataSet ds = new DataSet();
+            conexion.Open();
+            SqlDataAdapter moldura = new SqlDataAdapter(command);
+            moldura.Fill(ds);
+            moldura.Dispose();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                objConcurso.PK_IC_IdConcurso = int.Parse(reader[0].ToString());
+                objConcurso.VC_NombreCon = reader[1].ToString();
+                objConcurso.VC_LugarCon = reader[2].ToString();
+                objConcurso.DTC_FechaConcurso = Convert.ToDateTime(reader[3].ToString());
+                objConcurso.DC_PrecioSeriado = double.Parse(reader[4].ToString());
+                objConcurso.DC_PrecioNovel = double.Parse(reader[5].ToString());
+                objConcurso.VC_Estado = reader[6].ToString();
+            }
+            conexion.Close();
+            conexion.Dispose();
+        }
+        public DataSet desplegableConcurso()
+        {
+            SqlDataAdapter tipomol = new SqlDataAdapter("SP_Desplegable_Concurso", conexion);
+            tipomol.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet DS = new DataSet();
+            tipomol.Fill(DS);
+            return DS;
+        }
     }
 }
