@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTR", "CTR\CTR.csproj", "{F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SCRIPT_BD", "SCRIPT_BD", "{5FA3D02E-3F1E-41FA-A6DD-68FADC13FC82}"
 	ProjectSection(SolutionItems) = preProject
-		D:\TESIS\BD_SGIAMT_v3.sql = D:\TESIS\BD_SGIAMT_v3.sql
+		D:\ALE\TITES\BD_V1.sql = D:\ALE\TITES\BD_V1.sql
 	EndProjectSection
 EndProject
 Global
