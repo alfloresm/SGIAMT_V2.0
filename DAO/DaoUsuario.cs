@@ -78,7 +78,6 @@ namespace DAO
                 usuarioDto.VU_NAcademia = reader[6].ToString();
                 usuarioDto.PK_VU_DNI = reader[7].ToString();
                 usuarioDto.VU_Celular = reader[8].ToString();
-                usuarioDto.VU_Estado = reader[9].ToString();
                 usuarioDto.FK_ICA_CodCat = int.Parse(reader[10].ToString());
 
             }
