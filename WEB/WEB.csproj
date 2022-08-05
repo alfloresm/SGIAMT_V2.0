@@ -192,6 +192,7 @@
     <Content Include="PAG_WEB\assets\css\dialog\sweetalert2.min.css" />
     <Content Include="PAG_WEB\assets\css\dropzone\dropzone.css" />
     <Content Include="PAG_WEB\assets\css\font-awesome.min.css" />
+    <Content Include="PAG_WEB\assets\css\Inicio.css" />
     <Content Include="PAG_WEB\assets\css\jquery.dataTables.min.css" />
     <Content Include="PAG_WEB\assets\css\jvectormap\jquery-jvectormap-2.0.3.css" />
     <Content Include="PAG_WEB\assets\css\main.css" />
@@ -213,6 +214,14 @@
     <Content Include="PAG_WEB\assets\fonts\fontawesome-webfont.svg" />
     <Content Include="PAG_WEB\assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="PAG_WEB\assets\fonts\notika-icon.svg" />
+    <Content Include="PAG_WEB\assets\images\1.jpg" />
+    <Content Include="PAG_WEB\assets\images\2.jpg" />
+    <Content Include="PAG_WEB\assets\images\3.jpg" />
+    <Content Include="PAG_WEB\assets\images\4.jpg" />
+    <Content Include="PAG_WEB\assets\images\5.jpg" />
+    <Content Include="PAG_WEB\assets\images\ejemplo.png" />
+    <Content Include="PAG_WEB\assets\images\portada.jpg" />
+    <Content Include="PAG_WEB\assets\images\portadaa.jpg" />
     <Content Include="PAG_WEB\assets\images\select.png" />
     <Content Include="PAG_WEB\assets\images\sort_asc.png" />
     <Content Include="PAG_WEB\assets\images\sort_asc_disabled.png" />

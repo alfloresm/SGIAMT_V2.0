@@ -70,7 +70,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-area">
                         <a href="#">
-                            <img src="../PAG_WEB/assets/img/logo/Logo1.png" width="100" height="34" alt="" /></a>
+                            <img src="../PAG_WEB/assets/img/logo/Logo1.png" width="200" height="68" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -93,6 +93,7 @@
                                 <li><a data-toggle="collapse" data-target="#demoevent" href="#">Concursos 🏆</a>
                                     <ul id="demoevent" class="collapse dropdown-header-top">
                                         <li><a href="#">Inscribete aquí</a></li>
+                                        <li><a href="#">Comprar entradas</a></li>
                                     </ul>
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#democrou" href="#">Contactanos 📞</a>
@@ -113,7 +114,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i>Home</a>
+                        <li class="active prueba"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i>Home</a>
                         </li>
                         <li><a data-toggle="tab" href="#concurso"><i class="notika-icon notika-checked"></i>Concursos</a>
                         </li>
@@ -236,6 +237,6 @@
     <script src="../PAG_WEB/assets/js/main.js"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="../PAG_WEB/assets/js/tawk-chat.js"></script>
+    <%--<script src="../PAG_WEB/assets/js/tawk-chat.js"></script>--%>
 </body>
 </html>
