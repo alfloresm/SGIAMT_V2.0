@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PAG_WEB/Master_Externa.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Web.index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../PAG_WEB/assets/css/Inicio.css">
+    <link rel="stylesheet" href="../PAG_WEB/assets/css/Inicio.css?1.0">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section id="hero">
@@ -9,6 +9,20 @@
             <br />
             con los mejores</h1>
         <button>INSCRIBETE</button>
+    </section>
+    <section id="compra-entradas">
+        <div class="container">
+            <div class="img-container">
+                <h1>Participe en
+            <br />
+                    nuestros concursos</h1>
+                <button>COMPRE ENTRADAS</button>
+            </div>
+            <div class="panel-concurso">
+                <h2>El próximo concurso se realizará en la fecha:</h2>
+                <p>21/08/2022</p>
+            </div>
+        </div>
     </section>
     <section id="quienes-somos">
         <div class="container">
