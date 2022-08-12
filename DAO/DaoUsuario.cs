@@ -52,7 +52,6 @@ namespace DAO
                 "U.VU_NAcademia," +
                 "U.PK_VU_DNI," +
                 "U.VU_Celular," +
-                "U.VU_Estado," +
                 "U.FK_ICA_CodCat" +
                 " from T_Usuario as U " +
                 "where U.PK_VU_DNI = '" + usuario + "'", conexion);
@@ -78,7 +77,7 @@ namespace DAO
                 usuarioDto.VU_NAcademia = reader[6].ToString();
                 usuarioDto.PK_VU_DNI = reader[7].ToString();
                 usuarioDto.VU_Celular = reader[8].ToString();
-                usuarioDto.FK_ICA_CodCat = int.Parse(reader[10].ToString());
+                usuarioDto.FK_ICA_CodCat = int.Parse(reader[9].ToString());
 
             }
             conexion.Close();

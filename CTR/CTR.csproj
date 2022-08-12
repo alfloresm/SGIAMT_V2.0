@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CtrConcurso.cs" />
+    <Compile Include="CtrConcursoPrecio.cs" />
     <Compile Include="CtrUsuario.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

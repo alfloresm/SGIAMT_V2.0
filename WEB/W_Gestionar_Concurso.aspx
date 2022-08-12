@@ -34,7 +34,7 @@
                                         <div class="col-md-10 col-md-offset-1">
                                             <div class="card-content">
                                                 <asp:GridView ID="GVConcurso" runat="server" AutoGenerateColumns="False"
-                                                    DataKeyNames="PK_IC_IdConcurso,VC_NombreCon,DC_PrecioSeriado,DC_PrecioNovel,VC_Estado"
+                                                    DataKeyNames="PK_IC_IdConcurso,VC_NombreCon,DTC_FechaInicio,IC_Capacidad,VC_Estado"
                                                     CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="5"
                                                     AllowPaging="True" OnPageIndexChanging="GVConcurso_PageIndexChanging" OnRowCommand="GVConcurso_RowCommand"
                                                     Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small">
@@ -42,8 +42,8 @@
                                                     <Columns>
                                                         <asp:BoundField DataField="PK_IC_IdConcurso" HeaderText="Concurso" />
                                                         <asp:BoundField DataField="VC_NombreCon" HeaderText="Nombre" />
-                                                        <asp:BoundField DataField="DC_PrecioSeriado" HeaderText="Cantidad Seriado" />
-                                                        <asp:BoundField DataField="DC_PrecioNovel" HeaderText="Cantidad Novel" />
+                                                        <asp:BoundField DataField="DTC_FechaInicio" HeaderText="Lugar" />
+                                                        <asp:BoundField DataField="IC_Capacidad" HeaderText="Capacidad del lugar" />
                                                         <asp:BoundField DataField="VC_Estado" HeaderText="Estado" />
                                                         <asp:TemplateField HeaderText="">
                                                             <ItemTemplate>
@@ -63,6 +63,77 @@
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
+                </div>
+            </div>
+        </div>
+        <%-- Popup --%>
+        <div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notice">
+                <div class="modal-content">
+                    <asp:UpdatePanel runat="server" ID="updPanelModal" UpdateMode="Always">
+                        <ContentTemplate>
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                                <h5 class="modal-title" id="myModalLabel" runat="server"></h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-lg-12">
+                                    <label class="col-md-2 label-on-left">Lugar: </label>
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <asp:TextBox ID="txtlugar" runat="server" class="form-control " Enabled="False"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="col-md-2 label-on-left">fecha: </label>
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <asp:TextBox ID="txtFechaI" runat="server" class="form-control " Enabled="False"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="col-md-2 label-on-left">Precio inscripcion Seriado: </label>
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <asp:TextBox ID="txtFechaF" runat="server" class="form-control " Enabled="False"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="col-md-2 label-on-left">Precio inscripcion Novel: </label>
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <asp:TextBox ID="txtCant" runat="server" class="form-control " Enabled="False"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="col-md-2 label-on-left">Estado: </label>
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <asp:TextBox ID="txtEstado" runat="server" class="form-control " Enabled="False"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h2>Precios</h2>
+                                </div>
+                                <div class="col-lg-12">
+                                    <asp:GridView ID="GVVerPrecios" runat="server" AutoGenerateColumns="False"
+                                        DataKeyNames="VPRE_Descripcion,DCP_Monto"
+                                        CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="5"
+                                        AllowPaging="True" OnPageIndexChanging="GVVerPrecios_PageIndexChanging" OnRowCommand="GVVerPrecios_RowCommand"
+                                        Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small">
+                                        <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
+                                                    <Columns>
+                                                        <asp:BoundField DataField="VPRE_Descripcion" HeaderText="Precio" />
+                                                        <asp:BoundField DataField="DCP_Monto" HeaderText="Monto" />
+                                                    </Columns>
+                                    </asp:GridView>
+                                </div>
+                            </div>
+                            <div class="modal-footer text-center">
+                                <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
             </div>
         </div>

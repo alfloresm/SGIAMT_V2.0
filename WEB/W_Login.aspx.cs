@@ -48,43 +48,28 @@ namespace WEB
                 Session["CelularUsuario"] = usuarioDto.VU_Celular;
                 Session["Categoria"] = usuarioDto.FK_ICA_CodCat;
 
-                //*********HAY QUE CREAR USUARIOS GERENTE Y RECEPCIONISTA***********************
-                if (Session["id_perfil"].ToString() == "4")
-                {
-                    string script = @"<script type='text/javascript'>
-                                      location.href='../W_Listado_Alumnos_General.aspx';
-                                  </script>";
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", script, false);
-                }
-                else if (Session["id_perfil"].ToString() == "3")
+                if (Session["id_perfil"].ToString() == "2")
                 {
                     string script = @"<script type='text/javascript'>
                                       location.href='../W_Gestionar_Concurso.aspx';
                                   </script>";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", script, false);
                 }
-                else if (Session["id_perfil"].ToString() == "5")
+                else if (Session["id_perfil"].ToString() == "4")
                 {
                     string script = @"<script type='text/javascript'>
                                       location.href='../W_Calificar_Participante.aspx';
                                   </script>";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", script, false);
                 }
-                else if (Session["id_perfil"].ToString() == "6")
-                {
-                    string script = @"<script type='text/javascript'>
-                                      location.href='../W_Listar_Alumnos.aspx';
-                                  </script>";
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", script, false);
-                }
-                else if (Session["id_perfil"].ToString() == "7")
+                else if (Session["id_perfil"].ToString() == "3")
                 {
                     string script = @"<script type='text/javascript'>
                                       location.href='../W_Inscribir_ParticipanteP.aspx';
                                   </script>";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", script, false);
                 }
-                else if (Session["id_perfil"].ToString() == "8")
+                else if (Session["id_perfil"].ToString() == "5")
                 {
                     string script = @"<script type='text/javascript'>
                                       location.href='../W_Mostrar_Resultado.aspx';

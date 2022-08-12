@@ -32,7 +32,14 @@ namespace WEB
 
         protected void GVConcurso_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandName == "Detalle")
+            {
 
+            }
+            else
+            {
+
+            }
         }
 
         protected void GVConcurso_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -43,6 +50,16 @@ namespace WEB
         protected Boolean ValidacionEstado(string estado)
         {
             return estado == "No Realizado";
+        }
+
+        protected void GVVerPrecios_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void GVVerPrecios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
         }
     }
 }
