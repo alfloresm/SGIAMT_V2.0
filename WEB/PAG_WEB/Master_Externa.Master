@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="../PAG_WEB/assets/css/scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- jvectormap CSS
 		============================================ -->
-    <link rel="stylesheet" href="../PAG_WEB/assets/css/jvectormap/jquery-jvectormap-2.0.3.css">
+    <%--<link rel="stylesheet" href="../PAG_WEB/assets/css/jvectormap/jquery-jvectormap-2.0.3.css">--%>
     <!-- notika icon CSS
 		============================================ -->
     <link rel="stylesheet" href="../PAG_WEB/assets/css/notika-custom-icon.css">
@@ -200,9 +200,9 @@
     <script src="../PAG_WEB/assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- jvectormap JS
 		============================================ -->
-    <script src="../PAG_WEB/assets/js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <%--<script src="../PAG_WEB/assets/js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="../PAG_WEB/assets/js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../PAG_WEB/assets/js/jvectormap/jvectormap-active.js"></script>
+    <script src="../PAG_WEB/assets/js/jvectormap/jvectormap-active.js"></script>--%>
     <!-- sparkline JS
 		============================================ -->
     <script src="../PAG_WEB/assets/js/sparkline/jquery.sparkline.min.js"></script>
@@ -235,8 +235,10 @@
     <!-- main JS
 		============================================ -->
     <script src="../PAG_WEB/assets/js/main.js"></script>
-    <!-- tawk chat JS
+    <!--  wizard JS
 		============================================ -->
-    <%--<script src="../PAG_WEB/assets/js/tawk-chat.js"></script>--%>
+    <script src="../PAG_WEB/assets/js/wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="../PAG_WEB/assets/js/wizard/wizard-active.js"></script>
+    
 </body>
 </html>
