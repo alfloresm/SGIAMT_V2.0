@@ -192,6 +192,7 @@
     <Content Include="PAG_WEB\assets\css\dialog\sweetalert2.min.css" />
     <Content Include="PAG_WEB\assets\css\dropzone\dropzone.css" />
     <Content Include="PAG_WEB\assets\css\font-awesome.min.css" />
+    <Content Include="PAG_WEB\assets\css\formulario.css" />
     <Content Include="PAG_WEB\assets\css\Inicio.css" />
     <Content Include="PAG_WEB\assets\css\jquery.dataTables.min.css" />
     <Content Include="PAG_WEB\assets\css\jvectormap\jquery-jvectormap-2.0.3.css" />

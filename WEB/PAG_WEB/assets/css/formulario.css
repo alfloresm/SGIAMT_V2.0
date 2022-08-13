@@ -1,0 +1,41 @@
+﻿body {
+}
+#tab1 .nombre{
+    margin-right: 100px;
+    margin-left: 30px;
+}
+
+#tab1 .apellido-paterno {
+    margin-left: 100px;
+    margin-right: 30px;
+}
+
+#tab1 .apellido-materno {
+    margin-right: 100px;
+    margin-left: 30px;
+}
+
+#tab1 .sexo {
+    margin-left: 100px;
+    margin-right: 30px;
+}
+
+#tab2 .correo-electronico {
+    margin-right: 100px;
+    margin-left: 30px;
+}
+
+#tab2 .fecha-nacimiento {
+    margin-left: 100px;
+    margin-right: 30px;
+}
+
+#tab2 .telefono {
+    margin-right: 100px;
+    margin-left: 30px;
+}
+
+#tab2 .nombre-academia {
+    margin-left: 100px;
+    margin-right: 30px;
+}
