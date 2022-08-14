@@ -16,11 +16,12 @@ namespace DAO
         {
             conexion = new SqlConnection(ConexionBD.CadenaConexion);
         }
-        public DataTable ListarPrecioByConcurso()
+        public DataTable ListarPrecioByConcurso(int id)
         {
             DataTable dtconcursoPrecio = null;
             conexion.Open();
             SqlCommand command = new SqlCommand("SP_Listar_Concurso_Precio_By_Concurso", conexion);
+            command.Parameters.AddWithValue("@idConcurso", id);
             SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
             command.CommandType = CommandType.StoredProcedure;
             dtconcursoPrecio = new DataTable();

@@ -36,9 +36,9 @@ namespace DAO
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@nombre", objConcurso.VC_NombreCon);
             command.Parameters.AddWithValue("@direccion", objConcurso.VC_LugarCon);
-            command.Parameters.AddWithValue("@fechac", objConcurso.DTC_FechaConcurso);
-            command.Parameters.AddWithValue("@cantS", objConcurso.DC_PrecioSeriado);
-            command.Parameters.AddWithValue("@cantN", objConcurso.DC_PrecioNovel);
+            command.Parameters.AddWithValue("@fechaI", objConcurso.DTC_FechaI);
+            command.Parameters.AddWithValue("@fechaF", objConcurso.DTC_FechaF);
+            command.Parameters.AddWithValue("@cap", objConcurso.IC_Capacidad);
 
             conexion.Open();
             command.ExecuteNonQuery();
@@ -52,9 +52,9 @@ namespace DAO
             command.Parameters.AddWithValue("@id", objConcurso.PK_IC_IdConcurso);
             command.Parameters.AddWithValue("@nombre", objConcurso.VC_NombreCon);
             command.Parameters.AddWithValue("@direccion", objConcurso.VC_LugarCon);
-            command.Parameters.AddWithValue("@fechac", objConcurso.DTC_FechaConcurso);
-            command.Parameters.AddWithValue("@cantS", objConcurso.DC_PrecioSeriado);
-            command.Parameters.AddWithValue("@cantN", objConcurso.DC_PrecioNovel);
+            command.Parameters.AddWithValue("@fechaI", objConcurso.DTC_FechaI);
+            command.Parameters.AddWithValue("@fechaF", objConcurso.DTC_FechaF);
+            command.Parameters.AddWithValue("@cap", objConcurso.DTC_FechaF);
             command.Parameters.AddWithValue("@est", objConcurso.VC_Estado);
             conexion.Open();
             command.ExecuteNonQuery();
@@ -78,10 +78,9 @@ namespace DAO
                 objConcurso.PK_IC_IdConcurso = int.Parse(reader[0].ToString());
                 objConcurso.VC_NombreCon = reader[1].ToString();
                 objConcurso.VC_LugarCon = reader[2].ToString();
-                objConcurso.DTC_FechaConcurso = Convert.ToDateTime(reader[3].ToString());
-                objConcurso.DC_PrecioSeriado = double.Parse(reader[4].ToString());
-                objConcurso.DC_PrecioNovel = double.Parse(reader[5].ToString());
-                objConcurso.VC_Estado = reader[6].ToString();
+                objConcurso.DTC_FechaI = Convert.ToDateTime(reader[3].ToString());
+                objConcurso.DTC_FechaF = Convert.ToDateTime(reader[4].ToString());
+                objConcurso.VC_Estado = reader[5].ToString();
             }
             conexion.Close();
             conexion.Dispose();

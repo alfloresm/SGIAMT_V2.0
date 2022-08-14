@@ -74,7 +74,7 @@
                         <ContentTemplate>
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
-                                <h5 class="modal-title" id="myModalLabel" runat="server"></h5>
+                                <h2 class="modal-title" id="myModalLabel" runat="server"></h2>
                             </div>
                             <div class="modal-body">
                                 <div class="col-lg-12">
@@ -113,7 +113,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <h2>Precios</h2>
+                                    <h4>Precios</h4>
                                 </div>
                                 <div class="col-lg-12">
                                     <asp:GridView ID="GVVerPrecios" runat="server" AutoGenerateColumns="False"

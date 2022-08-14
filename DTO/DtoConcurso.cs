@@ -11,9 +11,9 @@ namespace DTO
         public int PK_IC_IdConcurso { get; set; }
         public string VC_NombreCon { get; set; }
         public string VC_LugarCon { get; set; }
-        public DateTime DTC_FechaConcurso { get; set; }
-        public double DC_PrecioSeriado { get; set; }
-        public double DC_PrecioNovel { get; set; }
+        public DateTime DTC_FechaI { get; set; }
+        public DateTime DTC_FechaF { get; set; }
+        public int  IC_Capacidad { get; set; }
         public string VC_Estado { get; set; }
     }
 }

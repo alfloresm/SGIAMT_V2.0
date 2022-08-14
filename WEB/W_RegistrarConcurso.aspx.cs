@@ -41,7 +41,50 @@ namespace WEB
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (Convert.ToDateTime(txtFechaI.Text) < DateTime.Now || Convert.ToDateTime(txtFechaF.Text) < DateTime.Now)
+                {
+                    string m = "fecha incorrecta";
+                    Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
+                }
+                else
+                {
+                    if (Request.Params["Id"] != null)
+                    {
+                        objDtoConcurso.PK_IC_IdConcurso = Convert.ToInt32(txtCodigo.Text);
+                        objDtoConcurso.VC_NombreCon = txtNombre.Text;
+                        objDtoConcurso.VC_LugarCon = txtlugar.Text;
+                        objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
+                        objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
+                        objDtoConcurso.IC_Capacidad = Convert.ToInt32(txtcant.Text);
+                        objDtoConcurso.VC_Estado = ddlEstado.SelectedValue;
+                        objCtrConcurso.ActualizarConcurso(objDtoConcurso);
+                        string m = "Se actualizó correctamente";
+                        _log.CustomWriteOnLog("regConcurso", m);
 
+                        Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
+                        //Response.Redirect("~/W_GestionarConcurso.aspx");
+                    }
+                    else
+                    {
+                        objDtoConcurso.VC_NombreCon = txtNombre.Text;
+                        objDtoConcurso.VC_LugarCon = txtlugar.Text;
+                        objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
+                        objDtoConcurso.DTC_FechaF = Convert.ToDateTime(txtFechaI.Text);
+                        objDtoConcurso.IC_Capacidad = Convert.ToInt32(txtcant.Text);
+                        objCtrConcurso.RegistrarConcurso(objDtoConcurso);
+                        string m = "Se Registró correctamente";
+
+                        Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
+                        //Response.Redirect("~/W_GestionarConcurso.aspx");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + ex.Message + "','danger')");
+            }
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
@@ -51,14 +94,14 @@ namespace WEB
         public void obtenerConcurso(string cod)
         {
             objDtoConcurso.PK_IC_IdConcurso = int.Parse(cod);
-            //ojCtrConcurso.ObtenerConcurso(objDtoConcurso);
+            objCtrConcurso.ObtenerConcurso(objDtoConcurso);
 
             txtCodigo.Text = objDtoConcurso.PK_IC_IdConcurso.ToString();
             txtNombre.Text = objDtoConcurso.VC_NombreCon.ToString();
             txtlugar.Text = objDtoConcurso.VC_LugarCon.ToString();
-            txtFecha.Text = objDtoConcurso.DTC_FechaConcurso.ToString("yyyy-MM-dd");
-            txtcantSeriado.Text = objDtoConcurso.DC_PrecioSeriado.ToString();
-            txtcantNovel.Text = objDtoConcurso.DC_PrecioNovel.ToString();
+            txtFechaI.Text = objDtoConcurso.DTC_FechaI.ToString("yyyy-MM-dd");
+            txtFechaI.Text = objDtoConcurso.DTC_FechaF.ToString("yyyy-MM-dd");
+            txtcant.Text = objDtoConcurso.IC_Capacidad.ToString();
             ddlEstado.Text = objDtoConcurso.VC_Estado;
         }
     }

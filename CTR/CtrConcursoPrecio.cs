@@ -16,9 +16,9 @@ namespace CTR
         {
             objDaoConcursoPrecio = new DaoConcursoPrecio();
         }
-        public DataTable ListaPreciosByConcursos()
+        public DataTable ListaPreciosByConcursos(int id)
         {
-            return objDaoConcursoPrecio.ListarPrecioByConcurso();
+            return objDaoConcursoPrecio.ListarPrecioByConcurso(id);
         }
         public void RegistrarPreciosDeConcursos(DtoConcursoPrecio objc)
         {

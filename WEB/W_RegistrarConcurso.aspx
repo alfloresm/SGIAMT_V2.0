@@ -42,27 +42,27 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sd-6">
-                                            <label class="col-md-2 label-on-left">Fecha</label>
+                                            <label class="col-md-2 label-on-left">Fecha Inicial</label>
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
-                                                <asp:TextBox ID="txtFecha" runat="server" class="form-control datepicker" type="date" required></asp:TextBox>
+                                                <asp:TextBox ID="txtFechaI" runat="server" class="form-control datepicker" type="date" required></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-5 col-md-5 col-sd-6">
-                                            <label class="col-md-2 label-on-left">Precio Inscripcion Seriado</label>
+                                        <div class="col-lg-4 col-md-4 col-sd-6">
+                                            <label class="col-md-2 label-on-left">Fecha Final</label>
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
-                                                <asp:TextBox ID="txtcantSeriado" runat="server" class="form-control"  required></asp:TextBox>
+                                                <asp:TextBox ID="txtFechaF" runat="server" class="form-control datepicker" type="date" required></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-lg-2 col-md-2"></div>
                                         <div class="col-lg-5 col-md-5 col-sd-6">
-                                            <label class="col-md-2 label-on-left">Precio Inscripcion Novel</label>
+                                            <label class="col-md-2 label-on-left">Capacidad del Lugar</label>
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
-                                                <asp:TextBox ID="txtcantNovel" runat="server" class="form-control"  required></asp:TextBox>
+                                                <asp:TextBox ID="txtcant" runat="server" class="form-control"  required></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +76,8 @@
                                                     <asp:DropDownList ID="ddlEstado" runat="server" CssClass="selectpicker">
                                                         <asp:ListItem Text="---Seleccione----" Value="0" Selected="True"></asp:ListItem>
                                                         <asp:ListItem Text="No Realizado" Value="1"></asp:ListItem>
-                                                        <asp:ListItem Text="Realizado" Value="2"></asp:ListItem>
+                                                        <asp:ListItem Text="En Proceso" Value="2"></asp:ListItem>
+                                                        <asp:ListItem Text="Realizado" Value="3"></asp:ListItem>
                                                     </asp:DropDownList>
                                                 </div>
                                             </div>

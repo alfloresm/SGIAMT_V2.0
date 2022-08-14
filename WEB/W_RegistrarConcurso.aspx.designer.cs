@@ -85,31 +85,31 @@ namespace WEB {
         protected global::System.Web.UI.WebControls.TextBox txtlugar;
         
         /// <summary>
-        /// Control txtFecha.
+        /// Control txtFechaI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFecha;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaI;
         
         /// <summary>
-        /// Control txtcantSeriado.
+        /// Control txtFechaF.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcantSeriado;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaF;
         
         /// <summary>
-        /// Control txtcantNovel.
+        /// Control txtcant.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcantNovel;
+        protected global::System.Web.UI.WebControls.TextBox txtcant;
         
         /// <summary>
         /// Control Panel1.
