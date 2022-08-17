@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +14,10 @@ namespace WEB
     {
         CtrConcurso objCtrConcurso = new CtrConcurso();
         DtoConcurso objDtoConcurso = new DtoConcurso();
+        CtrConcursoPrecio objCtrConcursoPrecio = new CtrConcursoPrecio();
+        DtoConcursoPrecio objDtoConcursoPrecio = new DtoConcursoPrecio();
         Log _log = new Log();
+        int idConcurso=0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,6 +39,8 @@ namespace WEB
                     btnRegistrar.Text = "Registrar";
                     Panel1.Visible = false;
                     Panel2.Visible = false;
+                    tablaPreciosporConcurso();
+                    llenarPrecios();
                 }
             }
         }
@@ -52,6 +58,7 @@ namespace WEB
                 {
                     if (Request.Params["Id"] != null)
                     {
+                        idConcurso = Convert.ToInt32(Request.Params["Id"]);
                         objDtoConcurso.PK_IC_IdConcurso = Convert.ToInt32(txtCodigo.Text);
                         objDtoConcurso.VC_NombreCon = txtNombre.Text;
                         objDtoConcurso.VC_LugarCon = txtlugar.Text;
@@ -73,7 +80,8 @@ namespace WEB
                         objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
                         objDtoConcurso.DTC_FechaF = Convert.ToDateTime(txtFechaI.Text);
                         objDtoConcurso.IC_Capacidad = Convert.ToInt32(txtcant.Text);
-                        objCtrConcurso.RegistrarConcurso(objDtoConcurso);
+                        idConcurso=objCtrConcurso.RegistrarConcurso(objDtoConcurso);
+                        _log.CustomWriteOnLog("regConcurso", objDtoConcurso.PK_IC_IdConcurso.ToString());
                         string m = "Se Registró correctamente";
 
                         Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
@@ -103,6 +111,41 @@ namespace WEB
             txtFechaI.Text = objDtoConcurso.DTC_FechaF.ToString("yyyy-MM-dd");
             txtcant.Text = objDtoConcurso.IC_Capacidad.ToString();
             ddlEstado.Text = objDtoConcurso.VC_Estado;
+        }
+
+        protected void GVVerPrecios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+
+        protected void btnRegistrarPrecio_Click(object sender, EventArgs e)
+        {
+            objDtoConcursoPrecio.DCP_Monto = Convert.ToInt32(txtMonto.Text);
+            objDtoConcursoPrecio.PK_ICP_IdConcurso = idConcurso;
+            objDtoConcursoPrecio.PK_ICP_CodPrecio = Convert.ToInt32(ddlPrecios.SelectedValue.ToString());
+
+            //registro
+            objCtrConcursoPrecio.RegistrarPreciosDeConcursos(objDtoConcursoPrecio);
+
+            //Tabla Precios
+            GVVerPrecios.DataSource = objCtrConcursoPrecio.ListaPreciosByConcursos(idConcurso);
+            GVVerPrecios.DataBind();
+            UpListaPrecios.Update();
+        }
+        public void tablaPreciosporConcurso()
+        {
+            GVVerPrecios.DataSource = objCtrConcursoPrecio.ListaPreciosByConcursos(idConcurso);
+            GVVerPrecios.DataBind();
+        }
+        public void llenarPrecios()
+        {
+            DataSet ds = new DataSet();
+            ds = objCtrConcursoPrecio.DesplegablePrecios();
+            ddlPrecios.DataSource = ds;
+            ddlPrecios.DataTextField = "VPRE_Descripcion";
+            ddlPrecios.DataValueField = "PK_IPRE_CodPrecio";
+            ddlPrecios.DataBind();
+            ddlPrecios.Items.Insert(0, new ListItem("Seleccione", "0"));
         }
     }
 }

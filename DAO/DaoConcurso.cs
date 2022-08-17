@@ -29,7 +29,7 @@ namespace DAO
             conexion.Close();
             return dtconcurso;
         }
-        public void RegistrarConcurso(DtoConcurso objConcurso)
+        public int RegistrarConcurso(DtoConcurso objConcurso)
         {
 
             SqlCommand command = new SqlCommand("SP_Registrar_Concurso", conexion);
@@ -39,10 +39,13 @@ namespace DAO
             command.Parameters.AddWithValue("@fechaI", objConcurso.DTC_FechaI);
             command.Parameters.AddWithValue("@fechaF", objConcurso.DTC_FechaF);
             command.Parameters.AddWithValue("@cap", objConcurso.IC_Capacidad);
-
+            command.Parameters.Add("@id", SqlDbType.Int).Direction = ParameterDirection.Output;
             conexion.Open();
             command.ExecuteNonQuery();
+            objConcurso.PK_IC_IdConcurso = Convert.ToInt32(command.Parameters["@id"].Value.ToString());
             conexion.Close();
+            return objConcurso.PK_IC_IdConcurso;
+            
         }
         public void ActualizarConcurso(DtoConcurso objConcurso)
         {
