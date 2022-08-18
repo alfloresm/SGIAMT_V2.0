@@ -39,7 +39,6 @@ namespace WEB
                     btnRegistrar.Text = "Registrar";
                     Panel1.Visible = false;
                     Panel2.Visible = false;
-                    tablaPreciosporConcurso();
                     llenarPrecios();
                 }
             }
@@ -80,7 +79,7 @@ namespace WEB
                         objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
                         objDtoConcurso.DTC_FechaF = Convert.ToDateTime(txtFechaI.Text);
                         objDtoConcurso.IC_Capacidad = Convert.ToInt32(txtcant.Text);
-                        idConcurso=objCtrConcurso.RegistrarConcurso(objDtoConcurso);
+                        hfIdConcurso.Value = objCtrConcurso.RegistrarConcurso(objDtoConcurso).ToString();
                         _log.CustomWriteOnLog("regConcurso", objDtoConcurso.PK_IC_IdConcurso.ToString());
                         string m = "Se Registró correctamente";
 
@@ -120,21 +119,24 @@ namespace WEB
 
         protected void btnRegistrarPrecio_Click(object sender, EventArgs e)
         {
-            objDtoConcursoPrecio.DCP_Monto = Convert.ToInt32(txtMonto.Text);
-            objDtoConcursoPrecio.PK_ICP_IdConcurso = idConcurso;
+            objDtoConcursoPrecio.DCP_Monto = Convert.ToDouble(txtMonto.Text);
+            objDtoConcursoPrecio.PK_ICP_IdConcurso = Convert.ToInt32(hfIdConcurso.Value);
             objDtoConcursoPrecio.PK_ICP_CodPrecio = Convert.ToInt32(ddlPrecios.SelectedValue.ToString());
 
             //registro
             objCtrConcursoPrecio.RegistrarPreciosDeConcursos(objDtoConcursoPrecio);
-
+            txtMonto.Text = "";
+            ddlPrecios.Items.Remove(ddlPrecios.SelectedItem);
+            UpBoton.Update();
+            
             //Tabla Precios
-            GVVerPrecios.DataSource = objCtrConcursoPrecio.ListaPreciosByConcursos(idConcurso);
-            GVVerPrecios.DataBind();
+            tablaPreciosporConcurso();
             UpListaPrecios.Update();
+            llenarPrecios();
         }
         public void tablaPreciosporConcurso()
         {
-            GVVerPrecios.DataSource = objCtrConcursoPrecio.ListaPreciosByConcursos(idConcurso);
+            GVVerPrecios.DataSource = objCtrConcursoPrecio.ListaPreciosByConcursos(Convert.ToInt32(hfIdConcurso.Value));
             GVVerPrecios.DataBind();
         }
         public void llenarPrecios()

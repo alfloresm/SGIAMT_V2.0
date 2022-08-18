@@ -110,66 +110,76 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header card-header-text" data-background-color="red">
-                                <h4 id="H1" runat="server" class="card-title">Asignar Precios</h4>
-                            </div>
-                            <div class="card-content">
-                                <div class="row">
-                                    <div class="col-lg-9 col-md-9 col-sd-9">
-                                        <label class="col-md-2 label-on-left">Precios</label>
-                                        <div class="form-group label-floating is-empty">
-                                            <label class="control-label"></label>
-                                            <asp:DropDownList ID="ddlPrecios" runat="server" CssClass="selectpicker">
-                                                <asp:ListItem Text="---Seleccione----" Value="0" Selected="True"></asp:ListItem>
-                                            </asp:DropDownList>
+                    <asp:UpdatePanel ID="UpBoton" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false">
+                        <ContentTemplate>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header card-header-text" data-background-color="red">
+                                        <h4 id="H1" runat="server" class="card-title">Asignar Precios</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-md-9 col-sd-9">
+                                                <label class="col-md-2 label-on-left">Precios</label>
+                                                <div class="form-group label-floating is-empty">
+                                                    <label class="control-label"></label>
+                                                    <asp:DropDownList ID="ddlPrecios" runat="server" CssClass="selectpicker">
+                                                        <asp:ListItem Text="---Seleccione----" Value="0" Selected="True"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sd-3">
+                                                <label class="col-md-2 label-on-left">Monto</label>
+                                                <div class="form-group label-floating is-empty">
+                                                    <asp:TextBox ID="txtMonto" runat="server" class="form-control"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-4 col-md-offset-8">
+                                                <asp:Button ID="btnRegistrarPrecio" runat="server" Text="➡" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="btnRegistrarPrecio_Click" />
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sd-3">
-                                        <label class="col-md-2 label-on-left">Monto</label>
-                                        <div class="form-group label-floating is-empty">
-                                            <asp:TextBox ID="txtMonto" runat="server" class="form-control"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4 col-md-offset-8">
-                                        <asp:Button ID="btnRegistrarPrecio" runat="server" Text="➡" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="btnRegistrarPrecio_Click" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header card-header-text" data-background-color="red">
-                                <h4 id="H2" runat="server" class="card-title">Lista Precios</h4>
-                            </div>
-                            <div class="card-content">
-                                <asp:UpdatePanel ID="UpListaPrecios" runat="server" UpdateMode="Conditional">
-                                    <ContentTemplate>
-                                        <div class="col-lg-12 col-md-2 col-sm-12">
-                                            <asp:GridView ID="GVVerPrecios" runat="server" AutoGenerateColumns="False"
-                                                DataKeyNames="VPRE_Descripcion,DCP_Monto"
-                                                CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="5"
-                                                AllowPaging="True" OnPageIndexChanging="GVVerPrecios_PageIndexChanging"
-                                                Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small" EmptyDataText="No hay datos">
-                                                <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
-                                                <Columns>
-                                                    <asp:BoundField DataField="VPRE_Descripcion" HeaderText="Precio" />
-                                                    <asp:BoundField DataField="DCP_Monto" HeaderText="Monto" />
-                                                </Columns>
-                                            </asp:GridView>
-                                        </div>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </div>
-                        </div>
-                    </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-text" data-background-color="red">
+                    <h4 id="H2" runat="server" class="card-title">Lista Precios</h4>
+                </div>
+                <asp:UpdatePanel ID="UpListaPrecios" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <div class="card-content">
+                            <div class="col-lg-12 col-md-2 col-sm-12">
+                                <asp:GridView ID="GVVerPrecios" runat="server" AutoGenerateColumns="False"
+                                    DataKeyNames="VPRE_Descripcion,DCP_Monto"
+                                    CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="5"
+                                    AllowPaging="True" OnPageIndexChanging="GVVerPrecios_PageIndexChanging"
+                                    Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small" EmptyDataText="No hay datos">
+                                    <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
+                                    <Columns>
+                                        <asp:BoundField DataField="VPRE_Descripcion" HeaderText="Precio" />
+                                        <asp:BoundField DataField="DCP_Monto" HeaderText="Monto" />
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+        </div>
+        </div>
+            </div>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:HiddenField ID="hfIdConcurso" runat="server" ClientIDMode="Static" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
     </form>
     <script>
         function showSuccessMessage2() {
