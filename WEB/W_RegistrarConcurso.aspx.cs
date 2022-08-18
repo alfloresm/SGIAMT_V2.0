@@ -125,14 +125,10 @@ namespace WEB
 
             //registro
             objCtrConcursoPrecio.RegistrarPreciosDeConcursos(objDtoConcursoPrecio);
-            txtMonto.Text = "";
-            ddlPrecios.Items.Remove(ddlPrecios.SelectedItem);
-            UpBoton.Update();
-            
+                        
             //Tabla Precios
             tablaPreciosporConcurso();
             UpListaPrecios.Update();
-            llenarPrecios();
         }
         public void tablaPreciosporConcurso()
         {
