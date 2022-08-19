@@ -17,7 +17,6 @@ namespace WEB
         CtrConcursoPrecio objCtrConcursoPrecio = new CtrConcursoPrecio();
         DtoConcursoPrecio objDtoConcursoPrecio = new DtoConcursoPrecio();
         Log _log = new Log();
-        int idConcurso=0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,8 +29,10 @@ namespace WEB
                     btnRegistrar.Text = "Actualizar";
                     Panel1.Visible = true;
                     Panel2.Visible = true;
+                    hfIdConcurso.Value = Convert.ToInt32(Request.Params["Id"]).ToString();
                     obtenerConcurso(Request.Params["Id"]);
-
+                    tablaPreciosporConcurso();
+                    llenarPrecios();
                 }
                 else
                 {
@@ -57,12 +58,12 @@ namespace WEB
                 {
                     if (Request.Params["Id"] != null)
                     {
-                        idConcurso = Convert.ToInt32(Request.Params["Id"]);
+                        
                         objDtoConcurso.PK_IC_IdConcurso = Convert.ToInt32(txtCodigo.Text);
                         objDtoConcurso.VC_NombreCon = txtNombre.Text;
                         objDtoConcurso.VC_LugarCon = txtlugar.Text;
                         objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
-                        objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
+                        objDtoConcurso.DTC_FechaF = Convert.ToDateTime(txtFechaF.Text);
                         objDtoConcurso.IC_Capacidad = Convert.ToInt32(txtcant.Text);
                         objDtoConcurso.VC_Estado = ddlEstado.SelectedValue;
                         objCtrConcurso.ActualizarConcurso(objDtoConcurso);
@@ -107,7 +108,7 @@ namespace WEB
             txtNombre.Text = objDtoConcurso.VC_NombreCon.ToString();
             txtlugar.Text = objDtoConcurso.VC_LugarCon.ToString();
             txtFechaI.Text = objDtoConcurso.DTC_FechaI.ToString("yyyy-MM-dd");
-            txtFechaI.Text = objDtoConcurso.DTC_FechaF.ToString("yyyy-MM-dd");
+            txtFechaF.Text = objDtoConcurso.DTC_FechaF.ToString("yyyy-MM-dd");
             txtcant.Text = objDtoConcurso.IC_Capacidad.ToString();
             ddlEstado.Text = objDtoConcurso.VC_Estado;
         }
@@ -144,6 +145,10 @@ namespace WEB
             ddlPrecios.DataValueField = "PK_IPRE_CodPrecio";
             ddlPrecios.DataBind();
             ddlPrecios.Items.Insert(0, new ListItem("Seleccione", "0"));
+        }
+        protected Boolean ValidacionEstado(string estado)
+        {
+            return estado == "No Realizado";
         }
     }
 }
