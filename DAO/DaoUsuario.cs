@@ -106,6 +106,28 @@ namespace DAO
             }
         }
 
+        public string ObtenerNombreCategoria(int anio)
+        {
+            try
+            {
+                string valor_retornado = "";
+                SqlCommand cmd = new SqlCommand("select C.VCA_NomCategoria from T_Categoria C inner join T_Usuario U ON C.PK_ICA_CodCat = U.FK_ICA_CodCat where " + anio + " >= C.ICA_AnioInicio and " + anio + " <= C.ICA_Aniofin", conexion);
+                Console.WriteLine(cmd);
+                conexion.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    valor_retornado = reader[0].ToString();
+                }
+                conexion.Close();
+                return valor_retornado;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public bool SelectUsuario(DtoUsuario objuser)//encuentra usuario con ese dni
         {
             string Select = "SELECT * from T_Usuario where PK_VU_Dni ='" + objuser.PK_VU_DNI + "'";

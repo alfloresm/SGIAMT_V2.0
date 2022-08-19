@@ -38,6 +38,10 @@ namespace CTR
         {
             return objDaoUsuario.ObtenerCategoria(anio);
         }
+        public string devolverNombreCateg(int anio)
+        {
+            return objDaoUsuario.ObtenerNombreCategoria(anio);
+        }
 
         public void registrarUsuario(DtoUsuario obju)
         {

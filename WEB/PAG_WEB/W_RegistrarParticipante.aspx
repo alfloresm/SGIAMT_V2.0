@@ -18,6 +18,9 @@
                 </div>
             </div>
         </div>--%>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <%--                            <asp:UpdatePanel ID="upUsuario" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false">
+        --%>
         <div class="wizard-area">
             <div class="container">
                 <div class="row">
@@ -46,7 +49,17 @@
                                     <div class="tab-pane wizard-ctn" id="tab1">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 nombre">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 dni">
+                                                    <div class="form-group ic-cmp-int">
+                                                        <div class="form-ic-cmp">
+                                                            <i class="notika-icon notika-support"></i>
+                                                        </div>
+                                                        <div class="nk-int-st">
+                                                            <asp:TextBox ID="TextBoxDni" runat="server" class="form-control" placeholder="DNI"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 nombres">
                                                     <div class="form-group ic-cmp-int">
                                                         <div class="form-ic-cmp">
                                                             <i class="notika-icon notika-support"></i>
@@ -56,6 +69,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="row">
                                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 apellido-paterno">
                                                     <div class="form-group ic-cmp-int">
                                                         <div class="form-ic-cmp">
@@ -66,18 +81,18 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
                                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 apellido-materno">
                                                     <div class="form-group ic-cmp-int">
                                                         <div class="form-ic-cmp">
                                                             <i class="notika-icon notika-support"></i>
                                                         </div>
                                                         <div class="nk-int-st">
-                                                            <asp:TextBox ID="TextBox3" runat="server" class="form-control" placeholder="Apellido Materno"></asp:TextBox>
+                                                            <asp:TextBox ID="TextBox3" runat="server" class="form-control" placeholder="Apellido-Materno"></asp:TextBox>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="row">
                                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 sexo">
                                                     <div class="form-group ic-cmp-int">
                                                         <div class="form-ic-cmp">
@@ -99,7 +114,7 @@
                                                         <i class="notika-icon notika-phone"></i>
                                                     </div>
                                                     <div class="nk-int-st">
-                                                        <asp:TextBox ID="TextBox5" runat="server" class="form-control"  data-mask="(999) 999-9999" placeholder="Telefono"></asp:TextBox>
+                                                        <asp:TextBox ID="TextBox5" runat="server" class="form-control" data-mask="(999) 999-9999" placeholder="Telefono"></asp:TextBox>
                                                     </div>
                                                 </div>
                                             </div>
@@ -114,14 +129,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row ce">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 correo-electronico">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-4 col-xs-12 correo-electronico">
                                                 <div class="form-group ic-cmp-int">
                                                     <div class="form-ic-cmp">
                                                         <i class="notika-icon notika-mail"></i>
                                                     </div>
                                                     <div class="nk-int-st">
                                                         <asp:TextBox ID="TextBox7" runat="server" class="form-control" placeholder="Correo Electrónico"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contrasenia">
+                                                <div class="form-group ic-cmp-int">
+                                                    <div class="form-ic-cmp">
+                                                        <i class="notika-icon notika-support"></i>
+                                                    </div>
+                                                    <div class="nk-int-st">
+                                                        <asp:TextBox ID="TextBox8" runat="server" class="form-control" placeholder="Contraseña"></asp:TextBox>
                                                     </div>
                                                 </div>
                                             </div>
@@ -138,28 +163,55 @@
                                                         <i class="notika-icon notika-calendar"></i>
                                                     </div>
                                                     <div class="nk-int-st">
-                                                        <asp:TextBox ID="TextBox10" runat="server" class="form-control"  type="date" data-mask="99/99/9999" placeholder="dd/mm/aaaa"></asp:TextBox>
+                                                        <asp:TextBox ID="TextBox10" runat="server" class="form-control" type="date" data-mask="99/99/9999" placeholder="dd/mm/aaaa"></asp:TextBox>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row categoria">
+                                            <%--<asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <div class="col-lg-2 col-md-2 col-sm-6">
+                                                    <%--<asp:Button ID="Button2" runat="server" Text="⬇" CssClass="btn btn-default" <%--OnClick="Button2_Click"--%>
                                             <asp:Button ID="Button1" runat="server" Text="⬇" />
+
                                         </div>
+                                        <%--   </ContentTemplate>
+                                        </asp:UpdatePanel>--%>
                                         <div class="row categoria">
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                 <asp:Label ID="Label1" runat="server" Text="Su categoria es "></asp:Label>
+                                                <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-lg-8 col-md-8 col-sm-12">
+                                                <p></p>
+                                            </div>
+                                            <asp:UpdatePanel ID="upBotonEnviar" runat="server" UpdateMode="Conditional">
+                                                <ContentTemplate>
+                                                    <div class="col-lg-2 col-md-2 col-sm-6">
+                                                        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-fill btn-success" OnClick="btnRegistrar_Click" />
+                                                    </div>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                            <%--                                        <div class="col-lg-2 col-md-2 col-sm-6">
+                                            <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-fill btn-danger"/>
+                                        </div>--%>
+                                        </div>
+
                                     </div>
-                                    <%--<div class="tab-pane wizard-ctn" id="tab4">
+
+                                </div>
+
+                                <%--<div class="tab-pane wizard-ctn" id="tab4">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus purus sapien, cursus et egestas at, volutpat sed dolor. Aliquam sollicitudin dui ac euismod hendrerit. Phasellus quis lobortis dolor. Sed massa massa, sagittis nec fermentum eu, volutpat non lectus. Nullam vitae tristique nunc. Aenean vel placerat augue. Aliquam pharetra mauris neque, sitan amet egestas risus semper non. Proin egestas egestas ex sed gravida. Suspendisse commodo nisl sit amet risus volutpat volutpat. Phasellus vitae turpis a elit tinciduntansan ornare. Praesent non libero quis libero scelerisque eleifend. Ut eleifend laoreet vulputate.</p>
                                         <p class="wizard-mg-ctn">
                                             Duis eu eros vitae risus sollicitudin blandit in non nisi. Phasellus rhoncus ullamcorper pretium. Etiam et viverra neque, aliquam imperdiet velit. Nam a scelerisque justo, id tristique diam. Aenean ut vestibulum velit,
                                         vel ornare augue. Nullam eu est malesuada, vehicula ex in, maximus massa. Sed sit amet massa venenatis, tristique orci sed, eleifend arcu.
                                         </p>
                                     </div>--%>
-                                    <%--<div class="tab-pane wizard-ctn" id="tab5">
+                                <%--<div class="tab-pane wizard-ctn" id="tab5">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus purus sapien, cursus et egestas at, volutpat sed dolor. Aliquam sollicitudin dui ac euismod hendrerit. Phasellus quis lobortis dolor. Sed massa massa, sagittis nec fermentum eu, volutpat non lectus. Nullam vitae tristique nunc. Aenean vel placerat augue. Aliquam pharetra mauris neque, sitan amet egestas risus semper non. Proin egestas egestas ex sed gravida. Suspendisse commodo nisl sit amet risus volutpat volutpat. Phasellus vitae turpis a elit tinciduntansan ornare. Praesent non libero quis libero scelerisque eleifend. Ut eleifend laoreet vulputate.</p>
                                         <p class="wizard-mg-ctn">
                                             Duis eu eros vitae risus sollicitudin blandit in non nisi. Phasellus rhoncus ullamcorper pretium. Etiam et viverra neque, aliquam imperdiet velit. Nam a scelerisque justo, id tristique diam. Aenean ut vestibulum velit,
@@ -177,14 +229,13 @@
                                         vel ornare augue. Nullam eu est malesuada, vehicula ex in, maximus massa. Sed sit amet massa venenatis, tristique orci sed, eleifend arcu.
                                         </p>
                                     </div>--%>
-                                    <div class="wizard-action-pro">
-                                        <ul class="wizard-nav-ac">
-                                            <li><a class="button-first a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
-                                            <li><a class="button-previous a-prevent" href="#"><i class="notika-icon notika-back"></i></a></li>
-                                            <li><a class="button-next a-prevent" href="#"><i class="notika-icon notika-next-pro"></i></a></li>
-                                            <li><a class="button-last a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
-                                        </ul>
-                                    </div>
+                                <div class="wizard-action-pro">
+                                    <ul class="wizard-nav-ac">
+                                        <li><a class="button-first a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
+                                        <li><a class="button-previous a-prevent" href="#"><i class="notika-icon notika-back"></i></a></li>
+                                        <li><a class="button-next a-prevent" href="#"><i class="notika-icon notika-next-pro"></i></a></li>
+                                        <li><a class="button-last a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -192,5 +243,36 @@
                 </div>
             </div>
         </div>
+        <%--</div>--%>
     </form>
+
+    <script>
+        function showSuccessMessage2() {
+            setTimeout(function () {
+                swal({
+                    title: "Todo guardado",
+                    text: "Pulsa el botón y se te redirigirá",
+                    type: "success"
+                }, function () {
+                    window.location = "GestionCatalogo.aspx";
+                });
+            }, 1000);
+        }
+        function showMessage(from, align, message, type) {
+            $.notify({
+                icon: "notifications",
+                message: message
+
+            }, {
+                type: type,
+                timer: 3000,
+                placement: {
+                    from: from,
+                    align: align
+                }
+            });
+        }
+
+    </script>
+
 </asp:Content>

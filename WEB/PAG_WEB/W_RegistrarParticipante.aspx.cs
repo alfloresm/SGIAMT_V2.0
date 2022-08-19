@@ -22,7 +22,7 @@ namespace WEB.PAG_WEB
             {
                 if (!Page.IsPostBack)
                 {
-                    _log.CustomWriteOnLog("Registrar Usuario ", "***Cargo****");
+                    _log.CustomWriteOnLog("Registrar Usuario ", "****Cargo****");
                 }
             }
             catch (Exception ex)
@@ -36,12 +36,12 @@ namespace WEB.PAG_WEB
         {
             try
             {
-                //objdtoUsuario.PK_VU_DNI = TextBoxDNI.Text; //FALTA AGREGAR EL TEXTBOX PARA EL DNI
+                objdtoUsuario.PK_VU_DNI = TextBoxDni.Text;
                 if (!objCtrUsuario.existeUsuarioAca(objdtoUsuario))
                 {
                     if (!objCtrUsuario.existeUsuario(objdtoUsuario))
                     {
-                        DateTime a = Convert.ToDateTime(TextBox10.Text); //TextBox10: fecha de nacimiento
+                        DateTime a = Convert.ToDateTime(TextBox10.Text);
                         if (a.Year < 2017)
                         {
                             _log.CustomWriteOnLog("Registrar Usuario", "entra a boton registrar");
@@ -55,39 +55,43 @@ namespace WEB.PAG_WEB
                             objdtoUsuario.VU_Correo = TextBox7.Text; //correo electronico
 
                             objdtoUsuario.DTU_FechaNacimiento = Convert.ToDateTime(TextBox10.Text); //fecha de nacimiento
-                            
-                            //objdtoUsuario.VU_Contrasenia = txtContraseña.Text; //FALTA AGREGAR EL TEXTBOX PARA EL DNI
+                            _log.CustomWriteOnLog("Registrar Usuario", objdtoUsuario.DTU_FechaNacimiento.ToString());
+                            objdtoUsuario.VU_Contrasenia = TextBox8.Text; //contraseña
 
                             int anio = objdtoUsuario.DTU_FechaNacimiento.Year;
                             objdtoUsuario.FK_ICA_CodCat = objCtrUsuario.devolverCategoria(anio);
+
+                            Label2.Text = objCtrUsuario.devolverNombreCateg(anio); //la categoria
+                            _log.CustomWriteOnLog("Nombre categoria", Label2.Text);
+
                             objCtrUsuario.registrarUsuario(objdtoUsuario);
                             _log.CustomWriteOnLog("Registrar Usuario", "DNI:" + objdtoUsuario.PK_VU_DNI.ToString());
                             string id = objdtoUsuario.PK_VU_DNI.ToString();
-                            //VERIFICAR: Utils.AddScriptClientUpdatePanel(upBotonEnviar, "uploadFileDocuments(" + id + ");");
+                            Utils.AddScriptClientUpdatePanel(upBotonEnviar, "uploadFileDocuments(" + id + ");");
                             limpiar();
                             _log.CustomWriteOnLog("Registrar Usuario", "Agregado");
                             string m = "Usuario registrado correctamente";
-                            //VERIFICAR: Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
+                            Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
                             _log.CustomWriteOnLog("Registrar Participante", "terminado");
-                            //Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showSuccessMessage2()");
+                            Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showSuccessMessage2()");
                         }
                         else
                         {
                             string m = "Año fuera de rango";
-                            //VERIFICAR: Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
+                            Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
                         }
 
                     }
                     else
                     {
                         string m = "Usuario ya registrado en la academia";
-                        //VERIFICAR: Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
+                        Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
                     }
                 }
                 else
                 {
                     string m = "Usuario ya registrado como participante";
-                    //VERIFICAR: Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
+                    Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
                 }
             }
             catch (Exception ex)
@@ -98,6 +102,7 @@ namespace WEB.PAG_WEB
         }
         public void limpiar()
         {
+            TextBoxDni.Text = "";
             TextBox1.Text = "";
             TextBox2.Text = "";
             TextBox3.Text = "";
@@ -105,9 +110,22 @@ namespace WEB.PAG_WEB
             TextBox5.Text = "";
             TextBox6.Text = "";
             TextBox7.Text = "";
+            TextBox8.Text = "";
             TextBox10.Text = ""; //fecha nacimiento
 
         }
-    
-}
+
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("~/index.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //para mostrar nombre de categoria
+            int anio = objdtoUsuario.DTU_FechaNacimiento.Year;
+            Label2.Text = objCtrUsuario.devolverNombreCateg(anio);
+        }
+
+    }
 }
