@@ -19,17 +19,7 @@ namespace WEB
 
         }
 
-        protected void RbSeriado_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void RbNovel_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void RbAmbos_CheckedChanged(object sender, EventArgs e)
+        protected void btnIr2_Click(object sender, EventArgs e)
         {
 
         }
@@ -40,26 +30,6 @@ namespace WEB
         }
 
         protected void btnBuscar2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void rbSi_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void rbNo_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnInscribir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnRegresar_Click(object sender, EventArgs e)
         {
 
         }
