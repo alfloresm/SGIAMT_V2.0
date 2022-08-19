@@ -33,5 +33,34 @@ namespace CTR
             }
         }
 
+        //agregado
+        public int devolverCategoria(int anio)
+        {
+            return objDaoUsuario.ObtenerCategoria(anio);
+        }
+
+        public void registrarUsuario(DtoUsuario obju)
+        {
+            objDaoUsuario.RegistrarUsuario(obju);
+        }
+
+        public bool existeUsuario(DtoUsuario dtoUsuario)
+        {
+            return objDaoUsuario.SelectUsuario(dtoUsuario);
+        }
+        public bool existeUsuarioAca(DtoUsuario dtoUsuario)
+        {
+            return objDaoUsuario.SelectUsuario_Aca(dtoUsuario);
+        }
+        public bool existeUsuarioGen(DtoUsuario dtoUsuario, string gen)
+        {
+            return objDaoUsuario.SelectUsuario_Gen(dtoUsuario, gen);
+        }
+
+        //public void registrarImgP(byte[] bytes, string id)
+        //{
+        //    objDaoUsuario.RegistrarImgUsuario(bytes, id);
+        //}
+
     }
 }

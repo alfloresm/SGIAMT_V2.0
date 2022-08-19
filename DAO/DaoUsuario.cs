@@ -59,8 +59,6 @@ namespace DAO
             DtoUsuario usuarioDto = new DtoUsuario();
             DtoTipoUsuario tipousuarioDto = new DtoTipoUsuario();
 
-
-
             conexion.Open();
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -84,5 +82,126 @@ namespace DAO
 
             return (usuarioDto);
         }
+
+        //metodo devolver la categoria segun su año
+        public int ObtenerCategoria(int anio)
+        {
+            try
+            {
+                int valor_retornado = 0;
+                SqlCommand cmd = new SqlCommand("select PK_ICA_CodCat from T_Categoria where " + anio + " >= ICA_AnioInicio and " + anio + " <= ICA_Aniofin", conexion);
+                Console.WriteLine(cmd);
+                conexion.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    valor_retornado = int.Parse(reader[0].ToString());
+                }
+                conexion.Close();
+                return valor_retornado;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public bool SelectUsuario(DtoUsuario objuser)//encuentra usuario con ese dni
+        {
+            string Select = "SELECT * from T_Usuario where PK_VU_Dni ='" + objuser.PK_VU_DNI + "'";
+            SqlCommand unComando = new SqlCommand(Select, conexion);
+            conexion.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objuser.PK_VU_DNI = (string)reader[0];
+            }
+
+            conexion.Close();
+            return hayRegistros;
+        }
+        public bool SelectUsuario_Aca(DtoUsuario objuser)//encuentra usuario con ese dni diferente a la acedemia
+        {
+            string Select = "SELECT * from T_Usuario where PK_VU_Dni ='" + objuser.PK_VU_DNI + "' AND VU_NAcademia<>'TUSUY PERU' and FK_ITU_TipoUsuario=2";
+            SqlCommand unComando = new SqlCommand(Select, conexion);
+            conexion.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objuser.PK_VU_DNI = (string)reader[0];
+            }
+
+            conexion.Close();
+            return hayRegistros;
+        }
+        public bool SelectUsuario_Gen(DtoUsuario objuser, string gen)//encuentra usuario con ese dni diferente al genero
+        {
+            string Select = "SELECT * from T_Usuario where PK_VU_Dni ='" + objuser.PK_VU_DNI + "' AND VU_Sexo<>'" + gen + "'";
+            SqlCommand unComando = new SqlCommand(Select, conexion);
+            conexion.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+
+                objuser.PK_VU_DNI = (string)reader[0];
+            }
+
+            conexion.Close();
+            return hayRegistros;
+        }
+
+
+        //metodo registrar usuario
+        public void RegistrarUsuario(DtoUsuario obju)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("SP_Registrar_Usuario", conexion); //falta este procedure
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@dni", obju.PK_VU_DNI); //
+                command.Parameters.AddWithValue("@nombre", obju.VU_Nombre);
+                command.Parameters.AddWithValue("@apellidoP", obju.VU_APaterno);
+                command.Parameters.AddWithValue("@apellidoM", obju.VU_AMaterno);
+                command.Parameters.AddWithValue("@fechaNacimiento", obju.DTU_FechaNacimiento);
+                command.Parameters.AddWithValue("@contrasenia", obju.VU_Contrasenia);
+                command.Parameters.AddWithValue("@sexo", obju.VU_Sexo);
+                command.Parameters.AddWithValue("@nombreAcademia", obju.VU_NAcademia);
+                command.Parameters.AddWithValue("@correo", obju.VU_Correo);
+                command.Parameters.AddWithValue("@celular", obju.VU_Celular);
+                command.Parameters.AddWithValue("@cat", obju.FK_ICA_CodCat);
+                conexion.Open();
+                command.ExecuteNonQuery();
+                conexion.Close();
+            }
+            
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        
+        //metodo registrar imagen usuario
+        //public void RegistrarImgUsuario(byte[] bytes, string id)
+        //{
+        //    try
+        //    {
+        //        SqlCommand command = new SqlCommand("SP_Registrar_Img_Usuario", conexion); //falta este procedure
+        //        command.CommandType = CommandType.StoredProcedure;
+        //        command.Parameters.AddWithValue("@id", id);
+        //        command.Parameters.AddWithValue("@imagen", bytes);
+        //        conexion.Open();
+
+        //        command.ExecuteNonQuery();
+        //        conexion.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+
+        //}
     }
 }
