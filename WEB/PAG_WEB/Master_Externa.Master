@@ -213,6 +213,10 @@
     <script src="../PAG_WEB/assets/js/flot/jquery.flot.resize.js"></script>
     <script src="../PAG_WEB/assets/js/flot/curvedLines.js"></script>
     <script src="../PAG_WEB/assets/js/flot/flot-active.js"></script>
+    <!-- datapicker JS
+		============================================ -->
+    <script src="js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="js/datapicker/datepicker-active.js"></script>
     <!-- knob JS
 		============================================ -->
     <script src="../PAG_WEB/assets/js/knob/jquery.knob.js"></script>

@@ -29,7 +29,7 @@ namespace DAO
             conexion.Close();
             return dtconcurso;
         }
-        public void RegistrarConcurso(DtoConcurso objConcurso)
+        public int RegistrarConcurso(DtoConcurso objConcurso)
         {
 
             SqlCommand command = new SqlCommand("SP_Registrar_Concurso", conexion);
@@ -39,10 +39,13 @@ namespace DAO
             command.Parameters.AddWithValue("@fechaI", objConcurso.DTC_FechaI);
             command.Parameters.AddWithValue("@fechaF", objConcurso.DTC_FechaF);
             command.Parameters.AddWithValue("@cap", objConcurso.IC_Capacidad);
-
+            command.Parameters.Add("@id", SqlDbType.Int).Direction = ParameterDirection.Output;
             conexion.Open();
             command.ExecuteNonQuery();
+            objConcurso.PK_IC_IdConcurso = Convert.ToInt32(command.Parameters["@id"].Value.ToString());
             conexion.Close();
+            return objConcurso.PK_IC_IdConcurso;
+            
         }
         public void ActualizarConcurso(DtoConcurso objConcurso)
         {
@@ -54,7 +57,7 @@ namespace DAO
             command.Parameters.AddWithValue("@direccion", objConcurso.VC_LugarCon);
             command.Parameters.AddWithValue("@fechaI", objConcurso.DTC_FechaI);
             command.Parameters.AddWithValue("@fechaF", objConcurso.DTC_FechaF);
-            command.Parameters.AddWithValue("@cap", objConcurso.DTC_FechaF);
+            command.Parameters.AddWithValue("@cap", objConcurso.IC_Capacidad);
             command.Parameters.AddWithValue("@est", objConcurso.VC_Estado);
             conexion.Open();
             command.ExecuteNonQuery();
@@ -80,7 +83,8 @@ namespace DAO
                 objConcurso.VC_LugarCon = reader[2].ToString();
                 objConcurso.DTC_FechaI = Convert.ToDateTime(reader[3].ToString());
                 objConcurso.DTC_FechaF = Convert.ToDateTime(reader[4].ToString());
-                objConcurso.VC_Estado = reader[5].ToString();
+                objConcurso.IC_Capacidad = Convert.ToInt32(reader[5].ToString());
+                objConcurso.VC_Estado = reader[6].ToString();
             }
             conexion.Close();
             conexion.Dispose();

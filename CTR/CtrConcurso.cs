@@ -20,9 +20,9 @@ namespace CTR
         {
             return objDaoConcurso.ListarConcursos();
         }
-        public void RegistrarConcurso(DtoConcurso objc)
+        public int RegistrarConcurso(DtoConcurso objc)
         {
-            objDaoConcurso.RegistrarConcurso(objc);
+            return objDaoConcurso.RegistrarConcurso(objc);
         }
         public void ActualizarConcurso(DtoConcurso objc)
         {
