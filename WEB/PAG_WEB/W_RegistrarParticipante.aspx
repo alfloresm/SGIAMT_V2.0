@@ -21,6 +21,7 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <%--                            <asp:UpdatePanel ID="upUsuario" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false">
         --%>
+        <%--        <ContentTemplate>--%>
         <div class="wizard-area">
             <div class="container">
                 <div class="row">
@@ -34,9 +35,9 @@
                                     <div class="navbar-inner">
                                         <div class="container-pro wizard-cts-st">
                                             <ul>
-                                                <li><a href="#tab1" data-toggle="tab">Primero</a></li>
-                                                <li><a href="#tab2" data-toggle="tab">Segundo</a></li>
-                                                <li><a href="#tab3" data-toggle="tab">Tercero</a></li>
+                                                <li><a href="#tab1" data-toggle="tab">Datos Personales</a></li>
+                                                <li><a href="#tab2" data-toggle="tab">Contacto</a></li>
+                                                <li><a href="#tab3" data-toggle="tab">Categoría</a></li>
                                                 <%--<li><a href="#tab4" data-toggle="tab">Cuarto</a></li>--%>
                                                 <%--<li><a href="#tab5" data-toggle="tab">Fifth</a></li>
                                                 <li><a href="#tab6" data-toggle="tab">Sixth</a></li>
@@ -55,7 +56,7 @@
                                                             <i class="notika-icon notika-support"></i>
                                                         </div>
                                                         <div class="nk-int-st">
-                                                            <asp:TextBox ID="TextBoxDni" runat="server" class="form-control" placeholder="DNI"></asp:TextBox>
+                                                            <asp:TextBox ID="TextBoxDni" runat="server" class="form-control" TextMode="Number" MaxLength="9" placeholder="DNI"></asp:TextBox>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -146,7 +147,7 @@
                                                         <i class="notika-icon notika-support"></i>
                                                     </div>
                                                     <div class="nk-int-st">
-                                                        <asp:TextBox ID="TextBox8" runat="server" class="form-control" placeholder="Contraseña"></asp:TextBox>
+                                                        <asp:TextBox ID="TextBox8" runat="server" class="form-control" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
                                                     </div>
                                                 </div>
                                             </div>
@@ -201,7 +202,6 @@
                                         </div>
 
                                     </div>
-
                                 </div>
 
                                 <%--<div class="tab-pane wizard-ctn" id="tab4">
@@ -243,7 +243,6 @@
                 </div>
             </div>
         </div>
-        <%--</div>--%>
     </form>
 
     <script>
@@ -262,7 +261,6 @@
             $.notify({
                 icon: "notifications",
                 message: message
-
             }, {
                 type: type,
                 timer: 3000,

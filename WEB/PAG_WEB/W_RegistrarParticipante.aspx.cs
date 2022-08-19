@@ -74,6 +74,7 @@ namespace WEB.PAG_WEB
                             Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
                             _log.CustomWriteOnLog("Registrar Participante", "terminado");
                             Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showSuccessMessage2()");
+
                         }
                         else
                         {
@@ -120,12 +121,11 @@ namespace WEB.PAG_WEB
             //Response.Redirect("~/index.aspx");
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            //para mostrar nombre de categoria
-            int anio = objdtoUsuario.DTU_FechaNacimiento.Year;
-            Label2.Text = objCtrUsuario.devolverNombreCateg(anio);
-        }
-
+        //protected void Button2_Click(object sender, EventArgs e)
+        //{
+        //    //para mostrar nombre de categoria
+        //    int anio = objdtoUsuario.DTU_FechaNacimiento.Year;
+        //    Label2.Text = objCtrUsuario.devolverNombreCateg(anio);
+        //}
     }
 }
