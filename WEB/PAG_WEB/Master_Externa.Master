@@ -50,6 +50,7 @@
     <!-- wave CSS
 		============================================ -->
     <link rel="stylesheet" href="../PAG_WEB/assets/css/wave/waves.min.css">
+    <%--<link rel="stylesheet" href="../PAG_WEB/assets/css/wave/button.css">--%>
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="../PAG_WEB/assets/css/main.css">
@@ -215,8 +216,8 @@
     <script src="../PAG_WEB/assets/js/flot/flot-active.js"></script>
     <!-- datapicker JS
 		============================================ -->
-    <script src="js/datapicker/bootstrap-datepicker.js"></script>
-    <script src="js/datapicker/datepicker-active.js"></script>
+    <script src="../PAG_WEB/assets/js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="../PAG_WEB/assets/js/datapicker/datepicker-active.js"></script>
     <!-- knob JS
 		============================================ -->
     <script src="../PAG_WEB/assets/js/knob/jquery.knob.js"></script>
