@@ -74,14 +74,17 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="text-center">
-                                                <p>Género</p>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-ic-cmp floatleft">
+                                                <i class="notika-icon notika-support text-primary floatleft">Género</i>
                                             </div>
-                                            <asp:DropDownList ID="ddlGenero" runat="server" CssClass="select-css">
-                                                <asp:ListItem Text="---Seleccione----" Value="0" Selected="True"></asp:ListItem>
-                                                <asp:ListItem Text="Femenino" Value="F"></asp:ListItem>
-                                                <asp:ListItem Text="Masculino" Value="M"></asp:ListItem>
-                                            </asp:DropDownList>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 floatright">
+                                                <asp:DropDownList ID="ddlGenero" runat="server" CssClass="select-css">
+                                                    <asp:ListItem Text="---Seleccione----" Value="0" Selected="True"></asp:ListItem>
+                                                    <asp:ListItem Text="Femenino" Value="F"></asp:ListItem>
+                                                    <asp:ListItem Text="Masculino" Value="M"></asp:ListItem>
+                                                </asp:DropDownList>
+
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="tab-pane wizard-ctn" id="tab2">
@@ -130,31 +133,32 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="tab-pane wizard-ctn" id="tab3">
                                         <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 text-center">
-                                                    <p>Fecha de nacimiento</p>
-                                                </div>
-                                                <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 fecha-nacimiento">
-                                                    <div class="form-group ic-cmp-int">
-                                                        <div class="nk-int-st">
-                                                            <asp:TextBox ID="TextBox10" runat="server" class="form-control" type="date" data-mask="99/99/9999" placeholder="dd/mm/aaaa"></asp:TextBox>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 text-center">
-                                                <%--<asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
-                                            <ContentTemplate>--%>
-                                                <asp:LinkButton ID="btnCategoria" runat="server" OnClick="btnCategoria_Click" CssClass="btn waves-effect" BackColor="#a3423b" Font-Bold="true" ForeColor="#FFFFFF">
-                                                    <i class="notika-icon notika-checked"></i> 
-                                                </asp:LinkButton>
-                                                <%--   </ContentTemplate>
-                                        </asp:UpdatePanel>--%>
-                                            </div>
                                             <asp:UpdatePanel ID="UpCategoria" runat="server" UpdateMode="Conditional">
                                                 <ContentTemplate>
+                                                    <div class="col-lg-4">
+                                                        <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 text-center">
+                                                            <p>Fecha de nacimiento</p>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 fecha-nacimiento">
+                                                            <div class="form-group ic-cmp-int">
+                                                                <div class="nk-int-st">
+                                                                    <asp:TextBox ID="TextBox10" runat="server" class="form-control" type="date" data-mask="99/99/9999" placeholder="dd/mm/aaaa"></asp:TextBox>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 text-center">
+                                                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                                                            <ContentTemplate>
+                                                                <asp:LinkButton ID="btnCategoria" runat="server" OnClick="btnCategoria_Click" CssClass="btn waves-effect" BackColor="#a3423b" Font-Bold="true" ForeColor="#FFFFFF">
+                                                                    <i class="notika-icon notika-checked"></i> 
+                                                                </asp:LinkButton>
+                                                            </ContentTemplate>
+                                                        </asp:UpdatePanel>
+                                                    </div>
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                         <asp:Label ID="Label2" runat="server" Text="" Font-Bold="true"></asp:Label>
                                                     </div>
@@ -163,14 +167,14 @@
                                         </div>
 
                                     </div>
-                                </div>
-                                <div class="wizard-action-pro">
-                                    <ul class="wizard-nav-ac">
-                                        <li><a class="button-first a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
-                                        <li><a class="button-previous a-prevent" href="#"><i class="notika-icon notika-back"></i></a></li>
-                                        <li><a class="button-next a-prevent" href="#"><i class="notika-icon notika-next-pro"></i></a></li>
-                                        <li><a class="button-last a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
-                                    </ul>
+                                    <div class="wizard-action-pro">
+                                        <ul class="wizard-nav-ac">
+                                            <li><a class="button-first a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
+                                            <li><a class="button-previous a-prevent" href="#"><i class="notika-icon notika-back"></i></a></li>
+                                            <li><a class="button-next a-prevent" href="#"><i class="notika-icon notika-next-pro"></i></a></li>
+                                            <li><a class="button-last a-prevent" href="#"><i class="notika-icon notika-more-button"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -184,8 +188,6 @@
                         <asp:UpdatePanel ID="upBotonEnviar" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
                                 <div class="col-lg-2 col-md-2 col-sm-6">
-                                    <%--<asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success notika-btn-success" OnClick="btnRegistrar_Click" />--%>
-                                    <%--<button id="btnRegistrar" class="btn btn-success notika-btn-success" runat="server" onclick="btnRegistrar_Click">Success</button>--%>
                                     <asp:LinkButton ID="btnReg" runat="server" OnClick="btnRegistrar_Click" CssClass="btn btn-success notika-btn-success">
                                         <i class="notika-icon notika-checked"></i> Registrar
                                     </asp:LinkButton>
@@ -199,7 +201,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
         </div>
     </form>
 

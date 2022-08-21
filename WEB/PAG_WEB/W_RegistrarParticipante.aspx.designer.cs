@@ -112,6 +112,15 @@ namespace WEB.PAG_WEB {
         protected global::System.Web.UI.WebControls.TextBox TextBox8;
         
         /// <summary>
+        /// Control UpCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpCategoria;
+        
+        /// <summary>
         /// Control TextBox10.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,15 @@ namespace WEB.PAG_WEB {
         protected global::System.Web.UI.WebControls.TextBox TextBox10;
         
         /// <summary>
+        /// Control UpdatePanel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        
+        /// <summary>
         /// Control btnCategoria.
         /// </summary>
         /// <remarks>
@@ -128,15 +146,6 @@ namespace WEB.PAG_WEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnCategoria;
-        
-        /// <summary>
-        /// Control UpCategoria.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpCategoria;
         
         /// <summary>
         /// Control Label2.
