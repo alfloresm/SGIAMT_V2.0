@@ -21,5 +21,7 @@ namespace DTO
         public byte[] VBU_ArchivoUsuario { get; set; }
         public int FK_ICA_CodCat { get; set; }
         public int FK_ITU_TipoUsuario { get; set; }
+        /*-------------------------------*/
+        public string nombres { get; set; }
     }
 }

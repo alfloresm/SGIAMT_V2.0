@@ -97,5 +97,13 @@ namespace DAO
             tipomol.Fill(DS);
             return DS;
         }
+        public DataSet desplegableModalidades()
+        {
+            SqlDataAdapter tipomol = new SqlDataAdapter("SP_Desplegable_Modalidad", conexion);
+            tipomol.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet DS = new DataSet();
+            tipomol.Fill(DS);
+            return DS;
+        }
     }
 }

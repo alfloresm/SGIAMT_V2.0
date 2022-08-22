@@ -28,5 +28,9 @@ namespace CTR
         {
             return objDaoConcursoPrecio.DesplegablePrecio();
         }
+        public double ObtenerPrecio(int idConcurso, string modalidad)
+        {
+            return objDaoConcursoPrecio.ObtenerConcursoPrecio(idConcurso,modalidad);
+        }
     }
 }

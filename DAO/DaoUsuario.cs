@@ -204,7 +204,30 @@ namespace DAO
                 throw;
             }
         }
-        
+
+        public void ObtenerParticipante(DtoUsuario objUsuario, DtoCategoria objcat)
+        {
+            SqlCommand command = new SqlCommand("SP_ObtenerParticipante_I", conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@dni", objUsuario.PK_VU_DNI);
+            DataSet ds = new DataSet();
+            conexion.Open();
+            SqlDataAdapter moldura = new SqlDataAdapter(command);
+            moldura.Fill(ds);
+            moldura.Dispose();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                objUsuario.nombres = reader[0].ToString();
+                objcat.PK_ICA_CodCat = Convert.ToInt32(reader[1].ToString());
+                objcat.VCA_NomCategoria = reader[2].ToString();
+                objUsuario.VU_Sexo = reader[3].ToString();
+            }
+            conexion.Close();
+            conexion.Dispose();
+        }
         //metodo registrar imagen usuario
         //public void RegistrarImgUsuario(byte[] bytes, string id)
         //{

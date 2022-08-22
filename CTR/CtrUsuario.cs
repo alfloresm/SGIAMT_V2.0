@@ -61,6 +61,11 @@ namespace CTR
             return objDaoUsuario.SelectUsuario_Gen(dtoUsuario, gen);
         }
 
+        //Inscribir
+        public void obtenerParticipante(DtoUsuario dtoUsuario, DtoCategoria objcat)
+        {
+            objDaoUsuario.ObtenerParticipante(dtoUsuario, objcat);
+        }
         //public void registrarImgP(byte[] bytes, string id)
         //{
         //    objDaoUsuario.RegistrarImgUsuario(bytes, id);

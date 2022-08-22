@@ -135,11 +135,34 @@
                                                     </div>
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
-
                                         </div>
                                     </asp:Panel>
-
                                 </div>
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-8 col-sm-12">
+                                        <p></p>
+                                    </div>
+                                    <asp:UpdatePanel ID="upBotonEnviar" runat="server" UpdateMode="Conditional">
+                                        <ContentTemplate>
+                                            <div class="col-lg-2 col-md-2 col-sm-6">
+                                                <asp:Button ID="btnInscribir" runat="server" Text="Inscribir" CssClass="btn btn-fill btn-success" OnClick="btnInscribir_Click" />
+                                            </div>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                    <div class="col-lg-2 col-md-2 col-sm-6">
+                                        <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-fill btn-danger" OnClick="btnRegresar_Click" />
+                                    </div>
+                                </div>
+                                <asp:UpdatePanel ID="Uppago" runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3 class="text-left">PAGAR: </h3>
+                                                <h1 id="H1" runat="server" class="card-title"></h1>
+                                            </div>
+                                        </div>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
                             </div>
                         </div>
                     </div>
