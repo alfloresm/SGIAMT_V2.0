@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -61,8 +62,8 @@ namespace WEB.PAG_WEB
                             int anio = objdtoUsuario.DTU_FechaNacimiento.Year;
                             objdtoUsuario.FK_ICA_CodCat = objCtrUsuario.devolverCategoria(anio);
 
-                            Label2.Text = objCtrUsuario.devolverNombreCateg(anio); //la categoria
-                            _log.CustomWriteOnLog("Nombre categoria", Label2.Text);
+                            //Label2.Text = objCtrUsuario.devolverNombreCateg(anio); //la categoria
+                            //_log.CustomWriteOnLog("Nombre categoria", Label2.Text);
 
                             objCtrUsuario.registrarUsuario(objdtoUsuario);
                             _log.CustomWriteOnLog("Registrar Usuario", "DNI:" + objdtoUsuario.PK_VU_DNI.ToString());
@@ -76,6 +77,7 @@ namespace WEB.PAG_WEB
                             Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showSuccessMessage2()");
 
                         }
+
                         else
                         {
                             string m = "Año fuera de rango";
@@ -107,7 +109,7 @@ namespace WEB.PAG_WEB
             TextBox1.Text = "";
             TextBox2.Text = "";
             TextBox3.Text = "";
-            ddlGenero.Text= "---Seleccione----";
+            ddlGenero.Text = "---Seleccione----";
             TextBox5.Text = "";
             TextBox6.Text = "";
             TextBox7.Text = "";
@@ -125,8 +127,8 @@ namespace WEB.PAG_WEB
         {
             //para mostrar nombre de categoria
             int anio = objdtoUsuario.DTU_FechaNacimiento.Year;
-            Label2.Text = "Su categoria es"+objCtrUsuario.devolverNombreCateg(anio);
-            UpCategoria.Update();
+            //Label2.Text = "Su categoria es"+objCtrUsuario.devolverNombreCateg(anio);
+            //UpCategoria.Update();
         }
 
         //protected void Button2_Click(object sender, EventArgs e)

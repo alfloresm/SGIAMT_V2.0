@@ -73,7 +73,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <%--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-ic-cmp floatleft">
                                                 <i class="notika-icon notika-support text-primary floatleft">Género</i>
                                             </div>
@@ -85,10 +85,22 @@
                                                 </asp:DropDownList>
 
                                             </div>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                     <div class="tab-pane wizard-ctn" id="tab2">
                                         <div class="row">
+                                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 genero">
+                                                <div class="form-group ic-cmp-int">
+                                                    <div class="form-ic-cmp">
+                                                        <i class="notika-icon notika-support text-primary floatleft">Género</i>
+                                                    </div>
+                                                    <asp:DropDownList ID="ddlGenero" runat="server" CssClass="select-css" Font-Size="Small" Width="280px">
+                                                        <asp:ListItem Text="---Seleccione----" Value="0" Selected="True"></asp:ListItem>
+                                                        <asp:ListItem Text="Femenino" Value="F"></asp:ListItem>
+                                                        <asp:ListItem Text="Masculino" Value="M"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
                                             <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 telefono">
                                                 <div class="form-group ic-cmp-int">
                                                     <div class="form-ic-cmp">
@@ -99,6 +111,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 nombre-academia">
                                                 <div class="form-group ic-cmp-int">
                                                     <div class="form-ic-cmp">
@@ -110,8 +123,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div class="tab-pane wizard-ctn" id="tab3">
                                         <div class="row">
-                                            <div class="col-md-6 col-sm-4 col-xs-12 correo-electronico">
+                                            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 correo-electronico">
                                                 <div class="form-group ic-cmp-int">
                                                     <div class="form-ic-cmp">
                                                         <i class="notika-icon notika-mail"></i>
@@ -131,12 +147,32 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="tab-pane wizard-ctn" id="tab3">
+                                        </div>
                                         <div class="row">
                                             <asp:UpdatePanel ID="UpCategoria" runat="server" UpdateMode="Conditional">
+                                                <ContentTemplate>
+                                                    <div class="col-lg-4">
+                                                        <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+                                                            <p class="text-center">Fecha de nacimiento</p>
+
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="form-group ic-cmp-int">
+                                                                <div class="nk-int-st">
+                                                                    <asp:TextBox ID="TextBox10" runat="server" Font-Size="Small" CssClass="form-control" type="date" data-mask="99/99/9999" placeholder="dd/mm/aaaa" Width="300"></asp:TextBox>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                                                        <asp:Label ID="Label1" runat="server" Text="" Font-Bold="true"></asp:Label>
+                                                    </div>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </div>
+                                        
+                                        <%--<asp:UpdatePanel ID="UpCategoria" runat="server" UpdateMode="Conditional">
                                                 <ContentTemplate>
                                                     <div class="col-lg-4">
                                                         <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 text-center">
@@ -158,14 +194,14 @@
                                                                 </asp:LinkButton>
                                                             </ContentTemplate>
                                                         </asp:UpdatePanel>
+                                                        --
                                                     </div>
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                         <asp:Label ID="Label2" runat="server" Text="" Font-Bold="true"></asp:Label>
                                                     </div>
                                                 </ContentTemplate>
-                                            </asp:UpdatePanel>
-                                        </div>
-
+                                            </asp:UpdatePanel>--%>
+                                        <%--</div>--%>
                                     </div>
                                     <div class="wizard-action-pro">
                                         <ul class="wizard-nav-ac">
@@ -188,7 +224,7 @@
                         <asp:UpdatePanel ID="upBotonEnviar" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
                                 <div class="col-lg-2 col-md-2 col-sm-6">
-                                    <asp:LinkButton ID="btnReg" runat="server" OnClick="btnRegistrar_Click" CssClass="btn btn-success notika-btn-success">
+                                    <asp:LinkButton ID="btnReg" runat="server" OnClick="btnRegistrar_Click" OnClientClick="showSuccessMessage2()" CssClass="btn btn-success notika-btn-success">
                                         <i class="notika-icon notika-checked"></i> Registrar
                                     </asp:LinkButton>
                                 </div>
@@ -201,7 +237,7 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
         </div>
     </form>
 
@@ -222,13 +258,13 @@
                 icon: "notifications",
                 message: message
             }, {
-                    type: type,
-                    timer: 3000,
-                    placement: {
-                        from: from,
-                        align: align
-                    }
-                });
+                type: type,
+                timer: 3000,
+                placement: {
+                    from: from,
+                    align: align
+                }
+            });
         }
 
     </script>
