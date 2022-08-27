@@ -21,7 +21,7 @@ namespace DAO
             try
             {
 
-                SqlCommand command = new SqlCommand("SP_RegistrarInscripcion", conexion);
+                SqlCommand command = new SqlCommand("SP_Registrar_Inscripcion", conexion);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@monto", objdtoInscripcion.DI_Monto);
                 command.Parameters.AddWithValue("@id", objdtoInscripcion.FK_IUM_CodUm);

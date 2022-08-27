@@ -145,7 +145,7 @@ namespace DAO
         }
         public bool SelectUsuario_Aca(DtoUsuario objuser)//encuentra usuario con ese dni diferente a la acedemia
         {
-            string Select = "SELECT * from T_Usuario where PK_VU_Dni ='" + objuser.PK_VU_DNI + "' AND VU_NAcademia<>'TUSUY PERU' and FK_ITU_TipoUsuario=2";
+            string Select = "SELECT * from T_Usuario where PK_VU_Dni ='" + objuser.PK_VU_DNI + "' AND VU_NAcademia<>'TUSUY PERU'";
             SqlCommand unComando = new SqlCommand(Select, conexion);
             conexion.Open();
             SqlDataReader reader = unComando.ExecuteReader();
@@ -207,7 +207,7 @@ namespace DAO
 
         public void ObtenerParticipante(DtoUsuario objUsuario, DtoCategoria objcat)
         {
-            SqlCommand command = new SqlCommand("SP_ObtenerParticipante_I", conexion);
+            SqlCommand command = new SqlCommand("SP_Obtener_Participante_I", conexion);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@dni", objUsuario.PK_VU_DNI);
             DataSet ds = new DataSet();

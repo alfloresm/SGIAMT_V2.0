@@ -24,9 +24,9 @@
                                     <div class="navbar-inner">
                                         <div class="container-pro wizard-cts-st">
                                             <ul>
-                                                <li><a href="#tab1" data-toggle="tab">Datos Personales</a></li>
-                                                <li><a href="#tab2" data-toggle="tab">Contacto</a></li>
-                                                <li><a href="#tab3" data-toggle="tab">Categoría</a></li>
+                                                <li><a href="#tab1" data-toggle="tab">Paso 1</a></li>
+                                                <li><a href="#tab2" data-toggle="tab">Paso 2</a></li>
+                                                <li><a href="#tab3" data-toggle="tab">Paso 3</a></li>
                                             </ul>
                                         </div>
                                     </div>

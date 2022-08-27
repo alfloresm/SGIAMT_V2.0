@@ -23,7 +23,7 @@ namespace WEB.PAG_WEB
             {
                 if (!Page.IsPostBack)
                 {
-                    _log.CustomWriteOnLog("Registrar Usuario ", "****Cargo****");
+                    _log.CustomWriteOnLog("Registrar Usuario", "****Cargo****");
                 }
             }
             catch (Exception ex)
@@ -77,7 +77,6 @@ namespace WEB.PAG_WEB
                             Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showSuccessMessage2()");
 
                         }
-
                         else
                         {
                             string m = "Año fuera de rango";

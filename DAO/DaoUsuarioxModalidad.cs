@@ -87,7 +87,7 @@ namespace DAO
         {
 
             string Select = "select COUNT (*) from (select * from T_Usuario_Modalidad " +
-                "where FK_VU_Dni in ('" + objuxm.FK_VU_Dni + "', '" + objuxm.FK_DNI_Pareja + "') or FK_DNI_Pareja in ('"
+                "where FK_VU_Dni in ('" + objuxm.FK_VU_Dni + "', '" + objuxm.FK_DNI_Pareja + "') or FK_VU_DniPareja in ('"
                 + objuxm.FK_VU_Dni + "', '" + objuxm.FK_DNI_Pareja + "'))a where a.FK_IC_IdConcurso =" + objuxm.FK_IC_IdConcurso
                 + " and a.FK_IM_IdModalidad <> 1";
             SqlCommand unComando = new SqlCommand(Select, conexion);

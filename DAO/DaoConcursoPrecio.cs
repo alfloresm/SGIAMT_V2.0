@@ -51,18 +51,36 @@ namespace DAO
             return DS;
         }
 
-        public double ObtenerConcursoPrecio(int codConcurso,string modalidad)
+        public double ObtenerConcursoPrecio(int codConcurso, string modalidad)
         {
-            SqlCommand command = new SqlCommand("SP_Obtener_Precio", conexion);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@CodConcurso", codConcurso);
-            command.Parameters.AddWithValue("@Modalidad", modalidad);
-            command.Parameters.Add("@PRECIO", SqlDbType.Decimal).Direction = ParameterDirection.Output;
-            conexion.Open();
-            command.ExecuteNonQuery();
-            double precio = Convert.ToDouble(command.Parameters["@PRECIO"].Value.ToString());
-            conexion.Close();
-            return precio;
+            try
+            {
+                SqlCommand command = new SqlCommand("SP_Obtener_Precio", conexion);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CodConcurso", codConcurso);
+                command.Parameters.AddWithValue("@Modalidad", modalidad);
+                command.Parameters.Add("@PRECIO", SqlDbType.Decimal).Direction = ParameterDirection.Output;
+                conexion.Open();
+                command.ExecuteNonQuery();
+                double precio;
+                if (command.Parameters["@PRECIO"].Value != null)
+                {
+                    precio = Convert.ToDouble(command.Parameters["@PRECIO"].Value.ToString());
+                }
+                else
+                {
+                    precio = 0.0;
+                }
+
+                conexion.Close();
+                return precio;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
         }
     }
 }

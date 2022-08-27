@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DtoConcursoParticipado.cs" />
     <Compile Include="DtoConcursoPrecio.cs" />
+    <Compile Include="DtoDatosEmailInscripcion.cs" />
     <Compile Include="DtoEspectador.cs" />
     <Compile Include="DtoMarinera.cs" />
     <Compile Include="DtoPrecio.cs" />

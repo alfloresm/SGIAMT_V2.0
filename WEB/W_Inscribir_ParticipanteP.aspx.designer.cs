@@ -49,24 +49,6 @@ namespace WEB {
         protected global::System.Web.UI.WebControls.DropDownList ddlConcurso;
         
         /// <summary>
-        /// Control UpBtnIr.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpBtnIr;
-        
-        /// <summary>
-        /// Control btnIr.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnIr;
-        
-        /// <summary>
         /// Control ddlModalidades.
         /// </summary>
         /// <remarks>
@@ -76,13 +58,13 @@ namespace WEB {
         protected global::System.Web.UI.WebControls.DropDownList ddlModalidades;
         
         /// <summary>
-        /// Control UpdatePanel1.
+        /// Control UpBtnIr2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.UpdatePanel UpBtnIr2;
         
         /// <summary>
         /// Control btnIr2.
@@ -92,6 +74,15 @@ namespace WEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnIr2;
+        
+        /// <summary>
+        /// Control UpParticipanteInd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpParticipanteInd;
         
         /// <summary>
         /// Control pnlParticipanteIndividual.
@@ -182,6 +173,15 @@ namespace WEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcodCat;
+        
+        /// <summary>
+        /// Control UpParticipantePareja.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpParticipantePareja;
         
         /// <summary>
         /// Control pnlParticipantePareja.
@@ -308,5 +308,23 @@ namespace WEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl H1;
+        
+        /// <summary>
+        /// Control UpDatos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpDatos;
+        
+        /// <summary>
+        /// Control hdPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdPrecio;
     }
 }
