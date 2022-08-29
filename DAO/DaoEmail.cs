@@ -45,7 +45,7 @@ namespace DAO
                 objDatosEmail.Monto = Convert.ToDouble(reader["DI_Monto"].ToString());
                 objDatosEmail.FechaInscripcion = Convert.ToDateTime(reader["DTUM_FechaIns"].ToString());
                 objDatosEmail.NombreModalidad = reader["VM_NombreMod"].ToString();
-                objDatosEmail.CodigoParticipante = Convert.ToInt32(reader["PK_IUM_CodUM"].ToString());
+                objDatosEmail.CodigoParticipante = Convert.ToInt32(reader["PK_IUM_CodPart"].ToString());
                 objDatosEmail.FechaConcurso = Convert.ToDateTime(reader["DTC_FechaInicio"].ToString());                
             }
             conexion.Close();

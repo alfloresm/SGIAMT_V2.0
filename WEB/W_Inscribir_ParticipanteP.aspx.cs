@@ -268,9 +268,9 @@ namespace WEB
             {
                 string body = "<body>" +
                               "<h2>Hola " + objDatosEmail.NombrePrincipal + "</h2>" +
-                              "<h4>Tu inscripcion al concurso " + objDatosEmail.NombreConcurso + ",que se realizara en " + objDatosEmail.Lugar + " ,el día " + objDatosEmail.FechaConcurso + " ha sido realizada correctamente el dia " + objDatosEmail.FechaInscripcion + "</h4>" +
+                              "<h4>Tu inscripcion al concurso " + objDatosEmail.NombreConcurso + ",que se realizara en " + objDatosEmail.Lugar + " ,el día " + objDatosEmail.FechaConcurso.ToShortDateString() + " ha sido realizada correctamente el dia " + objDatosEmail.FechaInscripcion + "</h4>" +
                               "<br></br><h4>Su informacion es la siguiente:</h4>" +
-                              "<br></br><span>Monto de inscripcion: " + objDatosEmail.Monto + "</span>" +
+                              "<br></br><span>Monto de inscripcion: S/." + objDatosEmail.Monto + "</span>" +
                               "<br></br><span>Modalidad: " + objDatosEmail.NombreModalidad + "</span>" +
                               "<br></br><h3>recuerde que su código de participante es: " + objDatosEmail.CodigoParticipante + "</h3>" +
                               "<br></br><span> Saludos cordiales.<span>" +
@@ -284,9 +284,9 @@ namespace WEB
             {
                 string body ="<body>" +
                                 "<h2>Hola " + objDatosEmail.NombrePrincipal + " y " + objDatosEmail.NombrePareja + "</h2>" +
-                                "<h4>Tu inscripcion al concurso " + objDatosEmail.NombreConcurso + ",que se realizara en " + objDatosEmail.Lugar + " ,el día " + objDatosEmail.FechaConcurso + " ha sido realizada correctamente el dia " + objDatosEmail.FechaInscripcion + "</h4>" +
+                                "<h4>Tu inscripcion al concurso " + objDatosEmail.NombreConcurso + ",que se realizara en " + objDatosEmail.Lugar + " ,el día " + objDatosEmail.FechaConcurso.ToShortDateString() + " ha sido realizada correctamente el dia " + objDatosEmail.FechaInscripcion + "</h4>" +
                                 "<br></br><h4>Su informacion es la siguiente:</h4>" +
-                                "<br></br><span>Monto de inscripcion: " + objDatosEmail.Monto + "</span>" +
+                                "<br></br><span>Monto de inscripcion: S/." + objDatosEmail.Monto + "</span>" +
                                 "<br></br><span>Modalidad: " + objDatosEmail.NombreModalidad + "</span>" +
                                 "<br></br><h3>recuerde que su código de participante es: " + objDatosEmail.CodigoParticipante + "</h3>" +
                                 "<br></br><span> Saludos cordiales.<span>" +
