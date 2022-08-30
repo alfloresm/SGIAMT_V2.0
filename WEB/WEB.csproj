@@ -539,8 +539,10 @@
     <Content Include="PAG_WEB\index_Externo.html" />
     <Content Include="PAG_WEB\W_RegistrarParticipante.aspx" />
     <Content Include="Web.config" />
+    <Content Include="W_Asignar_Tanda.aspx" />
     <Content Include="W_Calificar_Participante.aspx" />
     <Content Include="W_Gestionar_Concurso.aspx" />
+    <Content Include="W_Gestionar_Tanda.aspx" />
     <Content Include="W_Inscribir_ParticipanteP.aspx" />
     <Content Include="W_Login.aspx" />
     <Content Include="W_RegistrarConcurso.aspx" />
@@ -582,6 +584,13 @@
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="W_Asignar_Tanda.aspx.cs">
+      <DependentUpon>W_Asignar_Tanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="W_Asignar_Tanda.aspx.designer.cs">
+      <DependentUpon>W_Asignar_Tanda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="W_Calificar_Participante.aspx.cs">
       <DependentUpon>W_Calificar_Participante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -595,6 +604,13 @@
     </Compile>
     <Compile Include="W_Gestionar_Concurso.aspx.designer.cs">
       <DependentUpon>W_Gestionar_Concurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="W_Gestionar_Tanda.aspx.cs">
+      <DependentUpon>W_Gestionar_Tanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="W_Gestionar_Tanda.aspx.designer.cs">
+      <DependentUpon>W_Gestionar_Tanda.aspx</DependentUpon>
     </Compile>
     <Compile Include="W_Inscribir_ParticipanteP.aspx.cs">
       <DependentUpon>W_Inscribir_ParticipanteP.aspx</DependentUpon>

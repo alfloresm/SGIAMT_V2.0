@@ -48,6 +48,7 @@
     <Compile Include="CtrConcursoPrecio.cs" />
     <Compile Include="CtrEmail.cs" />
     <Compile Include="CtrInscripcion.cs" />
+    <Compile Include="CtrTanda.cs" />
     <Compile Include="CtrUsuario.cs" />
     <Compile Include="CtrUsuarioxModalidad.cs" />
     <Compile Include="Log.cs" />
