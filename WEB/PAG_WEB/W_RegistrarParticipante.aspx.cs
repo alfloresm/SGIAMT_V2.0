@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,6 +16,7 @@ namespace WEB.PAG_WEB
 
         CtrUsuario objCtrUsuario = new CtrUsuario();
         DtoUsuario objdtoUsuario = new DtoUsuario();
+        CtrEmail objctrEmail = new CtrEmail();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -74,6 +76,20 @@ namespace WEB.PAG_WEB
                             Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
                             _log.CustomWriteOnLog("Registrar Participante", "terminado");
                             Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showSuccessMessage2()");
+                            string ActivationUrl = Server.HtmlEncode("http://localhost:49533/WebPrincipal/ActivarCuenta.aspx?UserID=" + objdtoUsuario.PK_VU_DNI + "&EmailId=" + objdtoUsuario.VU_Correo + "&CodigoActivacion=" + objdtoUsuario.IU_CodigoActivacion);
+                            string Asunto = "[CROSSFIT LA PARADA] Mensaje de activación";
+                            StringBuilder sb = new StringBuilder();
+                            sb.AppendLine("Hola : " + objdtoUsuario.VU_Nombre + " " + objdtoUsuario.VU_APaterno + "\n");
+                            sb.AppendLine("Gracias por mostrar interes y registrarte en La Parada Crosffit\n");
+                            sb.AppendLine("Por favor haga <a href='" + ActivationUrl + "'>Click aquí para activar</a> tu cuenta y disfrutar de nuestros servicios.");
+                            string CuerpoMensaje = sb.ToString();
+
+                            objCtrUsuario.registrarUsuario(objdtoUsuario);
+                            _log.CustomWriteOnLog("RegistrarSocio.aspx", "RegistrarSocio : Usuario Registrado con éxito");
+
+                            objctrEmail.EnviarEmail(TextBox7.Text, Asunto, sb.ToString());
+
+                            _log.CustomWriteOnLog("RegistrarSocio.aspx", "RegistrarSocio : Correo Enviado");
 
                         }
                         else

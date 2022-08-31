@@ -169,6 +169,7 @@
     <Content Include="assets\sweetalert\sweetalert.css" />
     <Content Include="assets\sweetalert\sweetalert.min.js" />
     <Content Include="index.aspx" />
+    <Content Include="PAG_WEB\assets\css\activar-cuenta.css" />
     <Content Include="PAG_WEB\assets\css\animate.css" />
     <Content Include="PAG_WEB\assets\css\animation\animation-custom.css" />
     <Content Include="PAG_WEB\assets\css\bootstrap-select\bootstrap-select.css" />
@@ -219,8 +220,10 @@
     <Content Include="PAG_WEB\assets\images\5.jpg" />
     <Content Include="PAG_WEB\assets\images\compra-entradas.jpg" />
     <Content Include="PAG_WEB\assets\images\ejemplo.png" />
+    <Content Include="PAG_WEB\assets\images\loader.gif" />
     <Content Include="PAG_WEB\assets\images\portada.jpg" />
     <Content Include="PAG_WEB\assets\images\portadaa.jpg" />
+    <Content Include="PAG_WEB\assets\images\preloader.jfif" />
     <Content Include="PAG_WEB\assets\images\select.png" />
     <Content Include="PAG_WEB\assets\images\sort_asc.png" />
     <Content Include="PAG_WEB\assets\images\sort_asc_disabled.png" />
@@ -537,6 +540,7 @@
     <Content Include="PAG_WEB\Ejemplo_Pagina\green-horizotal\wizard.html" />
     <Content Include="PAG_WEB\index.aspx" />
     <Content Include="PAG_WEB\index_Externo.html" />
+    <Content Include="PAG_WEB\W_ActivarCuenta.aspx" />
     <Content Include="PAG_WEB\W_RegistrarParticipante.aspx" />
     <Content Include="Web.config" />
     <Content Include="W_Calificar_Participante.aspx" />
@@ -566,6 +570,13 @@
     </Compile>
     <Compile Include="PAG_WEB\Master_Externa.Master.designer.cs">
       <DependentUpon>Master_Externa.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PAG_WEB\W_ActivarCuenta.aspx.cs">
+      <DependentUpon>W_ActivarCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_ActivarCuenta.aspx.designer.cs">
+      <DependentUpon>W_ActivarCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="PAG_WEB\W_RegistrarParticipante.aspx.cs">
       <DependentUpon>W_RegistrarParticipante.aspx</DependentUpon>
