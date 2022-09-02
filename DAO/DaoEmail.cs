@@ -76,5 +76,39 @@ namespace DAO
                 Console.WriteLine(ep.Message);
             }
         }
+
+        public string ConfirmarActivacionCuenta(string DNI, string CorreoCuenta, int codigoActivacion, string TipoOperacionSQL)
+        {
+
+            SqlCommand command = new SqlCommand("sp_AdministrarCuentaUsuario", conexion);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@DNI", DNI);
+            command.Parameters.AddWithValue("@CorreoCuenta", CorreoCuenta);
+            command.Parameters.AddWithValue("@CodigoActivacion", codigoActivacion);
+            command.Parameters.AddWithValue("@StatementType", TipoOperacionSQL);
+            if (TipoOperacionSQL == "Contar" || TipoOperacionSQL == "ValidarCuenta")
+            {
+                command.Parameters.Add("@totalCount", SqlDbType.Int).Direction = ParameterDirection.Output;
+            }
+            else if (TipoOperacionSQL == "Actualizar")
+            {
+                command.Parameters.AddWithValue("@totalCount", DBNull.Value);
+            }
+
+            conexion.Open();
+            command.ExecuteNonQuery();
+            conexion.Close();
+
+            if (TipoOperacionSQL == "Contar" || TipoOperacionSQL == "ValidarCuenta")
+            {
+                return Convert.ToString(command.Parameters["@totalCount"].Value);
+            }
+            else
+            {
+                return "Elemento activado";
+
+            }
+        }
     }
 }

@@ -25,5 +25,9 @@ namespace CTR
         {
             objdaoEmail.EnviarEmail(correo, asunto, cuerpoMensaje);
         }
+        public string ConfirmarActivacionCuenta(string DNI, string CorreoCuenta, int codigoActivacion, string TipoOperacionSQL)
+        {
+            return objdaoEmail.ConfirmarActivacionCuenta(DNI, CorreoCuenta, codigoActivacion, TipoOperacionSQL);
+        }
     }
 }

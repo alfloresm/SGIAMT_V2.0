@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,6 +17,7 @@ namespace WEB.PAG_WEB
 
         CtrUsuario objCtrUsuario = new CtrUsuario();
         DtoUsuario objdtoUsuario = new DtoUsuario();
+        CtrEmail objctrEmail = new CtrEmail();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -76,6 +78,26 @@ namespace WEB.PAG_WEB
                             _log.CustomWriteOnLog("Registrar Participante", "terminado");
                             Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showSuccessMessage2()");
 
+                            objdtoUsuario.IU_CodigoActivacion = GenerarCodigoToken();
+                            //Activaciòn
+                            string ActivationUrl = Server.HtmlEncode("http://localhost:49533/WebPrincipal/ActivarCuenta.aspx?UserID=" + objdtoUsuario.PK_VU_DNI + "&EmailId=" + objdtoUsuario.VU_Correo + "&CodigoActivacion=" + objdtoUsuario.IU_CodigoActivacion);
+                            string Asunto = "TusuyPeru -- Mensaje de activación";
+
+                            StringBuilder sb = new StringBuilder();
+                            sb.AppendLine("Hola : " + objdtoUsuario.VU_Nombre + " " + objdtoUsuario.VU_APaterno + "\n");
+                            sb.AppendLine("Gracias por mostrar interes y registrarte en La Parada Crosffit\n");
+                            sb.AppendLine("Por favor haga <a href='" + ActivationUrl + "'>Click aquí para activar</a> tu cuenta y disfrutar de nuestros servicios.");
+                            string CuerpoMensaje = sb.ToString();
+
+                            objCtrUsuario.registrarUsuario(objdtoUsuario);
+                            _log.CustomWriteOnLog("Registrar Usuario", "RegistrarParticipante : Usuario Registrado con éxito");
+
+                            objctrEmail.EnviarEmail(TextBox7.Text, Asunto, sb.ToString());
+
+                            _log.CustomWriteOnLog("Registrar Usuario", "RegistrarParticipante : Correo Enviado");
+
+                            ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "showSuccessMessage2()", true);
+
                         }
                         else
                         {
@@ -130,6 +152,15 @@ namespace WEB.PAG_WEB
             //UpCategoria.Update();
         }
 
+        protected int GenerarCodigoToken()
+        {
+            int min = 100000;
+            int max = 1000000;
+            Random rnd = new Random();
+            int value = rnd.Next(min, max);
+
+            return value;
+        }
         //protected void Button2_Click(object sender, EventArgs e)
         //{
         //    //para mostrar nombre de categoria
