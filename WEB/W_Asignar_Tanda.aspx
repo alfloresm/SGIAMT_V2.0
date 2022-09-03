@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="W_Asignar_Tanda.aspx.cs" Inherits="WEB.W_Asignar_Tanda" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../assets/css/material-dashboard.css" rel="stylesheet" />
 </asp:Content>
@@ -12,13 +13,11 @@
 
                 <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="3600"></asp:ScriptManager>
                 <div class="row">
-
+                    <asp:HiddenField ID="HdIdConcurso" runat="server" />
                     <div class="col-md-5">
                         <label class="col-md-12 label-on-left">Modalidad</label>
                         <div class="col-md-5 form-group label-floating is-empty">
                             <asp:DropDownList ID="ddlModalidad" runat="server" CssClass="selectpicker">
-                                <asp:ListItem Value="1" Text="Seriado"></asp:ListItem>
-                                <asp:ListItem Value="2" Text="Novel"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -41,16 +40,16 @@
                     <div class="col-md-2">
                         <br />
                         <br />
-                       <%-- <asp:UpdatePanel ID="UpBtnIr" runat="server" UpdateMode="Conditional">
+                        <%-- <asp:UpdatePanel ID="UpBtnIr" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>--%>
-                                <asp:LinkButton ID="btnIr" runat="server" OnClick="btnIr_Click" CssClass="btn btn-success btn-round btn-fab btn-fab-mini">
+                        <asp:LinkButton ID="btnIr" runat="server" OnClick="btnIr_Click" CssClass="btn btn-success btn-round btn-fab btn-fab-mini">
                             <i class="material-icons">done_outline</i>
-                                </asp:LinkButton>
-                            <%--</ContentTemplate>
+                        </asp:LinkButton>
+                        <%--</ContentTemplate>
                         </asp:UpdatePanel>--%>
                     </div>
                 </div>
-                            </div>
+            </div>
         </div>
     </form>
 </asp:Content>

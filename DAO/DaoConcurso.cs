@@ -105,5 +105,13 @@ namespace DAO
             tipomol.Fill(DS);
             return DS;
         }
+        public DataSet desplegableConcursoEnProceso()
+        {
+            SqlDataAdapter tipomol = new SqlDataAdapter("SP_Desplegable_Concursos_En_Proceso", conexion);
+            tipomol.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataSet DS = new DataSet();
+            tipomol.Fill(DS);
+            return DS;
+        }
     }
 }

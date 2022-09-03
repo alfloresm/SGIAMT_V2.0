@@ -40,5 +40,9 @@ namespace CTR
         {
             return objDaoConcurso.desplegableModalidades();
         }
+        public DataSet DesplegableConcursoEnProceso()
+        {
+            return objDaoConcurso.desplegableConcursoEnProceso();
+        }
     }
 }

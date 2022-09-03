@@ -20,5 +20,14 @@ namespace CTR
         {
             return objDaoTanda.listar_Tanda_NC();
         }
+        public void regTanda(DtoTanda objtanda)
+        {
+            objDaoTanda.registrarTanda(objtanda);
+        }
+        //pasar a ctr_usuarioModalidadTanda
+        public void registrarUMT(DtoUsuarioModalidadTanda objUMT)
+        {
+            objDaoTanda.registrarUMT(objUMT);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="W_Gestionar_Tanda.aspx.cs" Inherits="WEB.W_Gestionar_Tanda" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="assets/momentjs/moment.js"></script>
     <link href="../assets/css/material-dashboard.css" rel="stylesheet" />
@@ -17,7 +18,12 @@
                 <ContentTemplate>
                     <div class="card-content">
                         <div class="row">
-                            <div class="col-md-4 col-md-offset-1 text-center">
+                            <div class="col-md-4 col-md-offset-1 ">
+                                <asp:DropDownList ID="ddlConcurso" runat="server" CssClass="selectpicker">
+                                </asp:DropDownList>
+
+                            </div>
+                            <div class="col-md-4 col-md-offset-2 text-center">
                                 <asp:Button runat="server" Text="Asiganar Tanda" ID="btnAsignar" CssClass="btn btn-info waves-effect glyphicon-plus" OnClick="btnAsignar_Click" />
                             </div>
                         </div>
@@ -40,12 +46,12 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
     </form>
-     <script src="assets/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="assets/jquery-datatable/jquery.dataTables.js"></script>
     <script src="assets/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
