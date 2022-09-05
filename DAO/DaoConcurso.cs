@@ -113,5 +113,16 @@ namespace DAO
             tipomol.Fill(DS);
             return DS;
         }
+        public void ActualizarEstadoConcursoEnProceso(int id,string operacion)
+        {
+
+            SqlCommand command = new SqlCommand("SP_Actualizar_Estado_Concurso", conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@operacion", operacion);
+            conexion.Open();
+            command.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

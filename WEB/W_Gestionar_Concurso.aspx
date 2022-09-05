@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="assets/momentjs/moment.js"></script>
+    <link href="../assets/css/material-dashboard.css" rel="stylesheet" />
 
     <link href="assets/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 </asp:Content>
@@ -35,21 +36,28 @@
                                             <div class="card-content">
                                                 <asp:GridView ID="GVConcurso" runat="server" AutoGenerateColumns="False"
                                                     DataKeyNames="PK_IC_IdConcurso,VC_NombreCon,DTC_FechaInicio,IC_Capacidad,VC_Estado"
-                                                    CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="5"
+                                                    CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="10"
                                                     AllowPaging="True" OnPageIndexChanging="GVConcurso_PageIndexChanging" OnRowCommand="GVConcurso_RowCommand"
                                                     Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small">
                                                     <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
                                                     <Columns>
-                                                        <asp:BoundField DataField="PK_IC_IdConcurso" HeaderText="Concurso" />
+                                                        <asp:BoundField DataField="PK_IC_IdConcurso" HeaderText="Concurso" Visible="false" />
                                                         <asp:BoundField DataField="VC_NombreCon" HeaderText="Nombre" />
-                                                        <asp:BoundField DataField="DTC_FechaInicio" HeaderText="Lugar" />
-                                                        <asp:BoundField DataField="IC_Capacidad" HeaderText="Capacidad del lugar" />
+                                                        <asp:BoundField DataField="DTC_FechaInicio" HeaderText="Fecha" />
+                                                        <asp:BoundField DataField="IC_Capacidad" HeaderText="Capacidad" />
                                                         <asp:BoundField DataField="VC_Estado" HeaderText="Estado" />
                                                         <asp:TemplateField HeaderText="">
                                                             <ItemTemplate>
                                                                 <asp:Button runat="server" Text="✏️"
                                                                     Visible='<%# ValidacionEstado(Eval("VC_Estado").ToString()) %>'
                                                                     CommandName="Actualizar" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-sm btn-warning" />
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="">
+                                                            <ItemTemplate>
+                                                                <asp:Button runat="server" Text="↪"
+                                                                    Visible='<%# ValidacionEstado2(Eval("VC_Estado").ToString()) %>'
+                                                                    CommandName="CambiarEstado" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-sm btn-default" />
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                         <asp:ButtonField ButtonType="button" AccessibleHeaderText="btnDetalle" Text="📄" CommandName="Detalle">
@@ -66,7 +74,7 @@
                 </div>
             </div>
         </div>
-        <%-- Popup --%>
+        <%-- Popup Detalles --%>
         <div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-notice">
                 <div class="modal-content">
@@ -119,13 +127,12 @@
                                     <asp:GridView ID="GVVerPrecios" runat="server" AutoGenerateColumns="False"
                                         DataKeyNames="VPRE_Descripcion,DCP_Monto"
                                         CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="5"
-                                        AllowPaging="True" OnPageIndexChanging="GVVerPrecios_PageIndexChanging" OnRowCommand="GVVerPrecios_RowCommand"
-                                        Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small">
+                                        AllowPaging="True" Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small">
                                         <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
-                                                    <Columns>
-                                                        <asp:BoundField DataField="VPRE_Descripcion" HeaderText="Precio" />
-                                                        <asp:BoundField DataField="DCP_Monto" HeaderText="Monto" />
-                                                    </Columns>
+                                        <Columns>
+                                            <asp:BoundField DataField="VPRE_Descripcion" HeaderText="Precio" />
+                                            <asp:BoundField DataField="DCP_Monto" HeaderText="Monto" />
+                                        </Columns>
                                     </asp:GridView>
                                 </div>
                             </div>
@@ -137,5 +144,56 @@
                 </div>
             </div>
         </div>
+        <%-- Popup Detalles --%>
+        <div class="modal fade" id="EstadoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notice">
+                <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                                <h2 class="modal-title" id="H1" runat="server">Cambio de estado
+                                </h2>
+                            </div>
+                            <div class="modal-body">
+                                <h4 id="h2" runat="server">¿Está seguro que desea cambiar el estado?</h4>
+                            </div>
+                            <div class="modal-footer text-center">
+                                <asp:LinkButton ID="btnAceptar" runat="server" class="btn btn-success btn-round" OnClick="btnAceptar_Click">Aceptar</asp:LinkButton>
+                                <button type="button" class="btn btn-danger btn-round" data-dismiss="modal">Cancelar</button>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <asp:UpdatePanel runat="server" ID="upHiddenfields" UpdateMode="Conditional">
+            <ContentTemplate>
+                <asp:HiddenField ID="hfEstado" runat="server" ClientIDMode="Static" />
+                <asp:HiddenField ID="hfId" runat="server" ClientIDMode="Static"/>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
+    <script src="assets/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="assets/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+    <script>$(function () {
+            $(".dataTable").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
+                "bProcessing": false,
+                "bLengthChange": false,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Buscar registros",
+                    lengthMenu: "Mostrar _MENU_ registros",
+                    paginate: false,
+
+                },
+                "paging": false,
+                "info": false,
+                responsive: true
+            });
+        });
+    </script>
 </asp:Content>

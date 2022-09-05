@@ -44,5 +44,9 @@ namespace CTR
         {
             return objDaoConcurso.desplegableConcursoEnProceso();
         }
+        public void ActualizarConcursoEstado(int id,string Tipo)
+        {
+            objDaoConcurso.ActualizarEstadoConcursoEnProceso(id,Tipo);
+        }
     }
 }

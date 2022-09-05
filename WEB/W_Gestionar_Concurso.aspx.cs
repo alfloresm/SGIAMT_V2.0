@@ -52,16 +52,9 @@ namespace WEB
                     txtlugar.Text = objdtoconcurso.VC_LugarCon.ToString();
                     txtFechaI.Text = objdtoconcurso.DTC_FechaI.ToString("dd-MM-yyyy");
                     txtFechaF.Text = objdtoconcurso.DTC_FechaF.ToString("dd-MM-yyyy");
-                    txtCant.Text = objdtoconcurso.IC_Capacidad.ToString()+ " Personas";
-                    int est = Convert.ToInt32(objdtoconcurso.VC_Estado);
-                    if (est == 1)
-                    {
-                        txtEstado.Text = "No Realizado";
-                    }
-                    else
-                    {
-                        txtEstado.Text = "Realizado";
-                    }
+                    txtCant.Text = objdtoconcurso.IC_Capacidad.ToString() + " Personas";
+                    txtEstado.Text = objdtoconcurso.VC_Estado.ToString();
+
                     //Tabla Precios
                     GVVerPrecios.DataSource = objCtrConcursoPrecio.ListaPreciosByConcursos(objdtoconcurso.PK_IC_IdConcurso);
                     GVVerPrecios.DataBind();
@@ -80,6 +73,29 @@ namespace WEB
                 string id = colsNoVisible[0].ToString();
                 Response.Redirect("~/W_RegistrarConcurso.aspx?ID=" + id);
             }
+            else if (e.CommandName == "CambiarEstado")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                var colsNoVisible = GVConcurso.DataKeys[index].Values;
+                string estado = colsNoVisible[4].ToString();
+                hfEstado.Value = estado;
+                string id = colsNoVisible[0].ToString();
+                hfId.Value = id;
+                upHiddenfields.Update();
+                if (estado == "No Realizado")
+                {
+                    H1.InnerText = "Empezar Concurso";
+                    h2.InnerText = "¿Está seguro de empezar el concurso?";
+                }
+                else if (estado == "En Proceso")
+                {
+                    H1.InnerText = "Finalizar Concurso";
+                    h2.InnerText = "¿Está seguro de finalizar el concurso?";
+                }
+
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#EstadoModal').modal('show');</script>", false);
+
+            }
         }
 
         protected void GVConcurso_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -91,14 +107,30 @@ namespace WEB
         {
             return estado == "No Realizado";
         }
-
-        protected void GVVerPrecios_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected Boolean ValidacionEstado2(string estado)
         {
-
+            return estado != "Finalizado";
         }
-
-        protected void GVVerPrecios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (hfEstado.Value == "No Realizado")
+            {
+                string operacion = "proceso";
+                int id = Convert.ToInt32(hfId.Value);
+                objctrConcurso.ActualizarConcursoEstado(id, operacion);
+                GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
+                GVConcurso.DataBind();
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#EstadoModal').modal('hide');</script>", false);
+            }
+            else if (hfEstado.Value == "En Proceso")
+            {
+                string operacion = "finalizado";
+                int id = Convert.ToInt32(hfId.Value);
+                objctrConcurso.ActualizarConcursoEstado(id, operacion);
+                GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
+                GVConcurso.DataBind();
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#EstadoModal').modal('hide');</script>", false);
+            }
         }
     }
 }
