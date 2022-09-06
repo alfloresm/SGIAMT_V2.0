@@ -13,17 +13,16 @@
                 <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="3600"></asp:ScriptManager>
                 <div class="row">
                     <asp:HiddenField ID="HdIdConcurso" runat="server" />
-                    <div class="col-md-5">
-                        <label class="col-md-12 label-on-left">Modalidad</label>
+                    <div class="col-lg-5 col-md-5">
                         <div class="col-md-5 form-group label-floating is-empty">
                             <asp:DropDownList ID="ddlModalidad" runat="server" CssClass="selectpicker">
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <label class="col-md-12 label-on-left">Categoria:</label>
+                    <div class="col-lg-5 col-md-5">
                         <div class="col-md-5 form-group label-floating is-empty">
                             <asp:DropDownList ID="ddlCat" runat="server" CssClass="selectpicker">
+                                <asp:ListItem Value="-1" Text="Seleccione categoría"></asp:ListItem>
                                 <asp:ListItem Value="Pre Infante" Text="Pre Infante"></asp:ListItem>
                                 <asp:ListItem Value="Infante" Text="Infante"></asp:ListItem>
                                 <asp:ListItem Value="Infantil" Text="Infantil"></asp:ListItem>
@@ -36,8 +35,7 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <br />
+                    <div class="col-lg-2 col-md-2">
                         <br />
                         <%-- <asp:UpdatePanel ID="UpBtnIr" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>--%>
@@ -50,13 +48,14 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-header card-header-text" data-background-color="red">
-                <h4 id="H1" class="card-title">Asignación de Tanda</h4>
-            </div>
-            <asp:HiddenField ID="HFidTanda" runat="server" />
-            <%-- Panel Individual --%>
-            <asp:Panel ID="PanelIndividual" runat="server">
+
+        <asp:HiddenField ID="HFidTanda" runat="server" />
+        <%-- Panel Individual --%>
+        <asp:Panel ID="PanelIndividual" runat="server">
+            <div class="card">
+                <div class="card-header card-header-text" data-background-color="red">
+                    <h4 id="H1" class="card-title">Asignación de Tanda</h4>
+                </div>
                 <div class="card-content">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -191,9 +190,14 @@
                         </div>
                     </div>
                 </div>
-            </asp:Panel>
-            <%-- Panel En parejas --%>
-            <asp:Panel ID="PanelParejas" runat="server">
+            </div>
+        </asp:Panel>
+        <%-- Panel En parejas --%>
+        <asp:Panel ID="PanelParejas" runat="server">
+            <div class="card">
+                <div class="card-header card-header-text" data-background-color="red">
+                    <h4 id="H" class="card-title">Asignación de Tanda</h4>
+                </div>
                 <div class="card-content">
 
                     <div class="row">
@@ -257,7 +261,13 @@
                         </div>
                     </div>
                 </div>
-            </asp:Panel>
+            </div>
+        </asp:Panel>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <asp:LinkButton ID="btnReset" runat="server" CssClass="btn btn-danger btn-round btn-fab btn-fab-mini"><i class="material-icons">restore</i></asp:LinkButton>
+            </div>
+
         </div>
     </form>
     <script>

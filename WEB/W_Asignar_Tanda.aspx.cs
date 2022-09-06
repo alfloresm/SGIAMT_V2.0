@@ -27,6 +27,7 @@ namespace WEB
                 LlenarModalidades();
                 PanelIndividual.Visible = false;
                 PanelParejas.Visible = false;
+                btnReset.Visible = false;
             }
         }
 
@@ -70,7 +71,7 @@ namespace WEB
             ddlModalidad.DataTextField = "VM_NombreMod";
             ddlModalidad.DataValueField = "PK_IM_CodigoMod";
             ddlModalidad.DataBind();
-            ddlModalidad.Items.Insert(0, new ListItem("Seleccione", "0"));
+            ddlModalidad.Items.Insert(0, new ListItem("Seleccione Modalidad", "0"));
         }
 
         protected void BtnPista1A_Click(object sender, EventArgs e)
@@ -120,22 +121,86 @@ namespace WEB
 
         protected void BtnPista1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                _log.CustomWriteOnLog("asignar tanda", "entra boton pista 1");
+                objumt.IUMT_Pista = 1;
+                objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista1.Text);
+                objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+                objumt.PK_IUMT_CodUsuModTan = txtCodPista1.Text + HFidTanda.Value;
+                objctrtanda.registrarUMT(objumt);
+                _log.CustomWriteOnLog("asignar tanda", "registra 1");
+                string m = "Se registro Correctamente";
+                Utils.AddScriptClientUpdatePanel(updPista1, "showMessage('top','center','" + m + "','success')");
+            }
+            catch (Exception ex)
+            {
 
+                _log.CustomWriteOnLog("asignar tanda", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+            }
         }
 
         protected void BtnPista2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                _log.CustomWriteOnLog("asignar tanda", "entra boton pista 2");
+                objumt.IUMT_Pista = 2;
+                objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista2.Text);
+                objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+                objumt.PK_IUMT_CodUsuModTan = txtCodPista2.Text + HFidTanda.Value;
+                objctrtanda.registrarUMT(objumt);
+                _log.CustomWriteOnLog("asignar tanda", "registra 2");
+                string m = "Se registro Correctamente";
+                Utils.AddScriptClientUpdatePanel(updPista2, "showMessage('top','center','" + m + "','success')");
+            }
+            catch (Exception ex)
+            {
 
+                _log.CustomWriteOnLog("asignar tanda", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+            }
         }
 
         protected void BtnPista3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                _log.CustomWriteOnLog("asignar tanda", "entra boton pista 3");
+                objumt.IUMT_Pista = 3;
+                objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista3.Text);
+                objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+                objumt.PK_IUMT_CodUsuModTan = txtCodPista3.Text + HFidTanda.Value;
+                objctrtanda.registrarUMT(objumt);
+                _log.CustomWriteOnLog("asignar tanda", "registra 3");
+                string m = "Se registro Correctamente";
+                Utils.AddScriptClientUpdatePanel(updPista3, "showMessage('top','center','" + m + "','success')");
+            }
+            catch (Exception ex)
+            {
 
+                _log.CustomWriteOnLog("asignar tanda", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+            }
         }
 
         protected void BtnPista4_Click(object sender, EventArgs e)
         {
+            try
+            {
+                _log.CustomWriteOnLog("asignar tanda", "entra boton pista 4");
+                objumt.IUMT_Pista = 4;
+                objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista4.Text);
+                objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+                objumt.PK_IUMT_CodUsuModTan = txtCodPista3.Text + HFidTanda.Value;
+                objctrtanda.registrarUMT(objumt);
+                _log.CustomWriteOnLog("asignar tanda", "registra 4");
+                string m = "Se registro Correctamente";
+                Utils.AddScriptClientUpdatePanel(updPista4, "showMessage('top','center','" + m + "','success')");
+            }
+            catch (Exception ex)
+            {
 
+                _log.CustomWriteOnLog("asignar tanda", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+            }
         }
     }
 }
