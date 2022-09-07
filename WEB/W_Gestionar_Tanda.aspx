@@ -31,14 +31,14 @@
                             <div class="card-content">
                                 <div class="col-md-10 col-md-offset-1 table-responsive">
                                     <asp:GridView ID="GVTanda" runat="server" AutoGenerateColumns="False"
-                                        DataKeyNames="PK_IT_CodTan,Tipo_Tanda,VT_Descripcion"
+                                        DataKeyNames="PK_IT_CodTan,VT_Tipo_Tanda,VT_Descripcion"
                                         CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="10"
                                         AllowPaging="True" OnPageIndexChanging="GVTanda_PageIndexChanging"
                                         Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small" EmptyDataText="No hay Registros">
                                         <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
                                         <Columns>
                                             <asp:BoundField DataField="PK_IT_CodTan" HeaderText="Codigo" />
-                                            <asp:BoundField DataField="Tipo_Tanda" HeaderText="Tipo Tanda" />
+                                            <asp:BoundField DataField="VT_Tipo_Tanda" HeaderText="Tipo Tanda" />
                                             <asp:BoundField DataField="VT_Descripcion" HeaderText="Categoría" />
 
                                         </Columns>

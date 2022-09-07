@@ -76,47 +76,119 @@ namespace WEB
 
         protected void BtnPista1A_Click(object sender, EventArgs e)
         {
-
+            _log.CustomWriteOnLog("asignar tanda", "entra boton pista 1A");
+            objumt.IUMT_Pista = "1A";
+            objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista1A.Text);
+            objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+            objumt.PK_IUMT_CodUsuModTan = txtCodPista1A.Text + HFidTanda.Value;
+            objctrtanda.registrarUMT(objumt);
+            _log.CustomWriteOnLog("asignar tanda", "registra 1A");
+            string m = "Se registro Correctamente";
+            Utils.AddScriptClientUpdatePanel(updPista1A, "showMessage('top','center','" + m + "','success')");
         }
 
         protected void BtnPista1B_Click(object sender, EventArgs e)
         {
-
+            _log.CustomWriteOnLog("asignar tanda", "entra boton pista 1B");
+             objumt.IUMT_Pista = "1B";
+            objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista1B.Text);
+            objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+            objumt.PK_IUMT_CodUsuModTan = txtCodPista1B.Text + HFidTanda.Value;
+            objctrtanda.registrarUMT(objumt);
+            _log.CustomWriteOnLog("asignar tanda", "registra 1B");
+            string m = "Se registro Correctamente";
+            Utils.AddScriptClientUpdatePanel(updPista1B, "showMessage('top','center','" + m + "','success')");
         }
 
         protected void BtnPista1C_Click(object sender, EventArgs e)
         {
-
+            _log.CustomWriteOnLog("asignar tanda", "entra boton pista 1C");
+            objumt.IUMT_Pista = "1C";
+            objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista1C.Text);
+            objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+            objumt.PK_IUMT_CodUsuModTan = txtCodPista1C.Text + HFidTanda.Value;
+            objctrtanda.registrarUMT(objumt);
+            _log.CustomWriteOnLog("asignar tanda", "registra 1C");
+            string m = "Se registro Correctamente";
+            Utils.AddScriptClientUpdatePanel(updPista1C, "showMessage('top','center','" + m + "','success')");
         }
 
         protected void BtnPista2A_Click(object sender, EventArgs e)
         {
-
+            _log.CustomWriteOnLog("asignar tanda", "entra boton pista 2A");
+            objumt.IUMT_Pista = "2A";
+            objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista2A.Text);
+            objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+            objumt.PK_IUMT_CodUsuModTan = txtCodPista2A.Text + HFidTanda.Value;
+            objctrtanda.registrarUMT(objumt);
+            _log.CustomWriteOnLog("asignar tanda", "registra 2A");
+            string m = "Se registro Correctamente";
+            Utils.AddScriptClientUpdatePanel(updPista2A, "showMessage('top','center','" + m + "','success')");
         }
 
         protected void BtnPista2B_Click(object sender, EventArgs e)
         {
-
+            _log.CustomWriteOnLog("asignar tanda", "entra boton pista 2B");
+            objumt.IUMT_Pista = "2B";
+            objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista2B.Text);
+            objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+            objumt.PK_IUMT_CodUsuModTan = txtCodPista2B.Text + HFidTanda.Value;
+            objctrtanda.registrarUMT(objumt);
+            _log.CustomWriteOnLog("asignar tanda", "registra 2B");
+            string m = "Se registro Correctamente";
+            Utils.AddScriptClientUpdatePanel(updPista2B, "showMessage('top','center','" + m + "','success')");
         }
 
         protected void BtnPista2C_Click(object sender, EventArgs e)
         {
-
+            _log.CustomWriteOnLog("asignar tanda", "entra boton pista 2C");
+            objumt.IUMT_Pista = "2C";
+            objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista2C.Text);
+            objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+            objumt.PK_IUMT_CodUsuModTan = txtCodPista2C.Text + HFidTanda.Value;
+            objctrtanda.registrarUMT(objumt);
+            _log.CustomWriteOnLog("asignar tanda", "registra 2C");
+            string m = "Se registro Correctamente";
+            Utils.AddScriptClientUpdatePanel(updPista2C, "showMessage('top','center','" + m + "','success')");
         }
 
         protected void BtnPista3A_Click(object sender, EventArgs e)
         {
-
+            _log.CustomWriteOnLog("asignar tanda", "entra boton pista 3A");
+            objumt.IUMT_Pista = "3A";
+            objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista3A.Text);
+            objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+            objumt.PK_IUMT_CodUsuModTan = txtCodPista3A.Text + HFidTanda.Value;
+            objctrtanda.registrarUMT(objumt);
+            _log.CustomWriteOnLog("asignar tanda", "registra 3A");
+            string m = "Se registro Correctamente";
+            Utils.AddScriptClientUpdatePanel(updPista3A, "showMessage('top','center','" + m + "','success')");
         }
 
         protected void BtnPista3B_Click(object sender, EventArgs e)
         {
-
+            _log.CustomWriteOnLog("asignar tanda", "entra boton pista 3B");
+            objumt.IUMT_Pista = "3B";
+            objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista3B.Text);
+            objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+            objumt.PK_IUMT_CodUsuModTan = txtCodPista3B.Text + HFidTanda.Value;
+            objctrtanda.registrarUMT(objumt);
+            _log.CustomWriteOnLog("asignar tanda", "registra 3B");
+            string m = "Se registro Correctamente";
+            Utils.AddScriptClientUpdatePanel(updPista3B, "showMessage('top','center','" + m + "','success')");
         }
 
         protected void BtnPista3C_Click(object sender, EventArgs e)
         {
-
+            _log.CustomWriteOnLog("asignar tanda", "entra boton pista 3C");
+            objumt.IUMT_Pista = "3C";
+            objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista3C.Text);
+            objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
+            objumt.PK_IUMT_CodUsuModTan = txtCodPista3C.Text + HFidTanda.Value;
+            objctrtanda.registrarUMT(objumt);
+            _log.CustomWriteOnLog("asignar tanda", "registra 3C");
+            string m = "Se registro Correctamente";
+            Utils.AddScriptClientUpdatePanel(updPista3C, "showMessage('top','center','" + m + "','success')");
         }
 
         protected void BtnPista1_Click(object sender, EventArgs e)
@@ -124,7 +196,7 @@ namespace WEB
             try
             {
                 _log.CustomWriteOnLog("asignar tanda", "entra boton pista 1");
-                objumt.IUMT_Pista = 1;
+                objumt.IUMT_Pista = "1";
                 objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista1.Text);
                 objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
                 objumt.PK_IUMT_CodUsuModTan = txtCodPista1.Text + HFidTanda.Value;
@@ -145,7 +217,7 @@ namespace WEB
             try
             {
                 _log.CustomWriteOnLog("asignar tanda", "entra boton pista 2");
-                objumt.IUMT_Pista = 2;
+                objumt.IUMT_Pista = "2";
                 objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista2.Text);
                 objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
                 objumt.PK_IUMT_CodUsuModTan = txtCodPista2.Text + HFidTanda.Value;
@@ -166,7 +238,7 @@ namespace WEB
             try
             {
                 _log.CustomWriteOnLog("asignar tanda", "entra boton pista 3");
-                objumt.IUMT_Pista = 3;
+                objumt.IUMT_Pista = "3";
                 objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista3.Text);
                 objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
                 objumt.PK_IUMT_CodUsuModTan = txtCodPista3.Text + HFidTanda.Value;
@@ -187,7 +259,7 @@ namespace WEB
             try
             {
                 _log.CustomWriteOnLog("asignar tanda", "entra boton pista 4");
-                objumt.IUMT_Pista = 4;
+                objumt.IUMT_Pista = "4";
                 objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista4.Text);
                 objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
                 objumt.PK_IUMT_CodUsuModTan = txtCodPista3.Text + HFidTanda.Value;

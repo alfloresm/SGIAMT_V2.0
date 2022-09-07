@@ -79,7 +79,7 @@
                                 <div class="col-md-8 form-group label-floating is-empty">
                                     <asp:TextBox ID="txtCodPista1B" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
                                 </div>
-                                <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                                <asp:UpdatePanel ID="updPista1B" runat="server" UpdateMode="Conditional">
                                     <ContentTemplate>
                                         <asp:Button ID="BtnPista1B" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista1B_Click" />
                                     </ContentTemplate>
@@ -93,7 +93,7 @@
                                 <div class="col-md-8 form-group label-floating is-empty">
                                     <asp:TextBox ID="txtCodPista1C" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
                                 </div>
-                                <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                                <asp:UpdatePanel ID="updPista1C" runat="server" UpdateMode="Conditional">
                                     <ContentTemplate>
                                         <asp:Button ID="BtnPista1C" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista1C_Click" />
                                     </ContentTemplate>
@@ -275,7 +275,6 @@
             $.notify({
                 icon: "notifications",
                 message: message
-
             }, {
                     type: type,
                     timer: 3000,

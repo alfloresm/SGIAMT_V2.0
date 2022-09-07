@@ -130,13 +130,13 @@ namespace WEB {
         protected global::System.Web.UI.WebControls.TextBox txtCodPista1B;
         
         /// <summary>
-        /// Control UpdatePanel1.
+        /// Control updPista1B.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.UpdatePanel updPista1B;
         
         /// <summary>
         /// Control BtnPista1B.
@@ -157,13 +157,13 @@ namespace WEB {
         protected global::System.Web.UI.WebControls.TextBox txtCodPista1C;
         
         /// <summary>
-        /// Control UpdatePanel2.
+        /// Control updPista1C.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        protected global::System.Web.UI.UpdatePanel updPista1C;
         
         /// <summary>
         /// Control BtnPista1C.
