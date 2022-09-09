@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PAG_WEB/Master_Externa.Master" AutoEventWireup="true" CodeBehind="W_ActivarCuenta.aspx.cs" Inherits="WEB.PAG_WEB.W_ActivarCuenta" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="assets/css/activar-cuenta.css?1.0">
+
+<%-- agregado --%>
+    <script src="../PAG_WEB/assets/js/js_ActivarCuenta.js"></script>
+<%-- fin agregado --%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">

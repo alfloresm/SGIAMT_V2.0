@@ -306,6 +306,7 @@
     <Content Include="PAG_WEB\assets\js\jasny-bootstrap.min.js" />
     <Content Include="PAG_WEB\assets\js\jquery-price-slider.js" />
     <Content Include="PAG_WEB\assets\js\jquery.scrollUp.min.js" />
+    <Content Include="PAG_WEB\assets\js\js_ActivarCuenta.js" />
     <Content Include="PAG_WEB\assets\js\jvectormap\jquery-jvectormap-2.0.2.min.js" />
     <Content Include="PAG_WEB\assets\js\jvectormap\jquery-jvectormap-world-mill-en.js" />
     <Content Include="PAG_WEB\assets\js\jvectormap\jvectormap-active.js" />
@@ -545,6 +546,7 @@
     <Content Include="Web.config" />
     <Content Include="W_Asignar_Tanda.aspx" />
     <Content Include="W_Calificar_Participante.aspx" />
+    <Content Include="W_Elegir_Marinera.aspx" />
     <Content Include="W_Gestionar_Concurso.aspx" />
     <Content Include="W_Gestionar_Tanda.aspx" />
     <Content Include="W_Inscribir_ParticipanteP.aspx" />
@@ -615,6 +617,13 @@
     </Compile>
     <Compile Include="W_Calificar_Participante.aspx.designer.cs">
       <DependentUpon>W_Calificar_Participante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="W_Elegir_Marinera.aspx.cs">
+      <DependentUpon>W_Elegir_Marinera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="W_Elegir_Marinera.aspx.designer.cs">
+      <DependentUpon>W_Elegir_Marinera.aspx</DependentUpon>
     </Compile>
     <Compile Include="W_Gestionar_Concurso.aspx.cs">
       <DependentUpon>W_Gestionar_Concurso.aspx</DependentUpon>

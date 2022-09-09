@@ -85,7 +85,7 @@ namespace WEB.PAG_WEB
 
                             StringBuilder sb = new StringBuilder();
                             sb.AppendLine("Hola : " + objdtoUsuario.VU_Nombre + " " + objdtoUsuario.VU_APaterno + "\n");
-                            sb.AppendLine("Gracias por mostrar interes y registrarte en La Parada Crosffit\n");
+                            sb.AppendLine("Gracias por mostrar interes y registrarte en La Academia de Marinera Tusuy Perú\n");
                             sb.AppendLine("Por favor haga <a href='" + ActivationUrl + "'>Click aquí para activar</a> tu cuenta y disfrutar de nuestros servicios.");
                             string CuerpoMensaje = sb.ToString();
 

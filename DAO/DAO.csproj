@@ -46,6 +46,7 @@
     <Compile Include="DaoConcursoPrecio.cs" />
     <Compile Include="DaoEmail.cs" />
     <Compile Include="DaoInscripcion.cs" />
+    <Compile Include="DaoMarinera.cs" />
     <Compile Include="DaoTanda.cs" />
     <Compile Include="DaoUsuario.cs" />
     <Compile Include="DaoUsuarioxModalidad.cs" />
