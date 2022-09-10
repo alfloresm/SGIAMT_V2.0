@@ -29,5 +29,27 @@ namespace CTR
         {
             objDaoTanda.registrarUMT(objUMT);
         }
+
+        //update del registro de tanda
+        public void updTandaMarinera(DtoTanda objtanda)
+        {
+            objDaoTanda.updateTandaMar(objtanda);
+        }
+
+        //obtener el nombre de la marinera
+        public string devolverNombreMar(int codmar)
+        {
+            return objDaoTanda.ObtenerMarinera(codmar);
+        }
+        public string devolverCodMar(int codmar)
+        {
+            return objDaoTanda.ObtenerMarinera(codmar);
+        }
+
+        //listar tanda y marinera
+        public DataTable listar_Tanda_Marinera()
+        {
+            return objDaoTanda.listar_Tanda_marinera();
+        }
     }
 }

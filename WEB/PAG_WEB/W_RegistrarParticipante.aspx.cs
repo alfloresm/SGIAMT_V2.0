@@ -67,55 +67,58 @@ namespace WEB.PAG_WEB
                             //Label2.Text = objCtrUsuario.devolverNombreCateg(anio); //la categoria
                             //_log.CustomWriteOnLog("Nombre categoria", Label2.Text);
 
-                            objCtrUsuario.registrarUsuario(objdtoUsuario);
+                            //objCtrUsuario.registrarUsuario(objdtoUsuario);
                             _log.CustomWriteOnLog("Registrar Usuario", "DNI:" + objdtoUsuario.PK_VU_DNI.ToString());
                             string id = objdtoUsuario.PK_VU_DNI.ToString();
-                            Utils.AddScriptClientUpdatePanel(upBotonEnviar, "uploadFileDocuments(" + id + ");");
+                            //Utils.AddScriptClientUpdatePanel(upBotonEnviar, "uploadFileDocuments(" + id + ");");
                             Limpiar();
                             _log.CustomWriteOnLog("Registrar Usuario", "Agregado");
-                            string m = "Usuario registrado correctamente";
-                            Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
+                            //string m = "Usuario registrado correctamente";
+                            //Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
                             _log.CustomWriteOnLog("Registrar Participante", "terminado");
-                            Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showSuccessMessage2()");
+                            //Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showSuccessMessage2()");
 
                             objdtoUsuario.IU_CodigoActivacion = GenerarCodigoToken();
                             //Activaciòn
-                            string ActivationUrl = Server.HtmlEncode("http://localhost:49533/WebPrincipal/ActivarCuenta.aspx?UserID=" + objdtoUsuario.PK_VU_DNI + "&EmailId=" + objdtoUsuario.VU_Correo + "&CodigoActivacion=" + objdtoUsuario.IU_CodigoActivacion);
+                            string ActivationUrl = Server.HtmlEncode("http://localhost:54460/PAG_WEB/W_ActivarCuenta.aspx?UserID=" + objdtoUsuario.PK_VU_DNI + "&EmailId=" + objdtoUsuario.VU_Correo + "&CodigoActivacion=" + objdtoUsuario.IU_CodigoActivacion);
                             string Asunto = "TusuyPeru -- Mensaje de activación";
 
                             StringBuilder sb = new StringBuilder();
                             sb.AppendLine("Hola : " + objdtoUsuario.VU_Nombre + " " + objdtoUsuario.VU_APaterno + "\n");
-                            sb.AppendLine("Gracias por mostrar interes y registrarte en La Academia de Marinera Tusuy Perú\n");
-                            sb.AppendLine("Por favor haga <a href='" + ActivationUrl + "'>Click aquí para activar</a> tu cuenta y disfrutar de nuestros servicios.");
+                            sb.AppendLine("Gracias por mostrar interes y registrarte en La Academia de Marinera Tusuy Perú" + "\n");
+                            sb.AppendLine("Por favor haga <a href='" + ActivationUrl + "'>Click aquí para activar</a> tu cuenta y disfrutar de nuestros servicios." + "\n");
+                            sb.AppendLine("Saludos Cordiales.");
+
                             string CuerpoMensaje = sb.ToString();
+                            objctrEmail.EnviarEmail(objdtoUsuario.VU_Correo, Asunto, sb.ToString());
+                            //objctrEmail.EnviarEmail(TextBox7.Text, Asunto, sb.ToString());
 
                             objCtrUsuario.registrarUsuario(objdtoUsuario);
                             _log.CustomWriteOnLog("Registrar Usuario", "RegistrarParticipante : Usuario Registrado con éxito");
 
-                            objctrEmail.EnviarEmail(TextBox7.Text, Asunto, sb.ToString());
+                            Response.Redirect("~/PAG_WEB/W_Pagina_Inicio.aspx"); //mensaje que debe revisar su correo
 
                             _log.CustomWriteOnLog("Registrar Usuario", "RegistrarParticipante : Correo Enviado");
-
                             ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "showSuccessMessage2()", true);
 
                         }
                         else
                         {
                             string m = "Año fuera de rango";
-                            Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
+                            //Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
                         }
 
                     }
                     else
                     {
                         string m = "Usuario ya registrado en la academia";
-                        Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
+                        //Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
                     }
                 }
                 else
                 {
                     string m = "Usuario ya registrado como participante";
-                    Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
+                    //Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','danger')");
                 }
             }
             catch (Exception ex)
@@ -160,6 +163,11 @@ namespace WEB.PAG_WEB
             int value = rnd.Next(min, max);
 
             return value;
+        }
+
+        protected void click1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/PAG_WEB/W_Pagina_Blanco.aspx");
         }
         //protected void Button2_Click(object sender, EventArgs e)
         //{

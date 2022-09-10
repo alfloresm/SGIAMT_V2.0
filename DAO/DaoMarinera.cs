@@ -39,5 +39,28 @@ namespace DAO
                 throw;
             }
         }
+
+        public int obtenerCodMarinera(int dific)
+        {
+            try
+            {
+                int valor_retornado = 0;
+                SqlCommand cmd = new SqlCommand("select top 1 m.PK_IM_CodMar from T_Marinera m inner join T_Tanda t on m.PK_IM_CodMar = t.FK_IM_CodMar where m.IM_FlagDificultad = " + dific, conexion);
+                Console.WriteLine(cmd);
+                conexion.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    valor_retornado = int.Parse(reader[0].ToString());
+                }
+                conexion.Close();
+                return valor_retornado;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }

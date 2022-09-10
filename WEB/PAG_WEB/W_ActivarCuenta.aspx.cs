@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CTR;
+using DAO;
 
 namespace WEB.PAG_WEB
 {
     public partial class W_ActivarCuenta : System.Web.UI.Page
     {
-        //DaoEmail obj_daoEmail = new DaoEmail();
+        DaoEmail obj_daoEmail = new DaoEmail();
         CtrEmail obj_ctrEmail = new CtrEmail();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -56,6 +57,11 @@ namespace WEB.PAG_WEB
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('Error occured : " + ex.Message.ToString() + "');", true);
                 return;
             }
+        }
+
+        protected void btnIngresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/PAG_WEB/W_Iniciar_Sesion.aspx");
         }
     }
 

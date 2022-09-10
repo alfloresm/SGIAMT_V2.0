@@ -36,6 +36,9 @@
                                         <asp:LinkButton ID="btnElegir" runat="server" OnClick="btnElegir_Click1" OnClientClick="showSuccessMessage2()" CssClass="btn btn-success notika-btn-success">
                                             <i class="notika-icon notika-checked"></i> Elegir
                                         </asp:LinkButton>
+                                        <asp:LinkButton ID="btnVerListado" runat="server" OnClick="btnVerListado_Click" OnClientClick="showSuccessMessage2()" CssClass="btn btn-success notika-btn-success" BackColor="SkyBlue" ForeColor="White">
+                                            </i> Ver
+                                        </asp:LinkButton>
                                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="btnRegreso_Click" CssClass="btn btn-danger notika-btn-danger">
                                             <i class="notika-icon notika-close"></i> Regresar
                                         </asp:LinkButton>

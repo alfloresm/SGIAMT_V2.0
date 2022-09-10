@@ -542,6 +542,8 @@
     <Content Include="PAG_WEB\index_Externo.html" />
     <Content Include="PAG_WEB\W_ActivarCuenta.aspx" />
     <Content Include="PAG_WEB\W_Iniciar_Sesion.aspx" />
+    <Content Include="PAG_WEB\W_Pagina_Blanco.aspx" />
+    <Content Include="PAG_WEB\W_Pagina_Inicio.aspx" />
     <Content Include="PAG_WEB\W_RegistrarParticipante.aspx" />
     <Content Include="Web.config" />
     <Content Include="W_Asignar_Tanda.aspx" />
@@ -550,6 +552,7 @@
     <Content Include="W_Gestionar_Concurso.aspx" />
     <Content Include="W_Gestionar_Tanda.aspx" />
     <Content Include="W_Inscribir_ParticipanteP.aspx" />
+    <Content Include="W_Listar_Tandas_Marinera.aspx" />
     <Content Include="W_Login.aspx" />
     <Content Include="W_RegistrarConcurso.aspx" />
   </ItemGroup>
@@ -588,6 +591,20 @@
     </Compile>
     <Compile Include="PAG_WEB\W_Iniciar_Sesion.aspx.designer.cs">
       <DependentUpon>W_Iniciar_Sesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Pagina_Blanco.aspx.cs">
+      <DependentUpon>W_Pagina_Blanco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Pagina_Blanco.aspx.designer.cs">
+      <DependentUpon>W_Pagina_Blanco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Pagina_Inicio.aspx.cs">
+      <DependentUpon>W_Pagina_Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Pagina_Inicio.aspx.designer.cs">
+      <DependentUpon>W_Pagina_Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="PAG_WEB\W_RegistrarParticipante.aspx.cs">
       <DependentUpon>W_RegistrarParticipante.aspx</DependentUpon>
@@ -645,6 +662,13 @@
     </Compile>
     <Compile Include="W_Inscribir_ParticipanteP.aspx.designer.cs">
       <DependentUpon>W_Inscribir_ParticipanteP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="W_Listar_Tandas_Marinera.aspx.cs">
+      <DependentUpon>W_Listar_Tandas_Marinera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="W_Listar_Tandas_Marinera.aspx.designer.cs">
+      <DependentUpon>W_Listar_Tandas_Marinera.aspx</DependentUpon>
     </Compile>
     <Compile Include="W_Login.aspx.cs">
       <DependentUpon>W_Login.aspx</DependentUpon>
@@ -747,6 +771,10 @@
     <ProjectReference Include="..\CTR\CTR.csproj">
       <Project>{f66a8d06-64e3-4f2c-852b-87acf9f18e10}</Project>
       <Name>CTR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{93fd065d-334f-44f5-b936-2ea4758625fe}</Project>
+      <Name>DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{f953c1a4-ddce-4343-bdbc-a964a394e03e}</Project>

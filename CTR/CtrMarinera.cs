@@ -19,5 +19,10 @@ namespace CTR
         {
             return objDaoMarinera.Elegir_Marinera(dific);
         }
+
+        public int devolverCodMar(int dific)
+        {
+            return objDaoMarinera.obtenerCodMarinera(dific);
+        }
     }
 }

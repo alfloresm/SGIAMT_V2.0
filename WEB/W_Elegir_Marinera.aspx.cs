@@ -14,6 +14,9 @@ namespace WEB
     {
         CtrMarinera objctrmarinera = new CtrMarinera();
         DtoMarinera objdtomarinera = new DtoMarinera();
+        CtrTanda objctrtanda = new CtrTanda();
+        DtoTanda objdtotanda = new DtoTanda();
+
         Log _log = new Log();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -37,16 +40,27 @@ namespace WEB
                 _log.CustomWriteOnLog("elegir marinera", "la dificultad es: " + ddlDificultad.SelectedValue.ToString());
 
                 _log.CustomWriteOnLog("elegir marinera", "la marinera aleatoria es: " + marinera);
+                int codmarin = objctrmarinera.devolverCodMar(ddlDificultad.SelectedIndex);
+                _log.CustomWriteOnLog("elegir marinera", "el codigo de marinera es: " + codmarin);
 
                 string m = "Se muestra la marinera a bailar con éxito";
                 Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + "La marinera a bailar es: " + marinera + "','success')");
 
-                //txtMarinera.Text = marinera.ToString();
+                //objctrtanda.devolverCodMar(codmarin);
+                objctrtanda.updTandaMarinera(objdtotanda);
+                //string n = "Se actualizó la tanda con éxito";
+                //Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + n + "','success')");
+
             }
             catch (Exception ex)
             {
                 _log.CustomWriteOnLog("elegir marinera", "Error : " + ex.Message + "Stac" + ex.StackTrace);
             }
+        }
+
+        protected void btnVerListado_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("W_Listar_Tandas_Marinera.aspx");
         }
     }
 }

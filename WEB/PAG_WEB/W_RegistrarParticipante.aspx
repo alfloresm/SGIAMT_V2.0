@@ -171,7 +171,7 @@
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
                                         </div>
-                                        
+
                                         <%--<asp:UpdatePanel ID="UpCategoria" runat="server" UpdateMode="Conditional">
                                                 <ContentTemplate>
                                                     <div class="col-lg-4">
@@ -221,15 +221,18 @@
                         <div class="col-lg-8 col-md-8 col-sm-12">
                             <p></p>
                         </div>
-                        <asp:UpdatePanel ID="upBotonEnviar" runat="server" UpdateMode="Conditional">
-                            <ContentTemplate>
-                                <div class="col-lg-2 col-md-2 col-sm-6">
-                                    <asp:LinkButton ID="btnReg" runat="server" OnClick="btnRegistrar_Click" OnClientClick="showSuccessMessage2()" CssClass="btn btn-success notika-btn-success">
+                        <%--<asp:UpdatePanel ID="upBotonEnviar" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>--%>
+                        <div class="col-lg-2 col-md-2 col-sm-6">
+                            <asp:LinkButton ID="btnReg" runat="server" OnClick="btnRegistrar_Click" OnClientClick="showSuccessMessage2()" CssClass="btn btn-success notika-btn-success">
                                         <i class="notika-icon notika-checked"></i> Registrar
-                                    </asp:LinkButton>
-                                </div>
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
+                            </asp:LinkButton>
+                            <%--<asp:LinkButton ID="LinkButton1" runat="server" OnClick="click1_Click" CssClass="btn btn-danger notika-btn-danger">
+                                <i class="notika-icon notika-close"></i> Click
+                            </asp:LinkButton>--%>
+                        </div>
+                        <%--</ContentTemplate>
+                        </asp:UpdatePanel>--%>
                         <div class="col-lg-2 col-md-2 col-sm-6">
                             <asp:LinkButton ID="btnRegreso" runat="server" OnClick="btnRegreso_Click" CssClass="btn btn-danger notika-btn-danger">
                                 <i class="notika-icon notika-close"></i> Regresar

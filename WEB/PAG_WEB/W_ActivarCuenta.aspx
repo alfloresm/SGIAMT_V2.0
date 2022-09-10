@@ -10,8 +10,14 @@
     <form id="form1" runat="server">
         <div id="preloader" >
             <div class="preloader-container"></div>
-            <img src="assets/images/loader.gif" alt="Alternate Text" width: 100px height: 100px/>
+            <img src="assets/images/loader.gif" alt="Alternate Text" width: "100px" height: "100px"/>
             <p id="TextoAyuda" runat="server" class="center-block">Por favor espere.....</p>
+            <br />
+            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="btnIngresar_Click" CssClass="btn btn-success notika-btn-success">
+                 <i class="notika-icon notika-checked"></i> Ingresar
+            </asp:LinkButton>
         </div>
+
+
     </form>
 </asp:Content>

@@ -11,7 +11,7 @@ namespace WEB
 {
 
 
-    public partial class W_Gestionar_Tanda
+    public partial class W_Listar_Tandas_Marinera
     {
 
         /// <summary>
@@ -42,30 +42,12 @@ namespace WEB
         protected global::System.Web.UI.UpdatePanel UpdatePanel;
 
         /// <summary>
-        /// Control ddlConcurso.
+        /// Control GVTandaMar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlConcurso;
-
-        /// <summary>
-        /// Control btnAsignar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAsignar;
-
-        /// <summary>
-        /// Control GVTanda.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVTanda;
+        protected global::System.Web.UI.WebControls.GridView GVTandaMar;
     }
 }
