@@ -19,17 +19,17 @@ namespace WEB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                GVTandaMar.DataSource = objctrtanda.listar_Tanda_Marinera();
-                GVTandaMar.DataBind();
-            }
+            //if (!IsPostBack)
+            //{
+            //    GVTandaMar.DataSource = objctrtanda.listar_Tanda_Marinera();
+            //    GVTandaMar.DataBind();
+            //}
         }
 
         protected void GVTanda_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            GVTandaMar.DataSource = objctrtanda.listar_Tanda_Marinera();
-            GVTandaMar.DataBind();
+            //GVTandaMar.DataSource = objctrtanda.listar_Tanda_Marinera();
+            //GVTandaMar.DataBind();
         }
     }
 }
