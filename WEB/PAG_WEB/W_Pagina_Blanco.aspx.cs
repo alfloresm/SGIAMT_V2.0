@@ -17,7 +17,7 @@ namespace WEB.PAG_WEB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             try
             {
                 if (!IsPostBack)
@@ -39,5 +39,51 @@ namespace WEB.PAG_WEB
                 _log.CustomWriteOnLog("Master", "Error : " + ex.Message + "Stac" + ex.StackTrace);
             }
         }
+
+        public void inicio()
+        {
+            _log.CustomWriteOnLog("Master", " Session['NombreUsuario'] " + Session["NombreUsuario"]);
+            string dni = Session["DNIUsuario"].ToString();
+
+            string html = string.Format(@"
+                         
+                <ul class='nav'>
+                    <li class='active'>
+                        <a href = 'MASTER_EXTERNO/index_Externo.html'>
+                            <i class='material-icons'>dashboard</i>
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a data-toggle='collapse' href='#gestionConcurso'>
+                            <i class='material-icons'>emoji_events</i>
+                            <p>
+                                Gestion Concurso
+
+                                <b class='caret'></b>
+                            </p>
+                        </a>
+                        <div class='collapse' id='gestionConcurso'>
+                            <ul class='nav'>
+                                <li>
+                                    <a href = 'W_Gestionar_Concurso.aspx' > Gestionar Concurso</a>
+                                </li>
+                                <li>
+                                    <a href = 'W_Inscribir_ParticipanteP.aspx' > Inscribir Participante</a>
+                                </li>
+                                <li>
+                                    <a href = '#' > Adminitrar Participante</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                    ");
+            string img = String.Format(@"<img src='../assets/img/faces/avatar.jpg'/>");
+            this.Literal.Text = img;
+            this.Literal1.Text = html;
+        }
+           
     }
 }
