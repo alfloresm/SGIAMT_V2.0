@@ -6,7 +6,7 @@
     <form id="form1" runat="server">
         <div id="preloader" >
             <div class="preloader-container"></div>
-            <h1>Por favor, revisar su correo electrónico para activar su cuenta de usuario.</h1>
+            <h1 class="text-center">Por favor, revisar su correo electrónico para activar su cuenta de usuario.</h1>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             <br />
         </div>

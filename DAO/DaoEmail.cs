@@ -58,18 +58,16 @@ namespace DAO
         {
             try
             {
-                String userName = "karla.santacruz@urp.edu.pe";
-                String password = "ctkqcsriklodaial";// "123";
+                String userName = "TusuyPeru2022@hotmail.com";
+                String password = "Tusuy@Peru2022";
                 MailMessage msg = new MailMessage(userName, CuentaCorreo);
                 msg.Subject = Asunto;
                 msg.Body = cuerpoMensaje;
-                msg.From = new MailAddress("karla.santacruz@urp.edu.pe", "Account2"); ;
-                msg.To.Add(new MailAddress("karlasantacruzgutierrez28@gmail.com", "Account1"));
   
                 msg.IsBodyHtml = true;
                 SmtpClient SmtpClient = new SmtpClient();
                 SmtpClient.Credentials = new System.Net.NetworkCredential(userName, password);
-                SmtpClient.Host = "smtp.gmail.com";
+                SmtpClient.Host = "smtp.office365.com";
                 SmtpClient.Port = 587;
                 SmtpClient.EnableSsl = true;
                 SmtpClient.Send(msg);

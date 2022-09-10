@@ -14,6 +14,10 @@ namespace WEB.PAG_WEB
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack)
+            {
+                Session["id_perfil"] = -1;
+            }
         }
 
         DtoUsuario usr = new DtoUsuario();
@@ -51,7 +55,7 @@ namespace WEB.PAG_WEB
                 Session["Categoria"] = usuarioDto.FK_ICA_CodCat;
 
                 //Session.Timeout = 60;
-                Response.Redirect("~/PAG_WEB/W_Pagina_Blanco.aspx"); //pagina inicio con su perfil
+                Response.Redirect("~/PAG_WEB/index.aspx?IdPerfil=" + usuarioDto.FK_ITU_TipoUsuario); //pagina inicio con su perfil
             }
             else
             {
@@ -68,7 +72,7 @@ namespace WEB.PAG_WEB
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/PAG_WEB/W_RegistrarParticipante.aspx");
         }
 
         protected void btnForgotPassword_Click(object sender, EventArgs e)

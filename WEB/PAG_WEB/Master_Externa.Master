@@ -74,6 +74,13 @@
                             <img src="../PAG_WEB/assets/img/logo/Logo1.png" width="200" height="68" alt="" /></a>
                     </div>
                 </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="header-top-menu">
+                        <ul class="nav navbar-nav notika-top-nav">
+                            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -88,18 +95,21 @@
                             <ul class="mobile-menu-nav">
                                 <li><a data-toggle="collapse" data-target="#Charts" href="#">Home 🏠</a>
                                     <ul class="collapse dropdown-header-top">
-                                        <li><a href="index.html">Inicio</a></li>
+                                        <li><a href="index.aspx">Inicio</a></li>
                                     </ul>
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#demoevent" href="#">Concursos 🏆</a>
                                     <ul id="demoevent" class="collapse dropdown-header-top">
-                                        <li><a href="#">Inscribete aquí</a></li>
+                                        <li><a href="W_RegistrarParticipante.aspx">Inscribete aquí</a></li>
                                         <li><a href="#">Comprar entradas</a></li>
                                     </ul>
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#democrou" href="#">Contactanos 📞</a>
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#demolibra" href="#">Inicio Sesión 🔐</a>
+                                    <ul id="demolibra" class="collapse dropdown-header-top">
+                                        <li><a href="W_Iniciar_Sesion.aspx">Iniciar Sesión</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </nav>
@@ -121,7 +131,7 @@
                         </li>
                         <li><a data-toggle="tab" href="#"><i class="notika-icon notika-phone"></i>Contactanos</a>
                         </li>
-                        <li><a data-toggle="tab" href="#"><i class="notika-icon notika-social"></i>Inicio Sesión</a>
+                        <li><a data-toggle="tab" href="#login"><i class="notika-icon notika-social"></i>Inicio Sesión</a>
                         </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
@@ -133,9 +143,15 @@
                         </div>
                         <div id="concurso" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="#">Inscribete aquí</a>
+                                <li><a href="W_RegistrarParticipante.aspx">Inscribete aquí</a>
                                 </li>
                                 <li><a href="#">Compra Entradas</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="login" class="tab-pane in active notika-tab-menu-bg animated flipInX">
+                            <ul class="notika-main-menu-dropdown">
+                                <li><a href="W_Iniciar_Sesion.aspx">Iniciar Sesión</a>
                                 </li>
                             </ul>
                         </div>
