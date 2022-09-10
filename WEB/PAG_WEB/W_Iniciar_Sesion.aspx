@@ -150,4 +150,14 @@
 		============================================ -->
     <script src="../PAG_WEB/assets/js/main.js"></script>
 </body>
+<script src="assets/sweetalert/sweetalert.min.js"></script>
+<script>
+    function showErrorMessage() {
+        swal({
+            title: "ERROR!",
+            text: "Usuario o contraseña incorrecta",
+            type: "error"
+        });
+    }
+</script>
 </html>

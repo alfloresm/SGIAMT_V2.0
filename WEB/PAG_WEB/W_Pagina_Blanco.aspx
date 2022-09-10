@@ -67,6 +67,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <!-- Start Header Top Area -->
+
     <div class="header-top-area">
         <div class="container">
             <div class="row">
@@ -74,6 +75,7 @@
                     <div class="logo-area">
                         <a href="#">
                             <img src="../PAG_WEB/assets/img/logo/Logo1.png" width="200" height="68" alt="" /></a>
+                        <asp:Label ID="lblNombre" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -156,7 +158,10 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span>
+                                <div class="spinner4 spinner-4"></div>
+                                <div class="ntd-ctn"><span>3</span></div>
+                            </a>
                                 <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Notification</h2>
@@ -223,7 +228,10 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span>
+                                <div class="spinner4 spinner-4"></div>
+                                <div class="ntd-ctn"><span>2</span></div>
+                            </a>
                                 <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
                                     <div class="hd-mg-tt">
                                         <h2>Tasks</h2>
@@ -234,7 +242,8 @@
                                                 <div class="lead-content">
                                                     <p>HTML5 Validation Report</p>
                                                 </div>
-                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>95%</span>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                                                    <span>95%</span>
                                                 </div>
                                             </div>
                                             <div class="progress">
@@ -454,24 +463,26 @@
     </div>
     <!-- Mobile Menu end -->
     <!-- Main Menu area start-->
-    
+
     <!-- Main Menu area End-->
-	<!-- Breadcomb area Start-->
-	
-	<!-- Breadcomb area End-->
+    <!-- Breadcomb area Start-->
+
+    <!-- Breadcomb area End-->
     <!-- Animateions area start-->
-    
+
     <!-- Animateions area End-->
     <!-- Start Footer area-->
     <div class="footer-copyright-area">
         <div class="container">
             <div class="row">
-                <%--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="footer-copy-right">
-                        <p>Copyright © 2018 
-. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                        <p>
+                            Copyright © 2018 
+. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.
+                        </p>
                     </div>
-                </div>--%>
+                </div>
             </div>
         </div>
     </div>
@@ -538,7 +549,7 @@
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
-	<!-- tawk chat JS
+    <!-- tawk chat JS
 		============================================ -->
     <script src="js/tawk-chat.js"></script>
 </body>
