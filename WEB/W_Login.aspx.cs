@@ -57,6 +57,7 @@ namespace WEB
                 }
                 else if (Session["id_perfil"].ToString() == "4")
                 {
+                    Session["codJurado"] = usuarioCtr.devolverCodJurado(usuarioDto.PK_VU_DNI);
                     string script = @"<script type='text/javascript'>
                                       location.href='../W_Calificar_Participante.aspx';
                                   </script>";

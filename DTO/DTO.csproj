@@ -45,6 +45,7 @@
     <Compile Include="DtoConcursoPrecio.cs" />
     <Compile Include="DtoDatosEmailInscripcion.cs" />
     <Compile Include="DtoEspectador.cs" />
+    <Compile Include="DtoJurado.cs" />
     <Compile Include="DtoMarinera.cs" />
     <Compile Include="DtoPrecio.cs" />
     <Compile Include="DtoPuntaje.cs" />

@@ -11,7 +11,7 @@ namespace DTO
 
         public int PK_IP_Cod { get; set; }
         public int IP_Puntaje { get; set; }
-        public string VP_NombreJurado { get; set; }
+        public int FK_JU_CodJurado { get; set; }
         public string FK_IUMT_UsuModTan { get; set; }
     }
 }

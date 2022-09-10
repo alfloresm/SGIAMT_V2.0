@@ -228,6 +228,27 @@ namespace DAO
             conexion.Close();
             conexion.Dispose();
         }
+        public string ObtenerCodJurado(string dni)
+        {
+            try
+            {
+                string valor_retornado = "";
+                SqlCommand cmd = new SqlCommand("select PK_IJ_CodJurado from T_Jurado where FK_VU_Dni='"+ dni + "'", conexion);
+                Console.WriteLine(cmd);
+                conexion.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    valor_retornado = reader[0].ToString();
+                }
+                conexion.Close();
+                return valor_retornado;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         //metodo registrar imagen usuario
         //public void RegistrarImgUsuario(byte[] bytes, string id)
         //{

@@ -49,6 +49,7 @@
     <Compile Include="CtrEmail.cs" />
     <Compile Include="CtrInscripcion.cs" />
     <Compile Include="CtrMarinera.cs" />
+    <Compile Include="CtrPuntaje.cs" />
     <Compile Include="CtrTanda.cs" />
     <Compile Include="CtrUsuario.cs" />
     <Compile Include="CtrUsuarioxModalidad.cs" />

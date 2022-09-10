@@ -66,6 +66,11 @@ namespace CTR
         {
             objDaoUsuario.ObtenerParticipante(dtoUsuario, objcat);
         }
+        //calificar participante
+        public string devolverCodJurado(string dni)
+        {
+            return objDaoUsuario.ObtenerCodJurado(dni);
+        }
         //public void registrarImgP(byte[] bytes, string id)
         //{
         //    objDaoUsuario.RegistrarImgUsuario(bytes, id);

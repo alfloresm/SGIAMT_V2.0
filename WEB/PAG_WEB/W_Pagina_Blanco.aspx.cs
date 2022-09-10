@@ -81,8 +81,8 @@ namespace WEB.PAG_WEB
                 </ul>
                     ");
             string img = String.Format(@"<img src='../assets/img/faces/avatar.jpg'/>");
-            this.Literal.Text = img;
-            this.Literal1.Text = html;
+            //this.Literal.Text = img;
+            //this.Literal1.Text = html;
         }
            
     }

@@ -46,10 +46,27 @@ namespace CTR
             return objDaoTanda.ObtenerMarinera(codmar);
         }
 
-        //listar tanda y marinera
-        public DataTable listar_Tanda_Marinera()
+        
+        public bool selectTanda(DtoTanda objtanda)
         {
-            return objDaoTanda.listar_Tanda_marinera();
+            return objDaoTanda.SelectTanda(objtanda);
+        }
+        public void obtenerTanda(DtoTanda objtanda)
+        {
+            objDaoTanda.ObtenerTanda(objtanda);
+        }
+        public DataTable obtenerParticipantesxTanda(DtoUsuarioModalidadTanda objUMT)
+        {
+            return objDaoTanda.ListarParticipantesXtanda(objUMT);
+        }
+        public DataTable obtenerParticipantesxTandaSeriado(int codTanda, string bloque)
+        {
+            return objDaoTanda.ListarParticipantesXtanda_Seriado(codTanda, bloque);
+        }
+        public void actualizarEstadoUMT(DtoUsuarioModalidadTanda objUMT)
+        {
+            objDaoTanda.actualizar_estado_umt(objUMT);
+
         }
     }
 }
