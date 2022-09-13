@@ -21,5 +21,11 @@ namespace CTR
         {
             return objDaoEntrada.desplegableConcursoNoRealizado();
         }
+
+        //desplegable fechas segun concurso seleccionado
+        public DataSet DesplegableFechasConcurso(int codconc)
+        {
+            return objDaoEntrada.desplegableFechasConcurso(codconc);
+        }
     }
 }

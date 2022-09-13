@@ -24,5 +24,27 @@ namespace DAO
             tipomol.Fill(DS);
             return DS;
         }
+
+        //desplegable fechas segun concurso seleccionado
+        public DataSet desplegableFechasConcurso(int codcon)
+        {
+            try
+            {
+                DataSet dtFechasConcurso = null;
+                conexion.Open();
+                SqlCommand command = new SqlCommand("SP_Desplegable_Fechas_Concurso_NR", conexion);
+                command.Parameters.AddWithValue("@cod_con", codcon);
+                SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
+                command.CommandType = CommandType.StoredProcedure;
+                dtFechasConcurso = new DataSet();
+                daAdaptador.Fill(dtFechasConcurso);
+                conexion.Close();
+                return dtFechasConcurso;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }
