@@ -45,6 +45,7 @@
     <Compile Include="ConexionBD.cs" />
     <Compile Include="DaoConcursoPrecio.cs" />
     <Compile Include="DaoEmail.cs" />
+    <Compile Include="DaoEntrada.cs" />
     <Compile Include="DaoInscripcion.cs" />
     <Compile Include="DaoMarinera.cs" />
     <Compile Include="DaoPuntaje.cs" />
