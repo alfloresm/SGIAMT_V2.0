@@ -1,5 +1,5 @@
 ﻿#preloader {
-    width: 100%;
+    width: 15%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,11 @@
         height: 200px;*/
     }
 
-    #preloader p {
-        font-size: 3em;
-        margin-top: 15px;
-    }
+.image-gif {
+    max-width: 15%;
+}
+
+#preloader p {
+    font-size: 3em;
+    margin-top: 15px;
+}

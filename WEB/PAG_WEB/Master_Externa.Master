@@ -94,7 +94,7 @@
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
                                 <li><a data-toggle="collapse" data-target="#Charts" href="#">Home 🏠</a>
-                                    <ul class="collapse dropdown-header-top">
+                                    <ul id="Charts" class="collapse dropdown-header-top">
                                         <li><a href="index.aspx">Inicio</a></li>
                                     </ul>
                                 </li>

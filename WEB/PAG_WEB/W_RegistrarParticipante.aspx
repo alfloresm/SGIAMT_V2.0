@@ -243,7 +243,7 @@
             </div>
         </div>
     </form>
-
+    <script src="assets/js/notification/notification-active.js"></script>
     <script>
         function showSuccessMessage2() {
             setTimeout(function () {
