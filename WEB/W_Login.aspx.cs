@@ -86,8 +86,8 @@ namespace WEB
                 log.CustomWriteOnLog("Login_", "---------------------------ERROR---------------------------------------------------");
                 txtPassword.Text = String.Empty;
                 log.CustomWriteOnLog("Login_", "---------------------------ERROR---------------------------------------------------");
-                //Utils.AddScriptClientUpdatePanel(UpdatePanel, "showErrorMessage()");
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "mensaje", "swal({icon: 'error',title: 'ERROR!',text: 'Su usuario o contraseña es incorrecta o no existe'});", true);
+                Utils.AddScriptClientUpdatePanel(UpdatePanel, "showErrorMessage()");
+                //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "mensaje", "swal({icon: 'error',title: 'ERROR!',text: 'Su usuario o contraseña es incorrecta o no existe'});", true);
 
             }
         }

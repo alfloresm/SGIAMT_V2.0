@@ -52,6 +52,7 @@
     <Compile Include="DtoCategoria.cs" />
     <Compile Include="DtoConcurso.cs" />
     <Compile Include="DtoInscripcion.cs" />
+    <Compile Include="DtoPuntajePorParticipante.cs" />
     <Compile Include="DtoTanda.cs" />
     <Compile Include="DtoTipoUsuario.cs" />
     <Compile Include="DtoUsuario.cs" />

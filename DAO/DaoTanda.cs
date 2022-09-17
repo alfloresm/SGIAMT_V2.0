@@ -65,6 +65,7 @@ namespace DAO
                 command.Parameters.AddWithValue("@cod", objUMT.FK_IUM_CodUM);
                 command.Parameters.AddWithValue("@idT", objUMT.FK_IT_CodTan);
                 command.Parameters.AddWithValue("@pista", objUMT.IUMT_Pista);
+                command.Parameters.AddWithValue("@Bloque", objUMT.VUMT_Bloque);
                 conexion.Open();
                 command.ExecuteNonQuery();
                 conexion.Close();
@@ -107,10 +108,12 @@ namespace DAO
             while (reader.Read())
             {
                 objTanda.PK_IT_CodTan = Convert.ToInt32(reader[0].ToString());
-
-                objTanda.VT_TipoTanda = Convert.ToInt32(reader[2].ToString());
-                objTanda.VT_Estado = reader[3].ToString();
-                objTanda.VT_Descripcion = reader[4].ToString();
+                objTanda.IT_GanadorA = Convert.ToInt32(reader[1].ToString());
+                objTanda.IT_GanadorB = Convert.ToInt32(reader[2].ToString());
+                objTanda.IT_GanadorC = Convert.ToInt32(reader[3].ToString());
+                objTanda.VT_TipoTanda = Convert.ToInt32(reader[4].ToString());
+                objTanda.VT_Estado = reader[5].ToString();
+                objTanda.VT_Descripcion = reader[6].ToString();
 
             }
             conexion.Close();
@@ -207,6 +210,170 @@ namespace DAO
                 throw;
             }
         }
+        public void ObtenerTandaP(DtoTanda objTanda)
+        {
+            SqlConnection con = new SqlConnection(@"data source=ALEPC; initial catalog=BD_SGIAMTv1; integrated security=SSPI;");
+            SqlCommand command = new SqlCommand("SP_Buscar_Tanda_P", con);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", objTanda.PK_IT_CodTan);
+            DataSet ds = new DataSet();
+            con.Open();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.Fill(ds);
+            da.Dispose();
 
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                objTanda.PK_IT_CodTan = Convert.ToInt32(reader[0].ToString());
+                objTanda.IT_GanadorA= Convert.ToInt32(reader[1].ToString());
+                objTanda.IT_GanadorB = Convert.ToInt32(reader[2].ToString());
+                objTanda.IT_GanadorC = Convert.ToInt32(reader[3].ToString());
+                objTanda.VT_TipoTanda = Convert.ToInt32(reader[4].ToString());
+                objTanda.VT_Estado = reader[5].ToString();
+                objTanda.VT_Descripcion = reader[6].ToString();
+
+            }
+            con.Close();
+            con.Dispose();
+        }
+
+        public String ObtenerModalidad(int id)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(@"data source=ALEPC; initial catalog=BD_SGIAMTv1; integrated security=SSPI;");
+                string valor_retornado = "";
+                SqlCommand cmd = new SqlCommand("select VM_NombreMod from T_Modalidad_Concurso where PK_IM_CodigoMod = " + id, con);
+                Console.WriteLine(cmd);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    valor_retornado = reader[0].ToString();
+                }
+                con.Close();
+                return valor_retornado;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public void actualizar_estadoT(DtoTanda objT)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("SP_Actualiza_Estado_Tanda", conexion);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@id", objT.PK_IT_CodTan);
+                conexion.Open();
+                command.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public int sumaPuntaje(DtoUsuarioModalidadTanda objUMT)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("SP_SumarPuntaje_UMT", conexion);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@id", objUMT.PK_IUMT_CodUsuModTan);
+                DataSet ds = new DataSet();
+                conexion.Open();
+                SqlDataAdapter moldura = new SqlDataAdapter(command);
+                moldura.Fill(ds);
+                moldura.Dispose();
+
+                SqlDataReader reader = command.ExecuteReader();
+                int suma = 0;
+                while (reader.Read())
+                {
+                    suma = Convert.ToInt32(reader[0].ToString());
+                }
+                conexion.Close();
+                return suma;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        public void actualizar_PuntajeT_umt(DtoUsuarioModalidadTanda objUMT)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("SP_Actualiza_PuntajeT", conexion);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@id", objUMT.PK_IUMT_CodUsuModTan);
+                command.Parameters.AddWithValue("@suma", objUMT.IUMT_PuntajeTotal);
+                conexion.Open();
+                command.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public void actualizar_ganadorT(DtoTanda objT)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("SP_Actualiza_Ganador", conexion);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@id", objT.PK_IT_CodTan);
+                conexion.Open();
+                command.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public DataTable ListarParticipantesXtanda_Puntaje(int codTanda)
+        {
+
+            DataTable dtParticipantes = null;
+            conexion.Open();
+            SqlCommand command = new SqlCommand("SP_Obtener_Tanda_orderBy_Bloque", conexion);
+            command.Parameters.AddWithValue("@id", codTanda);
+            SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
+            command.CommandType = CommandType.StoredProcedure;
+            dtParticipantes = new DataTable();
+            daAdaptador.Fill(dtParticipantes);
+            conexion.Close();
+            return dtParticipantes;
+        }
+        public DataTable puntajePorParticipante(string codtan)
+        {
+            try
+            {
+                DataTable dtParticipantes = null;
+                conexion.Open();
+                SqlCommand command = new SqlCommand("SP_Obtener_Puntajes_por_Participante", conexion);
+                command.Parameters.AddWithValue("@id", codtan);
+                SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
+                command.CommandType = CommandType.StoredProcedure;
+                dtParticipantes = new DataTable();
+                daAdaptador.Fill(dtParticipantes);
+                conexion.Close();
+                return dtParticipantes;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
     }
 }
