@@ -46,5 +46,55 @@ namespace DAO
                 throw;
             }
         }
+
+        //registrar compra entrada
+        public string RegistrarCompraEntrada(DtoEspectador objEspectador)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("SP_Comprar_Entrada", conexion);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@dni", objEspectador.PK_VES_Dni);
+                command.Parameters.AddWithValue("@nombre", objEspectador.VES_NombreCompleto);
+                command.Parameters.AddWithValue("@email", objEspectador.VES_Email);
+                command.Parameters.AddWithValue("@fkIdCon", objEspectador.FK_IC_IdConcurso);
+                command.Parameters.AddWithValue("@cantEntrada", objEspectador.IES_NumEntrada);
+                command.Parameters.AddWithValue("@fecha", objEspectador.VES_TipoFecha);
+                conexion.Open();
+                command.ExecuteNonQuery();
+                //objConcurso.PK_IC_IdConcurso = Convert.ToInt32(command.Parameters["@id"].Value.ToString());
+                conexion.Close();
+                return objEspectador.PK_VES_Dni;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        //registrar venta entrada
+        public string RegistrarVentaEntrada(DtoEspectador objEspectador)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("SP_Vender_Entrada", conexion);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@dni", objEspectador.PK_VES_Dni);
+                command.Parameters.AddWithValue("@nombre", objEspectador.VES_NombreCompleto);
+                command.Parameters.AddWithValue("@email", objEspectador.VES_Email);
+                command.Parameters.AddWithValue("@fkIdCon", objEspectador.FK_IC_IdConcurso);
+                command.Parameters.AddWithValue("@cantEntrada", objEspectador.IES_NumEntrada);
+                command.Parameters.AddWithValue("@fecha", objEspectador.VES_TipoFecha);
+                conexion.Open();
+                command.ExecuteNonQuery();
+                //objConcurso.PK_IC_IdConcurso = Convert.ToInt32(command.Parameters["@id"].Value.ToString());
+                conexion.Close();
+                return objEspectador.PK_VES_Dni;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

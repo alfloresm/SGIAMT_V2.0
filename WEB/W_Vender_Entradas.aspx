@@ -16,37 +16,36 @@
                             <asp:UpdatePanel ID="upEntrada" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false">
                                 <ContentTemplate>
                                     <div class="row">
-                                        
-                                            <div class="col-lg-6 col-md-6 col-sd-6">
-                                                <label class="col-md-2 label-on-left">Concurso</label>
-                                                <div class="form-group label-floating is-empty">
-                                                    <label class="control-label"></label>
-                                                    <asp:DropDownList ID="ddlConcurso" runat="server" CssClass="selectpicker">
-                                                    </asp:DropDownList>
-                                                </div>
+                                        <div class="col-lg-6 col-md-6 col-sd-6">
+                                            <label class="col-md-2 label-on-left">Concurso</label>
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <asp:DropDownList ID="ddlConcurso" runat="server" CssClass="selectpicker">
+                                                </asp:DropDownList>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sd-6">
-                                                <label class="col-md-2 label-on-left">Fecha</label>
-                                                <div class="form-group label-floating is-empty">
-                                                    <label class="control-label"></label>
-                                                    <asp:DropDownList ID="ddlFechaConcurso" runat="server" CssClass="selectpicker">
-                                                    </asp:DropDownList>
-                                                </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sd-6">
+                                            <label class="col-md-2 label-on-left">Fecha</label>
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <asp:DropDownList ID="ddlFechaConcurso" runat="server" CssClass="selectpicker">
+                                                    <asp:ListItem Text="Seleccione" Value="0" Selected="True"></asp:ListItem>
+                                                    <asp:ListItem Text="Fecha 1" Value="fecha1"></asp:ListItem>
+                                                    <asp:ListItem Text="Fecha 2" Value="fecha2"></asp:ListItem>
+                                                </asp:DropDownList>
                                             </div>
-                                        
-
-
+                                        </div>
                                     </div>
                                     <br />
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sd-6">
+                                        <div class="col-lg-6 col-md-6 col-sd-6">
                                             <label class="col-md-2 label-on-left">Dni</label>
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
                                                 <asp:TextBox ID="txtDni" runat="server" class="form-control" required></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-4 col-sd-6">
+                                        <div class="col-lg-6 col-md-6 col-sd-6">
                                             <label class="col-md-2 label-on-left">Nombres</label>
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
@@ -56,14 +55,14 @@
                                     </div>
                                     <br />
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sd-6">
+                                        <div class="col-lg-6 col-md-6 col-sd-6">
                                             <label class="col-md-2 label-on-left">Correo</label>
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
                                                 <asp:TextBox ID="txtCorreo" runat="server" class="form-control" required></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-4 col-sd-6">
+                                        <div class="col-lg-6 col-md-6 col-sd-6">
                                             <label class="col-md-2 label-on-left">Cantidad Entradas</label>
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
@@ -82,7 +81,7 @@
                                                 </div>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
-                                        <div class="col-lg-4 col-md-4 col-sd-6">
+                                        <div class="col-lg-2 col-md-4 col-sd-6">
                                             <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-fill btn-danger" OnClick="btnRegresar_Click" />
                                         </div>
                                     </div>

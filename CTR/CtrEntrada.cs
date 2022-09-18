@@ -27,5 +27,17 @@ namespace CTR
         {
             return objDaoEntrada.desplegableFechasConcurso(codconc);
         }
+
+        //registrar compra entrada
+        public string RegistrarCompraEntrada(DtoEspectador objEsp)
+        {
+            return objDaoEntrada.RegistrarCompraEntrada(objEsp);
+        }
+
+        //registrar venta entrada
+        public string RegistrarVentaEntrada(DtoEspectador objEsp)
+        {
+            return objDaoEntrada.RegistrarVentaEntrada(objEsp);
+        }
     }
 }
