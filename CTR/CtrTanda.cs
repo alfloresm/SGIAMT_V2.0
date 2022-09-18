@@ -68,5 +68,38 @@ namespace CTR
             objDaoTanda.actualizar_estado_umt(objUMT);
 
         }
+        public void obtenerTandaP(DtoTanda objtanda)
+        {
+            objDaoTanda.ObtenerTandaP(objtanda);
+        }
+        public string obtenerModalidad(int id)
+        {
+            return objDaoTanda.ObtenerModalidad(id);
+        }
+        //Mostrar Resultado
+        public void actualizarEstadoT(DtoTanda objtanda)
+        {
+            objDaoTanda.actualizar_estadoT(objtanda);
+        }
+        public int sumaPuntajes(DtoUsuarioModalidadTanda objUMT)
+        {
+            return objDaoTanda.sumaPuntaje(objUMT);
+        }
+        public void actualizarPuntajeT(DtoUsuarioModalidadTanda objUMT)
+        {
+            objDaoTanda.actualizar_PuntajeT_umt(objUMT);
+        }
+        public void actualizarganadorT(DtoTanda objtanda)
+        {
+            objDaoTanda.actualizar_ganadorT(objtanda);
+        }
+        public DataTable ObtenertandaXBloque(int codTanda)
+        {
+            return objDaoTanda.ListarParticipantesXtanda_Puntaje(codTanda);
+        }
+        public DataTable ObtenerPuntajesPorParticipante(string id)
+        {
+            return objDaoTanda.puntajePorParticipante(id);
+        }
     }
 }

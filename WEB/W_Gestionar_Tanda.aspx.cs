@@ -40,7 +40,7 @@ namespace WEB
 
         protected void btnAsignar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/W_Asignar_Tanda.aspx?ConcursoID="+ddlConcurso.SelectedValue);
+            Response.Redirect("~/W_AsignarTanda.aspx?ConcursoID="+ddlConcurso.SelectedValue);
         }
 
         protected void GVTanda_PageIndexChanging(object sender, GridViewPageEventArgs e)

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="W_Asignar_Tanda.aspx.cs" Inherits="WEB.W_Asignar_Tanda" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="W_AsignarTanda.aspx.cs" Inherits="WEB.W_AsignarTanda" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../assets/css/material-dashboard.css" rel="stylesheet" />
@@ -48,7 +48,6 @@
                 </div>
             </div>
         </div>
-
         <asp:HiddenField ID="HFidTanda" runat="server" />
         <%-- Panel Individual --%>
         <asp:Panel ID="PanelIndividual" runat="server">
@@ -74,36 +73,6 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12">
                             <div class="card card-pricing card-raised">
-                                <h2 class="card-title">PISTA N° 1B</h2>
-                                <br />
-                                <div class="col-md-8 form-group label-floating is-empty">
-                                    <asp:TextBox ID="txtCodPista1B" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
-                                </div>
-                                <asp:UpdatePanel ID="updPista1B" runat="server" UpdateMode="Conditional">
-                                    <ContentTemplate>
-                                        <asp:Button ID="BtnPista1B" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista1B_Click" />
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <div class="card card-pricing card-raised">
-                                <h2 class="card-title">PISTA N° 1C</h2>
-                                <br />
-                                <div class="col-md-8 form-group label-floating is-empty">
-                                    <asp:TextBox ID="txtCodPista1C" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
-                                </div>
-                                <asp:UpdatePanel ID="updPista1C" runat="server" UpdateMode="Conditional">
-                                    <ContentTemplate>
-                                        <asp:Button ID="BtnPista1C" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista1C_Click" />
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <div class="card card-pricing card-raised">
                                 <h2 class="card-title">PISTA N° 2A</h2>
                                 <br />
                                 <div class="col-md-8 form-group label-floating is-empty">
@@ -112,6 +81,36 @@
                                 <asp:UpdatePanel ID="updPista2A" runat="server" UpdateMode="Conditional">
                                     <ContentTemplate>
                                         <asp:Button ID="BtnPista2A" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista2A_Click" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="card card-pricing card-raised">
+                                <h2 class="card-title">PISTA N° 3A</h2>
+                                <br />
+                                <div class="col-md-8 form-group label-floating is-empty">
+                                    <asp:TextBox ID="txtCodPista3A" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
+                                </div>
+                                <asp:UpdatePanel ID="updPista3A" runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <asp:Button ID="BtnPista3A" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista3A_Click" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="card card-pricing card-raised">
+                                <h2 class="card-title">PISTA N° 1B</h2>
+                                <br />
+                                <div class="col-md-8 form-group label-floating is-empty">
+                                    <asp:TextBox ID="txtCodPista1B" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
+                                </div>
+                                <asp:UpdatePanel ID="updPista1B" runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <asp:Button ID="BtnPista1B" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista1B_Click" />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </div>
@@ -132,36 +131,6 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12">
                             <div class="card card-pricing card-raised">
-                                <h2 class="card-title">PISTA N° 2C</h2>
-                                <br />
-                                <div class="col-md-8 form-group label-floating is-empty">
-                                    <asp:TextBox ID="txtCodPista2C" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
-                                </div>
-                                <asp:UpdatePanel ID="updPista2C" runat="server" UpdateMode="Conditional">
-                                    <ContentTemplate>
-                                        <asp:Button ID="BtnPista2C" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista2C_Click" />
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <div class="card card-pricing card-raised">
-                                <h2 class="card-title">PISTA N° 3A</h2>
-                                <br />
-                                <div class="col-md-8 form-group label-floating is-empty">
-                                    <asp:TextBox ID="txtCodPista3A" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
-                                </div>
-                                <asp:UpdatePanel ID="updPista3A" runat="server" UpdateMode="Conditional">
-                                    <ContentTemplate>
-                                        <asp:Button ID="BtnPista3A" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista3A_Click" />
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <div class="card card-pricing card-raised">
                                 <h2 class="card-title">PISTA N° 3B</h2>
                                 <br />
                                 <div class="col-md-8 form-group label-floating is-empty">
@@ -170,6 +139,36 @@
                                 <asp:UpdatePanel ID="updPista3B" runat="server" UpdateMode="Conditional">
                                     <ContentTemplate>
                                         <asp:Button ID="BtnPista3B" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista3B_Click" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="card card-pricing card-raised">
+                                <h2 class="card-title">PISTA N° 1C</h2>
+                                <br />
+                                <div class="col-md-8 form-group label-floating is-empty">
+                                    <asp:TextBox ID="txtCodPista1C" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
+                                </div>
+                                <asp:UpdatePanel ID="updPista1C" runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <asp:Button ID="BtnPista1C" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista1C_Click" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="card card-pricing card-raised">
+                                <h2 class="card-title">PISTA N° 2C</h2>
+                                <br />
+                                <div class="col-md-8 form-group label-floating is-empty">
+                                    <asp:TextBox ID="txtCodPista2C" runat="server" placeholder="Código" CssClass="form-control" Font-Size="Large"></asp:TextBox>
+                                </div>
+                                <asp:UpdatePanel ID="updPista2C" runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <asp:Button ID="BtnPista2C" runat="server" Text="OK" CssClass="btn btn-success btn-round btn-fab btn-fab-mini" OnClick="BtnPista2C_Click" />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </div>

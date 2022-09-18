@@ -1,4 +1,4 @@
-﻿<%@ Page Title="SGIAMT" Language="C#" MasterPageFile="~/PAG_WEB/Master_Externa.master" AutoEventWireup="true" CodeBehind="W_RegistrarParticipante.aspx.cs" Inherits="WEB.PAG_WEB.W_RegistrarParticipante" %>
+﻿         <%@ Page Title="SGIAMT" Language="C#" MasterPageFile="~/PAG_WEB/Master_Externa.master" AutoEventWireup="true" CodeBehind="W_RegistrarParticipante.aspx.cs" Inherits="WEB.PAG_WEB.W_RegistrarParticipante" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../PAG_WEB/assets/css/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
@@ -243,7 +243,7 @@
             </div>
         </div>
     </form>
-
+    <script src="assets/js/notification/notification-active.js"></script>
     <script>
         function showSuccessMessage2() {
             setTimeout(function () {

@@ -547,7 +547,7 @@
     <Content Include="PAG_WEB\W_Pagina_Inicio.aspx" />
     <Content Include="PAG_WEB\W_RegistrarParticipante.aspx" />
     <Content Include="Web.config" />
-    <Content Include="W_Asignar_Tanda.aspx" />
+    <Content Include="W_AsignarTanda.aspx" />
     <Content Include="W_Calificar_Participante.aspx" />
     <Content Include="W_Elegir_Marinera.aspx" />
     <Content Include="W_Gestionar_Concurso.aspx" />
@@ -555,6 +555,7 @@
     <Content Include="W_Inscribir_ParticipanteP.aspx" />
     <Content Include="W_Listar_Tandas_Marinera.aspx" />
     <Content Include="W_Login.aspx" />
+    <Content Include="W_Mostrar_Resultado.aspx" />
     <Content Include="W_RegistrarConcurso.aspx" />
     <Content Include="W_Validar_Entradas.aspx" />
     <Content Include="W_Vender_Entradas.aspx" />
@@ -631,12 +632,12 @@
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="W_Asignar_Tanda.aspx.cs">
-      <DependentUpon>W_Asignar_Tanda.aspx</DependentUpon>
+    <Compile Include="W_AsignarTanda.aspx.cs">
+      <DependentUpon>W_AsignarTanda.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="W_Asignar_Tanda.aspx.designer.cs">
-      <DependentUpon>W_Asignar_Tanda.aspx</DependentUpon>
+    <Compile Include="W_AsignarTanda.aspx.designer.cs">
+      <DependentUpon>W_AsignarTanda.aspx</DependentUpon>
     </Compile>
     <Compile Include="W_Calificar_Participante.aspx.cs">
       <DependentUpon>W_Calificar_Participante.aspx</DependentUpon>
@@ -686,6 +687,13 @@
     </Compile>
     <Compile Include="W_Login.aspx.designer.cs">
       <DependentUpon>W_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="W_Mostrar_Resultado.aspx.cs">
+      <DependentUpon>W_Mostrar_Resultado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="W_Mostrar_Resultado.aspx.designer.cs">
+      <DependentUpon>W_Mostrar_Resultado.aspx</DependentUpon>
     </Compile>
     <Compile Include="W_RegistrarConcurso.aspx.cs">
       <DependentUpon>W_RegistrarConcurso.aspx</DependentUpon>
