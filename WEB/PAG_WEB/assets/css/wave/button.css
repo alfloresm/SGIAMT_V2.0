@@ -55,8 +55,8 @@
 .btn-primary.notika-btn-primary:hover, .btn-primary.notika-gp-primary:hover, .btn-primary.primary-icon-notika:hover{
 	background: #2196F3;
 }
-.btn-success.notika-btn-success:hover, .btn-success.success-icon-notika:hover{
-	background: #a3423b;
+.btn-success.notika-btn-success:hover, .btn-success.success-icon-notika:hover {
+    background: #00c292;
 }
 .btn-warning.notika-btn-warning:hover, .btn-warning.warning-icon-notika:hover{
 	background: #FF9800;

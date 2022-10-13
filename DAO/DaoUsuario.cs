@@ -194,6 +194,7 @@ namespace DAO
                 command.Parameters.AddWithValue("@correo", obju.VU_Correo);
                 command.Parameters.AddWithValue("@celular", obju.VU_Celular);
                 command.Parameters.AddWithValue("@cat", obju.FK_ICA_CodCat);
+                command.Parameters.AddWithValue("@codigoAct", obju.IU_CodigoActivacion);
                 conexion.Open();
                 command.ExecuteNonQuery();
                 conexion.Close();

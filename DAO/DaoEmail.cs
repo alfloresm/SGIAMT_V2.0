@@ -58,7 +58,7 @@ namespace DAO
         {
             try
             {
-                String userName = "TusuyPeru2022@hotmail.com";
+                String userName = "tusuyperu2022@hotmail.com";
                 String password = "Tusuy@Peru2022";
                 MailMessage msg = new MailMessage(userName, CuentaCorreo);
                 msg.Subject = Asunto;

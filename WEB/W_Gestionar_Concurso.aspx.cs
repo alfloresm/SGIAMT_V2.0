@@ -22,7 +22,6 @@ namespace WEB
 
                 GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
                 GVConcurso.DataBind();
-
             }
         }
 
@@ -52,7 +51,7 @@ namespace WEB
                     txtlugar.Text = objdtoconcurso.VC_LugarCon.ToString();
                     txtFechaI.Text = objdtoconcurso.DTC_FechaI.ToString("dd-MM-yyyy");
                     txtFechaF.Text = objdtoconcurso.DTC_FechaF.ToString("dd-MM-yyyy");
-                    txtCant.Text = objdtoconcurso.IC_Capacidad.ToString() + " Personas";
+                    txtCant.Text = objdtoconcurso.IC_Capacidad1.ToString() + " Personas";
                     txtEstado.Text = objdtoconcurso.VC_Estado.ToString();
 
                     //Tabla Precios
@@ -100,7 +99,9 @@ namespace WEB
 
         protected void GVConcurso_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            upLista.Update();
             GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
+            GVConcurso.PageIndex = e.NewPageIndex;            
             GVConcurso.DataBind();
         }
         protected Boolean ValidacionEstado(string estado)

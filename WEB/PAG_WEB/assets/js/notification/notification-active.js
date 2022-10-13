@@ -4,11 +4,11 @@
 	/*
 	 * Notifications
 	 */
-	function notify(from, align, icon, type, animIn, animOut){
+	function notify(from, align, icon, type,message){
 		$.growl({
 			icon: icon,
-			title: ' Bootstrap Growl ',
-			message: 'Turning standard Bootstrap alerts into awesome notifications',
+            title: ' Bootstrap Growl ',
+            message: message,
 			url: ''
 		},{
 				element: 'body',
@@ -29,8 +29,8 @@
 				url_target: '_blank',
 				mouse_over: false,
 				animate: {
-						enter: animIn,
-						exit: animOut
+                    enter: 'animated fadeInUp',
+                    exit: 'animated fadeInDown'
 				},
 				icon_type: 'class',
 				template: '<div data-growl="container" class="alert" role="alert">' +

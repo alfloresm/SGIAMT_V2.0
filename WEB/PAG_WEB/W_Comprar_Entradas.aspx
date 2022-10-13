@@ -1,7 +1,17 @@
 ﻿<%@ Page Title="SGIAMT" Language="C#" MasterPageFile="~/PAG_WEB/Master_Externa.Master" AutoEventWireup="true" CodeBehind="W_Comprar_Entradas.aspx.cs" Inherits="WEB.PAG_WEB.W_Comprar_Entradas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="http://ksylvest.github.io/jquery-growl/stylesheets/jquery.growl.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script src='http://ksylvest.github.io/jquery-growl/javascripts/jquery.growl.js' type='text/javascript'></script>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="assets/js/notification/bootstrap-growl.min.js"></script>
     <link href="../PAG_WEB/assets/css/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
+    <link href="../PAG_WEB/assets/css/wave/button.css" rel="stylesheet" />
+    <link href="../PAG_WEB/assets/css/wave/waves.min.css" rel="stylesheet" />
+    <script src="../PAG_WEB/assets/js/notification/notificacion.js" type='text/javascript'></script>
+    <link href="assets/js/SweetAlert/sweetalert.css" rel="stylesheet" />
+    <script src="assets/js/SweetAlert/sweetalert.min.js" type='text/javascript'></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form2" runat="server" method="POST" class="form">
@@ -25,27 +35,21 @@
                 </div>
             </div>
         </div>
-        <%--<div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="form-element-list mg-t-30">
-                    <div class="cmp-tb-hd">
-                        <h2>Comprar Entradas</h2>
-                    </div>
-                </div>
-            </div>
-        </div>--%>
+
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-element-list mg-t-30">
                     <div class="cmp-tb-hd">
                         <h2>Elegir Concurso</h2>
-                        <%--<button class="btn btn-info" id="btnVerInfoConcurso">Ver Información</button>--%>
                         <div class="row">
                             <div class="col-md-6 label-on-left">
                                 <asp:DropDownList ID="ddlConcurso" runat="server" CssClass="select-css">
                                 </asp:DropDownList>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                </br>
                                 <asp:LinkButton ID="btnVerInfo" runat="server" OnClick="btnVerInfo_Click" CssClass="btn btn-info notika-btn-info" BackColor="SkyBlue">
-                                    <i class="notika-icon notika-search"></i>Ver Información
+                                    <i class="notika-icon notika-search"></i>
                                 </asp:LinkButton>
                             </div>
                         </div>
@@ -53,34 +57,35 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="form-element-list mg-t-30">
+                <div class="form-element-list">
                     <div class="cmp-tb-hd">
-                        <h2>Información del Concurso</h2>
-                        <%--<p>Complete los siguientes datos para comprar sus entradas: </p>--%>
-                        <%--<div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="card-content">
-                                    <asp:GridView ID="GVConcurso" runat="server" AutoGenerateColumns="False"
-                                        DataKeyNames="PK_IC_IdConcurso,VC_NombreCon,DTC_FechaInicio,IC_Capacidad1,IC_Capacidad1"
-                                        CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="10"
-                                        AllowPaging="True" OnPageIndexChanging="GVConcurso_PageIndexChanging" OnRowCommand="GVConcurso_RowCommand"
-                                        Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small">
-                                        <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
-                                        <Columns>
-                                            <asp:BoundField DataField="PK_IC_IdConcurso" HeaderText="Concurso" Visible="false" />
-                                            <asp:BoundField DataField="VC_NombreCon" HeaderText="Nombre" />
-                                            <asp:BoundField DataField="DTC_FechaInicio" HeaderText="Fecha" />
-                                            <asp:BoundField DataField="IC_Capacidad1" HeaderText="Capacidad 1" />
-                                            <asp:BoundField DataField="IC_Capacidad2" HeaderText="Capacidad 2" />
-                                        </Columns>
-                                    </asp:GridView>
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <asp:UpdatePanel ID="UpinfoConcurso" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
+                                <div class="btn-demo-notika">
+                                    <div class="btn-list">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <h4 runat="server" id="Nombre" class="text-center"></h4>
+                                            <h5 runat="server" id="Lugar" class="text-center"></h5>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <h5 runat="server" id="Fecha1" class="text-center"></h5>
+                                                <h5 runat="server" id="CantEntrada1" class="text-center text-primary"></h5>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <h5 runat="server" id="Fecha2" class="text-center"></h5>
+                                                <h5 runat="server" id="CantEntrada2" class="text-center text-primary"></h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <h4 runat="server" id="Precio" class="text-center text-danger"></h4>
+                                        </div>
+                                        <asp:HiddenField ID="HFCosto" runat="server" />
+                                    </div>
                                 </div>
-                            </div>
-                        </div>--%>
-
-                        <div class="col-md-11">
-                            <h1 id="H1" runat="server" class="card-title"></h1>
-                        </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                     </div>
                 </div>
             </div>
@@ -172,23 +177,6 @@
             </div>
         </div>
     </form>
-    <script>$(function () {
-            $(".dataTable").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
-                "bProcessing": false,
-                "bLengthChange": false,
-                language: {
-                    search: "_INPUT_",
-                    searchPlaceholder: "Buscar registros",
-                    lengthMenu: "Mostrar _MENU_ registros",
-                    paginate: false,
-
-                },
-                "paging": false,
-                "info": false,
-                responsive: true
-            });
-        });
-    </script>
 
     <style type="text/css">
         .select-css {

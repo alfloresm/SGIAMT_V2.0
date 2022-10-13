@@ -48,5 +48,13 @@ namespace CTR
         {
             objDaoConcurso.ActualizarEstadoConcursoEnProceso(id,Tipo);
         }
+        public void ObtenerDatosConcurso(DtoConcurso objc)
+        {
+            objDaoConcurso.ObtenerDatosConcurso(objc);
+        }
+        public Boolean ExistePrecioEntrada(int id)
+        {
+            return objDaoConcurso.existePrecioEntrada(id);
+        }
     }
 }

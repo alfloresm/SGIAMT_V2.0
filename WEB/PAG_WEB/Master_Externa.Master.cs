@@ -44,6 +44,13 @@ namespace WEB.PAG_WEB
                         html.Append("</div>");
                         html.Append("</div>");
                         html.Append("</a>");
+                        html.Append("<a href='W_Mis_Entradas.aspx'>");
+                        html.Append("<div class='hd-message-sn'>");
+                        html.Append("<div class='hd-mg-ctn'>");
+                        html.Append("<h3>Mis Entradas</h3>");
+                        html.Append("</div>");
+                        html.Append("</div>");
+                        html.Append("</a>");
                         html.Append("<a href='W_Iniciar_Sesion.aspx'>");
                         html.Append("<div class='hd-message-sn'>");
                         html.Append("<div class='hd-mg-ctn'>");
@@ -60,7 +67,7 @@ namespace WEB.PAG_WEB
             }
             catch (Exception ex)
             {
-                throw ex;
+                log.CustomWriteOnLog("MasterExterno", "Error : " + ex.Message + "Stac" + ex.StackTrace);
             }
         }
     }

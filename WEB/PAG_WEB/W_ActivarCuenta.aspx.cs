@@ -26,30 +26,32 @@ namespace WEB.PAG_WEB
         {
             try
             {
-                TextoAyuda.InnerHtml = "Validando parámetros...";
+                TextoAyuda.InnerHtml = "Validando...";
 
                 if ((!string.IsNullOrEmpty(Request.QueryString["UserID"])) & (!string.IsNullOrEmpty(Request.QueryString["EmailId"])) & (!string.IsNullOrEmpty(Request.QueryString["CodigoActivacion"])))
                 {
                     string validarActivacionCuenta = obj_ctrEmail.ConfirmarActivacionCuenta(Request.QueryString["UserID"], Request.QueryString["EmailId"], int.Parse(Request.QueryString["CodigoActivacion"]), "Contar");
 
-                    TextoAyuda.InnerHtml = "Esto no debería tomar mucho tiempo...";
-
                     if (validarActivacionCuenta == "0")
                     {
                         string ActualizarInformacion = obj_ctrEmail.ConfirmarActivacionCuenta(Request.QueryString["UserID"], Request.QueryString["EmailId"], int.Parse(Request.QueryString["CodigoActivacion"]), "Actualizar");
                         TextoAyuda.InnerHtml = "Completado...";
-                        //preloader.Visible = false;
-                        ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "MensajeConfirmacion();", true);
+                        preloader.Visible = false;
+                        ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "Confirmacion();", true);
                     }
                     else
                     {
-                        TextoAyuda.InnerHtml = "Hubo un error...";
-                        //preloader.Visible = false;
 
-                        ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "MensajeErrorConfirmacion();", true);
-                        ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "MensajeErrorConfirmacion()", true);
+                        ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "ErrorConfirmacion()", true);
 
                     }
+                }
+                else
+                {
+                    TextoAyuda.InnerHtml = "Hubo un error...";
+                    preloader.Visible = false;
+
+                    ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "ErrorConfirmacion();", true);
                 }
             }
             catch (Exception ex)
@@ -65,4 +67,4 @@ namespace WEB.PAG_WEB
         }
     }
 
-    }
+}

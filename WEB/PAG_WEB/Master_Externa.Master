@@ -60,9 +60,16 @@
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="../PAG_WEB/assets/css/responsive.css">
+    <!-- DataTable
+		============================================ -->
+    <%--<link href="../PAG_WEB/assets/js/data-table/dataTables.bootstrap.css" rel="stylesheet" />--%>
+    <!-- jquery
+		============================================ -->
+    <script src="../PAG_WEB/assets/js/vendor/jquery-1.12.4.min.js"></script>
     <!-- modernizr JS
 		============================================ -->
     <script src="../PAG_WEB/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body>
     <div class="header-top-area">
@@ -100,8 +107,8 @@
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#demoevent" href="#">Concursos 🏆</a>
                                     <ul id="demoevent" class="collapse dropdown-header-top">
-                                        <li><a href="W_RegistrarParticipante.aspx">Inscribete aquí</a></li>
-                                        <li><a href="#">Comprar entradas</a></li>
+                                        <li><a href="W_Registrar_Participante.aspx">Inscribete aquí</a></li>
+                                        <li><a href="W_Comprar_Entradas.aspx">Comprar entradas</a></li>
                                     </ul>
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#democrou" href="#">Contactanos 📞</a>
@@ -139,17 +146,15 @@
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="index.aspx">Inicio</a>
                                 </li>
-                            </ul>
-                        </div>
+                            </ul></div>
                         <div id="concurso" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="W_RegistrarParticipante.aspx">Inscribete aquí</a>
+                                <li><a href="W_Registrar_Participante.aspx">Inscribete aquí</a>
                                 </li>
-                                <li><a href="#">Compra Entradas</a>
-                                </li>
+                                <li><a href="W_Comprar_Entradas.aspx">Compra Entradas</a><li>
                             </ul>
                         </div>
-                        <div id="login" class="tab-pane in active notika-tab-menu-bg animated flipInX">
+                        <div id="login" class="tab-pane in notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="W_Iniciar_Sesion.aspx">Iniciar Sesión</a>
                                 </li>
@@ -160,6 +165,7 @@
             </div>
         </div>
     </div>
+
     <!-- Main Menu area End-->
     <!-- Start Status area -->
     <div class="notika-status-area">
@@ -186,9 +192,8 @@
         </div>
     </div>
     <!-- End Footer area-->
-    <!-- jquery
-		============================================ -->
-    <script src="../PAG_WEB/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    
+    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>--%>
     <!-- bootstrap JS
 		============================================ -->
     <script src="../PAG_WEB/assets/js/bootstrap.min.js"></script>
@@ -260,6 +265,11 @@
 		============================================ -->
     <script src="../PAG_WEB/assets/js/wizard/jquery.bootstrap.wizard.min.js"></script>
     <script src="../PAG_WEB/assets/js/wizard/wizard-active.js"></script>
-
+    <!--  Data  Table
+		============================================ -->
+    <%--<script src="assets/js/data-table/jquery.dataTables.min.js"></script>
+    <script src="assets/js/data-table/dataTables.bootstrap.js"></script>
+    <script src="assets/js/data-table/dataTables.buttons.min.js"></script>
+    <script src="assets/js/data-table/jquery-datatable.js"></script>--%>
 </body>
 </html>

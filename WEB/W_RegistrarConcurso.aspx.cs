@@ -64,7 +64,7 @@ namespace WEB
                         objDtoConcurso.VC_LugarCon = txtlugar.Text;
                         objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
                         objDtoConcurso.DTC_FechaF = Convert.ToDateTime(txtFechaF.Text);
-                        objDtoConcurso.IC_Capacidad = Convert.ToInt32(txtcant.Text);
+                        objDtoConcurso.IC_Capacidad1 = Convert.ToInt32(txtcant.Text);
                         objDtoConcurso.VC_Estado = ddlEstado.SelectedValue;
                         objCtrConcurso.ActualizarConcurso(objDtoConcurso);
                         string m = "Se actualizó correctamente";
@@ -79,7 +79,7 @@ namespace WEB
                         objDtoConcurso.VC_LugarCon = txtlugar.Text;
                         objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
                         objDtoConcurso.DTC_FechaF = Convert.ToDateTime(txtFechaI.Text);
-                        objDtoConcurso.IC_Capacidad = Convert.ToInt32(txtcant.Text);
+                        objDtoConcurso.IC_Capacidad1 = Convert.ToInt32(txtcant.Text);
                         hfIdConcurso.Value = objCtrConcurso.RegistrarConcurso(objDtoConcurso).ToString();
                         _log.CustomWriteOnLog("regConcurso", objDtoConcurso.PK_IC_IdConcurso.ToString());
                         string m = "Se Registró correctamente";
@@ -109,7 +109,7 @@ namespace WEB
             txtlugar.Text = objDtoConcurso.VC_LugarCon.ToString();
             txtFechaI.Text = objDtoConcurso.DTC_FechaI.ToString("yyyy-MM-dd");
             txtFechaF.Text = objDtoConcurso.DTC_FechaF.ToString("yyyy-MM-dd");
-            txtcant.Text = objDtoConcurso.IC_Capacidad.ToString();
+            txtcant.Text = objDtoConcurso.IC_Capacidad1.ToString();
             ddlEstado.Text = objDtoConcurso.VC_Estado;
         }
 

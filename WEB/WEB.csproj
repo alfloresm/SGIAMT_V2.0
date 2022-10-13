@@ -280,6 +280,10 @@
     <Content Include="PAG_WEB\assets\js\data-map\datamaps.all.min.js" />
     <Content Include="PAG_WEB\assets\js\data-map\topojson.js" />
     <Content Include="PAG_WEB\assets\js\data-table\data-table-act.js" />
+    <Content Include="PAG_WEB\assets\js\data-table\dataTables.bootstrap.css" />
+    <Content Include="PAG_WEB\assets\js\data-table\dataTables.bootstrap.js" />
+    <Content Include="PAG_WEB\assets\js\data-table\dataTables.buttons.min.js" />
+    <Content Include="PAG_WEB\assets\js\data-table\jquery-datatable.js" />
     <Content Include="PAG_WEB\assets\js\data-table\jquery.dataTables.min.js" />
     <Content Include="PAG_WEB\assets\js\datapicker\bootstrap-datepicker.js" />
     <Content Include="PAG_WEB\assets\js\datapicker\datepicker-active.js" />
@@ -319,6 +323,7 @@
     <Content Include="PAG_WEB\assets\js\metisMenu\metisMenu-active.js" />
     <Content Include="PAG_WEB\assets\js\metisMenu\metisMenu.min.js" />
     <Content Include="PAG_WEB\assets\js\notification\bootstrap-growl.min.js" />
+    <Content Include="PAG_WEB\assets\js\notification\notificacion.js" />
     <Content Include="PAG_WEB\assets\js\notification\notification-active.js" />
     <Content Include="PAG_WEB\assets\js\owl.carousel.min.js" />
     <Content Include="PAG_WEB\assets\js\plugins.js" />
@@ -331,8 +336,12 @@
     <Content Include="PAG_WEB\assets\js\summernote\summernote-active.js" />
     <Content Include="PAG_WEB\assets\js\summernote\summernote-updated.min.js" />
     <Content Include="PAG_WEB\assets\js\summernote\summernote.min.js" />
+    <Content Include="PAG_WEB\assets\js\SweetAlert\sweetalert-dev.js" />
+    <Content Include="PAG_WEB\assets\js\SweetAlert\sweetalert.css" />
+    <Content Include="PAG_WEB\assets\js\SweetAlert\sweetalert.min.js" />
     <Content Include="PAG_WEB\assets\js\tawk-chat.js" />
     <Content Include="PAG_WEB\assets\js\todo\jquery.todo.js" />
+    <Content Include="PAG_WEB\assets\js\UploadFile.js" />
     <Content Include="PAG_WEB\assets\js\vendor\jquery-1.12.4.min.js" />
     <Content Include="PAG_WEB\assets\js\vendor\modernizr-2.8.3.min.js" />
     <Content Include="PAG_WEB\assets\js\wave\wave-active.js" />
@@ -541,11 +550,11 @@
     <Content Include="PAG_WEB\index.aspx" />
     <Content Include="PAG_WEB\index_Externo.html" />
     <Content Include="PAG_WEB\W_ActivarCuenta.aspx" />
+    <Content Include="PAG_WEB\W_Mis_Entradas.aspx" />
     <Content Include="PAG_WEB\W_Comprar_Entradas.aspx" />
     <Content Include="PAG_WEB\W_Iniciar_Sesion.aspx" />
-    <Content Include="PAG_WEB\W_Pagina_Blanco.aspx" />
+    <Content Include="PAG_WEB\W_Mis_Inscripciones.aspx" />
     <Content Include="PAG_WEB\W_Pagina_Inicio.aspx" />
-    <Content Include="PAG_WEB\W_RegistrarParticipante.aspx" />
     <Content Include="Web.config" />
     <Content Include="W_AsignarTanda.aspx" />
     <Content Include="W_Calificar_Participante.aspx" />
@@ -557,10 +566,14 @@
     <Content Include="W_Login.aspx" />
     <Content Include="W_Mostrar_Resultado.aspx" />
     <Content Include="W_RegistrarConcurso.aspx" />
+    <Content Include="PAG_WEB\W_Registrar_Participante.aspx" />
     <Content Include="W_Validar_Entradas.aspx" />
     <Content Include="W_Vender_Entradas.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PAG_WEB\ghUploadFile.ashx.cs">
+      <DependentUpon>ghUploadFile.ashx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -589,6 +602,13 @@
     <Compile Include="PAG_WEB\W_ActivarCuenta.aspx.designer.cs">
       <DependentUpon>W_ActivarCuenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PAG_WEB\W_Mis_Entradas.aspx.cs">
+      <DependentUpon>W_Mis_Entradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Mis_Entradas.aspx.designer.cs">
+      <DependentUpon>W_Mis_Entradas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PAG_WEB\W_Comprar_Entradas.aspx.cs">
       <DependentUpon>W_Comprar_Entradas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -603,12 +623,12 @@
     <Compile Include="PAG_WEB\W_Iniciar_Sesion.aspx.designer.cs">
       <DependentUpon>W_Iniciar_Sesion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PAG_WEB\W_Pagina_Blanco.aspx.cs">
-      <DependentUpon>W_Pagina_Blanco.aspx</DependentUpon>
+    <Compile Include="PAG_WEB\W_Mis_Inscripciones.aspx.cs">
+      <DependentUpon>W_Mis_Inscripciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PAG_WEB\W_Pagina_Blanco.aspx.designer.cs">
-      <DependentUpon>W_Pagina_Blanco.aspx</DependentUpon>
+    <Compile Include="PAG_WEB\W_Mis_Inscripciones.aspx.designer.cs">
+      <DependentUpon>W_Mis_Inscripciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="PAG_WEB\W_Pagina_Inicio.aspx.cs">
       <DependentUpon>W_Pagina_Inicio.aspx</DependentUpon>
@@ -616,13 +636,6 @@
     </Compile>
     <Compile Include="PAG_WEB\W_Pagina_Inicio.aspx.designer.cs">
       <DependentUpon>W_Pagina_Inicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PAG_WEB\W_RegistrarParticipante.aspx.cs">
-      <DependentUpon>W_RegistrarParticipante.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PAG_WEB\W_RegistrarParticipante.aspx.designer.cs">
-      <DependentUpon>W_RegistrarParticipante.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -701,6 +714,13 @@
     </Compile>
     <Compile Include="W_RegistrarConcurso.aspx.designer.cs">
       <DependentUpon>W_RegistrarConcurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Registrar_Participante.aspx.cs">
+      <DependentUpon>W_Registrar_Participante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Registrar_Participante.aspx.designer.cs">
+      <DependentUpon>W_Registrar_Participante.aspx</DependentUpon>
     </Compile>
     <Compile Include="W_Validar_Entradas.aspx.cs">
       <DependentUpon>W_Validar_Entradas.aspx</DependentUpon>
@@ -788,6 +808,7 @@
     <Content Include="PAG_WEB\Ejemplo_Pagina\green-horizotal\fonts\notika-icon.eot" />
     <Content Include="PAG_WEB\Ejemplo_Pagina\green-horizotal\fonts\notika-icon.ttf" />
     <Content Include="PAG_WEB\Ejemplo_Pagina\green-horizotal\fonts\notika-icon.woff" />
+    <Content Include="PAG_WEB\ghUploadFile.ashx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

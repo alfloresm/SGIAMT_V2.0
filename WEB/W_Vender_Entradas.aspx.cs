@@ -59,7 +59,7 @@ namespace WEB
         {
             try
             {
-                objdtoespectador.PK_VES_Dni = txtDni.Text;
+                objdtoespectador.VES_Dni = txtDni.Text;
                 objdtoespectador.VES_NombreCompleto = txtNombreCompleto.Text;
                 objdtoespectador.VES_Email = txtCorreo.Text;
                 objdtoespectador.IES_NumEntrada = Convert.ToInt32(txtCantEntradas.Text);
@@ -69,7 +69,7 @@ namespace WEB
                 //    //objdtoespectador.VES_TipoFecha = ;
                     
                 //objctrentrada.RegistrarVenderEntrada(objdtoespectador.PK_VES_Dni); --revisar
-                _log.CustomWriteOnLog("Vender entradas", objdtoespectador.PK_VES_Dni);
+                _log.CustomWriteOnLog("Vender entradas", objdtoespectador.VES_Dni);
                 string m = "Se Registró correctamente";
 
                 Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + m + "','success')");
