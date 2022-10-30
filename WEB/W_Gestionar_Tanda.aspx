@@ -5,6 +5,26 @@
     <link href="../assets/css/material-dashboard.css" rel="stylesheet" />
 
     <link href="assets/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <script src="assets/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="assets/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#ContentPlaceHolder1_GVTanda').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ],
+                responsive: true,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search records",
+                }
+
+            });
+            $('.card .material-datatables label').addClass('form-group');
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
@@ -32,9 +52,8 @@
                                 <div class="col-md-10 col-md-offset-1 table-responsive">
                                     <asp:GridView ID="GVTanda" runat="server" AutoGenerateColumns="False"
                                         DataKeyNames="PK_IT_CodTan,VT_Tipo_Tanda,VT_Descripcion"
-                                        CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="10"
-                                        AllowPaging="True" OnPageIndexChanging="GVTanda_PageIndexChanging"
-                                        Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small" EmptyDataText="No hay Registros">
+                                        CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable"
+                                        AllowPaging="True" Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small" EmptyDataText="No hay Registros">
                                         <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
                                         <Columns>
                                             <asp:BoundField DataField="PK_IT_CodTan" HeaderText="Codigo" />
@@ -56,8 +75,7 @@
             </asp:UpdatePanel>
         </div>
     </form>
-    <script src="assets/jquery-datatable/jquery.dataTables.js"></script>
-    <script src="assets/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    
     <script src="../../assets/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/jszip.min.js"></script>
@@ -65,21 +83,4 @@
     <script src="../../assets/jquery-datatable/extensions/export/vfs_fonts.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-    <script>$(function () {
-            $(".dataTable").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
-                "bProcessing": false,
-                "bLengthChange": false,
-                language: {
-                    search: "_INPUT_",
-                    searchPlaceholder: "Buscar registros",
-                    lengthMenu: "Mostrar _MENU_ registros",
-                    paginate: false,
-
-                },
-                "paging": false,
-                "info": false,
-                responsive: true
-            });
-        });
-    </script>
 </asp:Content>

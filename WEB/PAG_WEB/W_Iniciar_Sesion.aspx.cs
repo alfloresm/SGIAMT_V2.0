@@ -54,6 +54,8 @@ namespace WEB.PAG_WEB
                 Session["CelularUsuario"] = usuarioDto.VU_Celular;
                 Session["Categoria"] = usuarioDto.FK_ICA_CodCat;
 
+                Session["login"] = true;
+
                 //Session.Timeout = 60;
                 Response.Redirect("~/PAG_WEB/index.aspx?IdPerfil=" + usuarioDto.FK_ITU_TipoUsuario); //pagina inicio con su perfil
             }
@@ -65,7 +67,7 @@ namespace WEB.PAG_WEB
                 TextBox1.Text = String.Empty;
                 log.CustomWriteOnLog("Login_", "---------------------------ERROR---------------------------------------------------");
                 //Utils.AddScriptClientUpdatePanel(UpdatePanel, "showErrorMessage()");
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "mensaje", "swal({icon: 'error',title: 'ERROR!',text: 'Su usuario o contraseña es incorrecta o no existe'});", true);
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "alert", "showErrorMessageLogin()", true);
 
             }
         }

@@ -26,6 +26,12 @@ namespace WEB.PAG_WEB
             if (!IsPostBack)
             {
                 LlenarConcursos();
+                if (Session["DNIUsuario"] != null)
+                {
+                    txtDni.Text = Session["DNIUsuario"].ToString();
+                    txtNombreCompleto.Text = Session["NombreUsuario"].ToString() + " " + Session["ApellidoP"].ToString() + " " + Session["ApellidoM"].ToString();
+                    txtEmail.Text = Session["CorreoUsuario"].ToString();
+                }
 
             }
         }
@@ -123,6 +129,7 @@ namespace WEB.PAG_WEB
             try
             {
                 //registrar
+
                 if (objctrentrada.disponibilidadEntradas(ddlFecha.SelectedValue, Convert.ToInt32(ddlConcurso.SelectedValue)) >= Convert.ToInt32(txtCantEntradas.Text))
                 {
                     objdtoespectador.VES_Dni = txtDni.Text;
@@ -145,6 +152,8 @@ namespace WEB.PAG_WEB
                     string m = "No hay disponibilidad de entradas";
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "notify('top','center','danger','ERROR! ','" + m + "')", true);
                 }
+
+
             }
             catch (Exception ex)
             {

@@ -10,7 +10,7 @@
 namespace WEB {
     
     
-    public partial class W_Elegir_Marinera {
+    public partial class W_Asignar_Marinera {
         
         /// <summary>
         /// Control form1.
@@ -58,15 +58,6 @@ namespace WEB {
         protected global::System.Web.UI.WebControls.DropDownList ddlConcurso;
         
         /// <summary>
-        /// Control HiddenField1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
-        
-        /// <summary>
         /// Control btnIr.
         /// </summary>
         /// <remarks>
@@ -92,23 +83,5 @@ namespace WEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GVTandaMarinera;
-        
-        /// <summary>
-        /// Control H1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl H1;
-        
-        /// <summary>
-        /// Control h2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h2;
     }
 }

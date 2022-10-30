@@ -25,7 +25,7 @@ namespace WEB.PAG_WEB
                     log.CustomWriteOnLog("MasterExterno", "-------------------------------------------------------------------------------------------------------------");
                     
 
-                    if (Request.Params["IdPerfil"] != null)
+                    if (Session["login"] != null)
                     {
                         int perfil = int.Parse(Session["id_perfil"].ToString());
                         StringBuilder html = new StringBuilder();
@@ -48,6 +48,13 @@ namespace WEB.PAG_WEB
                         html.Append("<div class='hd-message-sn'>");
                         html.Append("<div class='hd-mg-ctn'>");
                         html.Append("<h3>Mis Entradas</h3>");
+                        html.Append("</div>");
+                        html.Append("</div>");
+                        html.Append("</a>");
+                        html.Append("<a href='W_Mis_Inscripciones.aspx'>");
+                        html.Append("<div class='hd-message-sn'>");
+                        html.Append("<div class='hd-mg-ctn'>");
+                        html.Append("<h3>Mis Inscripciones</h3>");
                         html.Append("</div>");
                         html.Append("</div>");
                         html.Append("</a>");

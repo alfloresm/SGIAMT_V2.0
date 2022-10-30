@@ -22,6 +22,7 @@ namespace WEB
 
                 GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
                 GVConcurso.DataBind();
+                GVConcurso.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
 
@@ -97,13 +98,13 @@ namespace WEB
             }
         }
 
-        protected void GVConcurso_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            upLista.Update();
-            GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
-            GVConcurso.PageIndex = e.NewPageIndex;            
-            GVConcurso.DataBind();
-        }
+        //protected void GVConcurso_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        //{
+        //    upLista.Update();
+        //    GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
+        //    GVConcurso.PageIndex = e.NewPageIndex;            
+        //    GVConcurso.DataBind();
+        //}
         protected Boolean ValidacionEstado(string estado)
         {
             return estado == "No Realizado";
@@ -121,6 +122,7 @@ namespace WEB
                 objctrConcurso.ActualizarConcursoEstado(id, operacion);
                 GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
                 GVConcurso.DataBind();
+                GVConcurso.HeaderRow.TableSection = TableRowSection.TableHeader;
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#EstadoModal').modal('hide');</script>", false);
             }
             else if (hfEstado.Value == "En Proceso")
@@ -130,6 +132,7 @@ namespace WEB
                 objctrConcurso.ActualizarConcursoEstado(id, operacion);
                 GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
                 GVConcurso.DataBind();
+                GVConcurso.HeaderRow.TableSection = TableRowSection.TableHeader;
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#EstadoModal').modal('hide');</script>", false);
             }
         }

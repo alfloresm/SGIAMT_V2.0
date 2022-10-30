@@ -557,6 +557,7 @@
     <Content Include="PAG_WEB\W_Pagina_Inicio.aspx" />
     <Content Include="Web.config" />
     <Content Include="W_AsignarTanda.aspx" />
+    <Content Include="W_Asignar_Marinera.aspx" />
     <Content Include="W_Calificar_Participante.aspx" />
     <Content Include="W_Elegir_Marinera.aspx" />
     <Content Include="W_Gestionar_Concurso.aspx" />
@@ -651,6 +652,13 @@
     </Compile>
     <Compile Include="W_AsignarTanda.aspx.designer.cs">
       <DependentUpon>W_AsignarTanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="W_Asignar_Marinera.aspx.cs">
+      <DependentUpon>W_Asignar_Marinera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="W_Asignar_Marinera.aspx.designer.cs">
+      <DependentUpon>W_Asignar_Marinera.aspx</DependentUpon>
     </Compile>
     <Compile Include="W_Calificar_Participante.aspx.cs">
       <DependentUpon>W_Calificar_Participante.aspx</DependentUpon>

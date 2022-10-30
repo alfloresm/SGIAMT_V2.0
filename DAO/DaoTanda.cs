@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using DTO;
+using System.Configuration;
 
 namespace DAO
 {
     public class DaoTanda
     {
         SqlConnection conexion;
+        SqlConnection _conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
 
         public DaoTanda()
         {
@@ -212,12 +214,12 @@ namespace DAO
         }
         public void ObtenerTandaP(DtoTanda objTanda)
         {
-            SqlConnection con = new SqlConnection(@"data source=ALEPC; initial catalog=BD_SGIAMTv1; integrated security=SSPI;");
-            SqlCommand command = new SqlCommand("SP_Buscar_Tanda_P", con);
+            
+            SqlCommand command = new SqlCommand("SP_Buscar_Tanda_P", _conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@id", objTanda.PK_IT_CodTan);
             DataSet ds = new DataSet();
-            con.Open();
+            _conn.Open();
             SqlDataAdapter da = new SqlDataAdapter(command);
             da.Fill(ds);
             da.Dispose();
@@ -235,25 +237,26 @@ namespace DAO
                 objTanda.VT_Descripcion = reader[6].ToString();
 
             }
-            con.Close();
-            con.Dispose();
+            _conn.Close();
+            _conn.Dispose();
         }
 
         public String ObtenerModalidad(int id)
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"data source=ALEPC; initial catalog=BD_SGIAMTv1; integrated security=SSPI;");
+                
                 string valor_retornado = "";
-                SqlCommand cmd = new SqlCommand("select VM_NombreMod from T_Modalidad_Concurso where PK_IM_CodigoMod = " + id, con);
+                SqlCommand cmd = new SqlCommand("select VM_NombreMod from T_Modalidad_Concurso where PK_IM_CodigoMod = " + id, _conn);
                 Console.WriteLine(cmd);
-                con.Open();
+                _conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
                     valor_retornado = reader[0].ToString();
                 }
-                con.Close();
+                _conn.Close();
+                _conn.Close();
                 return valor_retornado;
             }
             catch (Exception)
@@ -374,6 +377,32 @@ namespace DAO
                 throw;
             }
 
+        }
+        //Listar Marinera
+        public DataTable listar_Tanda_EM()
+        {
+            DataTable dtTanda = null;
+            conexion.Open();
+            SqlCommand command = new SqlCommand("SP_Listar_Tanda_Mar", conexion);
+            SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
+            command.CommandType = CommandType.StoredProcedure;
+            dtTanda = new DataTable();
+            daAdaptador.Fill(dtTanda);
+            conexion.Close();
+            return dtTanda;
+        }
+        public DataTable listar_Tanda_EM_By_Concurso(int cod)
+        {
+            DataTable dtTanda = null;
+            conexion.Open();
+            SqlCommand command = new SqlCommand("SP_Listar_Tanda_Mar_by_concurso", conexion);
+            command.Parameters.AddWithValue("@codCon", cod);
+            SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
+            command.CommandType = CommandType.StoredProcedure;
+            dtTanda = new DataTable();
+            daAdaptador.Fill(dtTanda);
+            conexion.Close();
+            return dtTanda;
         }
     }
 }

@@ -26,6 +26,7 @@ namespace WEB
             {
                 GVEntrada.DataSource = objctrentrada.ListarEntradasbyConcurso();
                 GVEntrada.DataBind();
+                GVEntrada.HeaderRow.TableSection = TableRowSection.TableHeader;
                 LlenarConcursos();
             }
         }
@@ -41,21 +42,21 @@ namespace WEB
             ddlConcurso.DataBind();
             ddlConcurso.Items.Insert(0, new ListItem("Seleccione", "0"));
         }
-        protected void GVEntrada_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        public void llenarTabla()
         {
             if (ddlConcurso.SelectedIndex == 0)
             {
                 upLista.Update();
                 GVEntrada.DataSource = objctrentrada.ListarEntradasbyConcurso();
-                GVEntrada.PageIndex = e.NewPageIndex;
                 GVEntrada.DataBind();
+                GVEntrada.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
             else
             {
                 upLista.Update();
                 GVEntrada.DataSource = objctrentrada.ListarEntradasbyConcurso(Convert.ToInt32(ddlConcurso.SelectedValue));
-                GVEntrada.PageIndex = e.NewPageIndex;
                 GVEntrada.DataBind();
+                GVEntrada.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
 
@@ -118,6 +119,8 @@ namespace WEB
             upLista.Update();
             GVEntrada.DataSource = objctrentrada.ListarEntradasbyConcurso(Convert.ToInt32(ddlConcurso.SelectedValue));
             GVEntrada.DataBind();
+            GVEntrada.HeaderRow.TableSection = TableRowSection.TableHeader;
+            ScriptManager.RegisterStartupScript(this.Page, typeof(Page), "alert", "<script type='text/javascript'>tableLoad()</script>", false);
         }
 
         protected void btnAprobar_Click(object sender, EventArgs e)
@@ -145,7 +148,7 @@ namespace WEB
                 upLista.Update();
                 GVEntrada.DataSource = objctrentrada.ListarEntradasbyConcurso(Convert.ToInt32(ddlConcurso.SelectedValue));
                 GVEntrada.DataBind();
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#ValidarModal').modal('hide');$('#AprobarModal').modal('hide');showSA('" + message + "');</script>", false);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#ValidarModal').modal('hide');$('#AprobarModal').modal('hide');showSA('" + message + "');tableLoad();</script>", false);
                 //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none", "<script>$('#AprobarModal').modal('hide');</script>", false);
                 
                 //ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "showSA('"+ message + "')", true);
@@ -169,7 +172,7 @@ namespace WEB
                 upLista.Update();
                 GVEntrada.DataSource = objctrentrada.ListarEntradasbyConcurso(Convert.ToInt32(ddlConcurso.SelectedValue));
                 GVEntrada.DataBind();
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), "alert", "<script type='text/javascript'>$('#ValidarModal').modal('hide');$('#RechazarModal').modal('hide');showSA('" + message + "')</script>", false);
+                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), "alert", "<script type='text/javascript'>$('#ValidarModal').modal('hide');$('#RechazarModal').modal('hide');showSA('" + message + "');tableLoad()</script>", false);
                 
             }
             catch (Exception ex)

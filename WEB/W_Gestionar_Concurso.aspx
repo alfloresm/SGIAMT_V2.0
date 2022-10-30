@@ -5,6 +5,26 @@
     <link href="../assets/css/material-dashboard.css" rel="stylesheet" />
 
     <link href="assets/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <script src="assets/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="assets/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#ContentPlaceHolder1_GVConcurso').DataTable({
+            "pagingType": "full_numbers",
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            responsive: true,
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Search records",
+            }
+
+        });
+        $('.card .material-datatables label').addClass('form-group');
+    });
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
@@ -33,8 +53,7 @@
                                             <div class="card-content">
                                                 <asp:GridView ID="GVConcurso" runat="server" AutoGenerateColumns="False"
                                                     DataKeyNames="PK_IC_IdConcurso,VC_NombreCon,DTC_FechaInicio,IC_Capacidad1,VC_Estado"
-                                                    CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="5"
-                                                    AllowPaging="True" OnPageIndexChanging="GVConcurso_PageIndexChanging" OnRowCommand="GVConcurso_RowCommand"
+                                                    CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" OnRowCommand="GVConcurso_RowCommand"
                                                     Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small">
                                                     <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
                                                     <Columns>
@@ -167,8 +186,7 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
-    <script src="assets/jquery-datatable/jquery.dataTables.js"></script>
-    <script src="assets/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    
     <script src="../../assets/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/jszip.min.js"></script>
@@ -176,7 +194,8 @@
     <script src="../../assets/jquery-datatable/extensions/export/vfs_fonts.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
     <script src="../../assets/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-    <script>$(function () {
+    <%--<script>
+        $(function () {
             $(".dataTable").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable({
                 "bProcessing": false,
                 "bLengthChange": false,
@@ -192,5 +211,6 @@
                 responsive: true
             });
         });
-    </script>
+    </script>--%>
+    
 </asp:Content>

@@ -52,6 +52,13 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="../PAG_WEB/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- SweetAlert CSS
+		============================================ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <link href="assets/js/SweetAlert/sweetalert.css" rel="stylesheet" />
+    <script src="../PAG_WEB/assets/js/SweetAlert/sweetalert.min.js" type="text/javascript"></script>
+    <script src="../PAG_WEB/assets/js/notification/notificacion.js" type='text/javascript'></script>
+    
 </head>
 <body>
     <form id="form1" runat="server">

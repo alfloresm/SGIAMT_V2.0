@@ -17,5 +17,6 @@ namespace DTO
         public string VT_Descripcion { get; set; }
         public int IT_CodigoConcurso { get; set; }
         public int FK_IM_CodMar { get; set; }
+        public DateTime DT_FechaCreacion { get; set; }
     }
 }

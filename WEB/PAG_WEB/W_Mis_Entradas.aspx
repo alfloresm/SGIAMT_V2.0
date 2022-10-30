@@ -16,7 +16,10 @@
             $(document).ready(function () {
                 $('#GVEntradas').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable();
             });
-        })(jQuery); </script>
+        })(jQuery); 
+        function DataTableload()
+        { $('#GVEntradas').prepend($('<thead></thead>').append($(this).find('tr:first')).DataTable()); }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
     <script src='http://ksylvest.github.io/jquery-growl/javascripts/jquery.growl.js' type='text/javascript'></script>
     <script src="assets/js/notification/bootstrap-growl.min.js"></script>

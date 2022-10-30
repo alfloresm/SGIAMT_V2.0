@@ -70,3 +70,10 @@ function showSuccessMessageSubirVoucher() {
         confirmButtonText: 'Cool'
     })
 };
+function showErrorMessageLogin() {
+    swal({
+        title: 'ERROR!',
+        icon: 'error',
+        text: 'Su usuario o contraseña es incorrecta o no existe'
+    })
+};

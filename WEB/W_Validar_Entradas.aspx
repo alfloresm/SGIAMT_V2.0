@@ -1,8 +1,47 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="W_Validar_Entradas.aspx.cs" Inherits="WEB.W_Validar_Entradas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="assets/momentjs/moment.js"></script>
+    <link href="../assets/css/material-dashboard.css" rel="stylesheet" />
     <script src="assets/sweetalert/sweetalert.min.js"></script>
     <link href="assets/sweetalert/sweetalert.css" rel="stylesheet" />
+    <link href="assets/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <script src="assets/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="assets/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#ContentPlaceHolder1_GVEntrada').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ],
+                responsive: true,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search records",
+                }
+
+            });
+            $('.card .material-datatables label').addClass('form-group');
+        });
+
+        function tableLoad() {
+            $('#ContentPlaceHolder1_GVEntrada').DataTable
+                ({
+                    "pagingType": "full_numbers",
+                "lengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ],
+                responsive: true,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search records",
+                }
+                });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
@@ -43,8 +82,7 @@
 
                                                 <asp:GridView ID="GVEntrada" runat="server" AutoGenerateColumns="False"
                                                     DataKeyNames="PK_VES_cod,VBES_Archivo,VES_NombreCompleto,VES_Email,IES_NumEntrada,Monto,VES_Estado"
-                                                    CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" PageSize="10"
-                                                    AllowPaging="True" OnPageIndexChanging="GVEntrada_PageIndexChanging" OnRowCommand="GVEntrada_RowCommand"
+                                                    CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" OnRowCommand="GVEntrada_RowCommand"
                                                     Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small">
                                                     <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
                                                     <Columns>
@@ -209,8 +247,8 @@
         <asp:UpdatePanel runat="server" ID="upHiddenfields" UpdateMode="Conditional">
             <ContentTemplate>
                 <asp:HiddenField ID="hfCodEntrada" runat="server" ClientIDMode="Static" />
-                <asp:HiddenField ID="hfNombre" runat="server" ClientIDMode="Static"/>
-                <asp:HiddenField ID="hfEmail" runat="server" ClientIDMode="Static"/>
+                <asp:HiddenField ID="hfNombre" runat="server" ClientIDMode="Static" />
+                <asp:HiddenField ID="hfEmail" runat="server" ClientIDMode="Static" />
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
@@ -223,4 +261,11 @@
             });
         }
     </script>
+    <script src="../../assets/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="../../assets/jquery-datatable/extensions/export/buttons.print.min.js"></script>
 </asp:Content>

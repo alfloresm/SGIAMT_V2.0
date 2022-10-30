@@ -15,6 +15,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form2" runat="server" method="POST" class="form">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="breadcomb-area">
             <div class="container">
                 <div class="row">
@@ -48,9 +49,13 @@
                             </div>
                             <div class="col-md-6 text-center">
                                 </br>
-                                <asp:LinkButton ID="btnVerInfo" runat="server" OnClick="btnVerInfo_Click" CssClass="btn btn-info notika-btn-info" BackColor="SkyBlue">
+                                <asp:UpdatePanel ID="upBtnIr" runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <asp:LinkButton ID="btnVerInfo" runat="server" OnClick="btnVerInfo_Click" CssClass="btn btn-info notika-btn-info" BackColor="SkyBlue">
                                     <i class="notika-icon notika-search"></i>
-                                </asp:LinkButton>
+                                        </asp:LinkButton>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
                             </div>
                         </div>
                     </div>
@@ -59,7 +64,7 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-element-list">
                     <div class="cmp-tb-hd">
-                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        
                         <asp:UpdatePanel ID="UpinfoConcurso" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
                                 <div class="btn-demo-notika">
@@ -98,52 +103,54 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="form-group ic-cmp-int float-lb floating-lb">
-                                <div class="form-ic-cmp">
-                                    <i class="notika-icon notika-edit"></i>
-                                </div>
-                                <div class="nk-int-st">
-                                    <%--<input type="text" class="form-control">--%>
-                                    <label class="nk-label">Dni</label>
-                                    <asp:TextBox ID="txtDni" runat="server" class="form-control" required></asp:TextBox>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="form-group ic-cmp-int float-lb floating-lb">
+                            <div class="form-group ic-cmp-int">
                                 <div class="form-ic-cmp">
                                     <i class="notika-icon notika-support"></i>
                                 </div>
                                 <div class="nk-int-st">
-                                    <%--<input type="text" class="form-control">--%>
-                                    <label class="nk-label">Nombre Completo</label>
-                                    <asp:TextBox ID="txtNombreCompleto" runat="server" class="form-control" required></asp:TextBox>
+                                    <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" TextMode="Number" size="8" placeholder="DNI"></asp:TextBox>
+                                    <asp:Label ID="lblDoc" runat="server" Text="" ForeColor="#CC0000"></asp:Label>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="form-group ic-cmp-int float-lb floating-lb">
+                            <div class="form-group ic-cmp-int">
+                                <div class="form-ic-cmp">
+                                    <i class="notika-icon notika-support"></i>
+                                </div>
+                                <div class="nk-int-st">
+                                    <asp:TextBox ID="txtNombreCompleto" runat="server" CssClass="form-control" placeholder="Nombres"></asp:TextBox>
+                                    <asp:Label ID="lblNombre" runat="server" Text="" ForeColor="#CC0000"></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="form-group ic-cmp-int">
                                 <div class="form-ic-cmp">
                                     <i class="notika-icon notika-mail"></i>
                                 </div>
                                 <div class="nk-int-st">
-                                    <%--<input type="text" class="form-control">--%>
-                                    <label class="nk-label">Correo Electrónico</label>
-                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" required></asp:TextBox>
+                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control" placeholder="Correo Electrónico" TextMode="Email"></asp:TextBox>
+                                    <asp:Label ID="lblEmail" runat="server" Text="" ForeColor="#CC0000"></asp:Label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="form-group ic-cmp-int float-lb form-elet-mg">
+                            <div class="form-group ic-cmp-int">
                                 <div class="form-ic-cmp">
-                                    <i class="notika-icon notika-tax"></i>
+                                    <i class="notika-icon notika-phone"></i>
                                 </div>
                                 <div class="nk-int-st">
-                                    <%--<input type="text" class="form-control">--%>
-                                    <label class="nk-label">Cantidad de Entradas</label>
-                                    <asp:TextBox ID="txtCantEntradas" runat="server" class="form-control" required></asp:TextBox>
+                                    <asp:TextBox ID="txtCantEntradas" runat="server" class="form-control" placeholder="# Entradas" size="2" TextMode="Number"></asp:TextBox>
+                                    <asp:RangeValidator ID="rango1" runat="server"
+                                        ControlToValidate="txtCantEntradas"
+                                        MinimumValue="1"
+                                        MaximumValue="50"
+                                        Type="Integer"
+                                        ForeColor="#CC0000"
+                                        Text="la maxima cantidad de entradas que puede comprar es 50!" Display="Dynamic" />
                                 </div>
                             </div>
                         </div>

@@ -101,5 +101,14 @@ namespace CTR
         {
             return objDaoTanda.puntajePorParticipante(id);
         }
+        //elegir marinera
+        public DataTable Listar_Tanda_NC_EM()
+        {
+            return objDaoTanda.listar_Tanda_EM();
+        }
+        public DataTable Listar_Tanda_NC_EM_By_Concurso(int cod)
+        {
+            return objDaoTanda.listar_Tanda_EM_By_Concurso(cod);
+        }
     }
 }

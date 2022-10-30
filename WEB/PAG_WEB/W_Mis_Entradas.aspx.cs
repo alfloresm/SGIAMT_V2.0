@@ -29,6 +29,7 @@ namespace WEB.PAG_WEB
                         hfDNI.Value = dni;
                         GVEntradas.DataSource = objCtrEntrada.ListarMisEntradas(dni);
                         GVEntradas.DataBind();
+                        GVEntradas.HeaderRow.TableSection = TableRowSection.TableHeader;
                     }
                     else
                     {
@@ -72,16 +73,14 @@ namespace WEB.PAG_WEB
         {
             try
             {
-                string id = hfCodEntrada.Value;
+                string id = hfCodEntrada.Value; 
                 Utils.AddScriptClientUpdatePanel(UpRegistrarVoucher, "uploadFileDocuments(" + id + ");");
                 GVEntradas.DataSource = objCtrEntrada.ListarMisEntradas(hfDNI.Value);
                 GVEntradas.DataBind();
+                GVEntradas.HeaderRow.TableSection = TableRowSection.TableHeader;
                 UPTable.Update();
-                string jstable= "(function ($) {'use strict';$(document).ready(function() {$('#GVEntradas').prepend($('<thead></thead>').append($(this).find('tr:first'))).DataTable();});})(jQuery)";
-                ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "alert", "<script>$('#imagenmodal').modal('hide');"+jstable+";showSuccessMessageSubirVoucher()</script>", false);
-                //ScriptManager.RegisterStartupScript(this, this.GetType(), "myScript", "$('#cph_body_GVEntradas').prepend($('<thead></thead>').append($('#cph_body_GVEntradas').find('tr:first'))).DataTable(); ", true);
-                //ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "showSuccessMessageSubirVoucher()", true);
                 
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "alert", "<script>$('#imagenmodal').modal('hide');showSuccessMessageSubirVoucher();setTimeout(function(){location.reload();}, 2000);</script>", false);
             }
             catch (Exception ex)
             {

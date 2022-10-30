@@ -24,6 +24,7 @@ namespace WEB
                 LlenarConcursos();
                 GVTanda.DataSource = objctrtanda.listar_Tanda_NC();
                 GVTanda.DataBind();
+                GVTanda.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
 
@@ -41,12 +42,6 @@ namespace WEB
         protected void btnAsignar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/W_AsignarTanda.aspx?ConcursoID="+ddlConcurso.SelectedValue);
-        }
-
-        protected void GVTanda_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GVTanda.DataSource = objctrtanda.listar_Tanda_NC();
-            GVTanda.DataBind();
         }
 
         protected void btnElegirM_Click(object sender, EventArgs e)
