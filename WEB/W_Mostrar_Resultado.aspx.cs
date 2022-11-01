@@ -85,7 +85,7 @@ namespace WEB
                             //Actualiza Ganador
                             ctrT.actualizarganadorT(objdtotanda);
                         }
-                        // Presentar resultados
+                        // Presentar resultados Seriado
                         BuildCards(objdtotanda.PK_IT_CodTan);
                     }
                     else

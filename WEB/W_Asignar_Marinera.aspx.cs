@@ -86,7 +86,7 @@ namespace WEB
                     GVTandaMarinera.DataBind();
                     GVTandaMarinera.HeaderRow.TableSection = TableRowSection.TableHeader;
                     UpdatePanel.Update();
-                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), "alert", "<script type='text/javascript'>$('#marineraModal').modal('show');</script>", false);
+                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), "alert", "<script type='text/javascript'>$('#marineraModal').modal('show');setTimeout(function(){location.reload();}, 2000);</script>", false);
                 }
                 else if (e.CommandName == "Ver")
                 {
@@ -95,7 +95,7 @@ namespace WEB
                     int idT = Convert.ToInt32(colsNoVisible[0].ToString());
                     h2.InnerText = objctrmarinera.devolverCodMar(idT);
                     UpdatePanel2.Update();
-                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), "alert", "<script type='text/javascript'>$('#marineraModal').modal('show');</script>", false);
+                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), "alert", "<script type='text/javascript'>$('#marineraModal').modal('show');setTimeout(function(){location.reload();}, 2000);</script>", false);
                 }
             }
             catch (Exception ex)
