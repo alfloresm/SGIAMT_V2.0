@@ -52,6 +52,18 @@ function showSuccessMessage2() {
     }, 1000);
 };
 
+function showSuccessCorreoContrasena() {
+    setTimeout(function () {
+        swal({
+            title: "Correo enviado",
+            text: "",
+            type: "success"
+        }, function () {
+            window.location = "W_AvisoMailContrasena.aspx";
+        });
+    }, 1000);
+};
+
 function showSuccessMessageEntrada() {
     setTimeout(function () {
         swal({
@@ -75,5 +87,12 @@ function showErrorMessageLogin() {
         title: 'ERROR!',
         icon: 'error',
         text: 'Su usuario o contraseña es incorrecta o no existe'
+    })
+};
+function showErrorMessagecontrasena(mensaje) {
+    swal({
+        title: 'ERROR!',
+        icon: 'error',
+        text: mensaje
     })
 };
