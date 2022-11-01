@@ -38,6 +38,10 @@ namespace CTR
         {
             return objDaoUsuario.ObtenerCategoria(anio);
         }
+        public int validacionContrasena(string dni, string email)
+        {
+            return objDaoUsuario.validacionContrasena(dni, email);
+        }
         public string devolverNombreCateg(int anio)
         {
             return objDaoUsuario.ObtenerNombreCategoria(anio);

@@ -250,6 +250,26 @@ namespace DAO
                 throw;
             }
         }
+
+        public int validacionContrasena(string usuario, string email)
+        {
+
+            int valor_retornado = 0;
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM T_USUARIO as U WHERE" +
+                " U.PK_VU_DNI = '" + usuario + "' AND U.VU_Correo = '" + email + "'", conexion);
+            Console.WriteLine(cmd);
+            conexion.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {    //valor_retornado = reader[0].ToString();
+                valor_retornado = int.Parse(reader[0].ToString());
+
+            }
+            conexion.Close();
+
+            return valor_retornado;
+        }
         //metodo registrar imagen usuario
         //public void RegistrarImgUsuario(byte[] bytes, string id)
         //{

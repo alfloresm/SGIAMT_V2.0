@@ -550,11 +550,14 @@
     <Content Include="PAG_WEB\index.aspx" />
     <Content Include="PAG_WEB\index_Externo.html" />
     <Content Include="PAG_WEB\W_ActivarCuenta.aspx" />
+    <Content Include="PAG_WEB\W_Forgot_Password.aspx" />
     <Content Include="PAG_WEB\W_Mis_Entradas.aspx" />
     <Content Include="PAG_WEB\W_Comprar_Entradas.aspx" />
     <Content Include="PAG_WEB\W_Iniciar_Sesion.aspx" />
     <Content Include="PAG_WEB\W_Mis_Inscripciones.aspx" />
+    <Content Include="PAG_WEB\W_AvisoMailContrasena.aspx" />
     <Content Include="PAG_WEB\W_Pagina_Inicio.aspx" />
+    <Content Include="PAG_WEB\W_RestablecerContrasena.aspx" />
     <Content Include="Web.config" />
     <Content Include="W_AsignarTanda.aspx" />
     <Content Include="W_Asignar_Marinera.aspx" />
@@ -602,6 +605,13 @@
     <Compile Include="PAG_WEB\W_ActivarCuenta.aspx.designer.cs">
       <DependentUpon>W_ActivarCuenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PAG_WEB\W_Forgot_Password.aspx.cs">
+      <DependentUpon>W_Forgot_Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Forgot_Password.aspx.designer.cs">
+      <DependentUpon>W_Forgot_Password.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PAG_WEB\W_Mis_Entradas.aspx.cs">
       <DependentUpon>W_Mis_Entradas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -630,12 +640,26 @@
     <Compile Include="PAG_WEB\W_Mis_Inscripciones.aspx.designer.cs">
       <DependentUpon>W_Mis_Inscripciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PAG_WEB\W_AvisoMailContrasena.aspx.cs">
+      <DependentUpon>W_AvisoMailContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_AvisoMailContrasena.aspx.designer.cs">
+      <DependentUpon>W_AvisoMailContrasena.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PAG_WEB\W_Pagina_Inicio.aspx.cs">
       <DependentUpon>W_Pagina_Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PAG_WEB\W_Pagina_Inicio.aspx.designer.cs">
       <DependentUpon>W_Pagina_Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PAG_WEB\W_RestablecerContrasena.aspx.cs">
+      <DependentUpon>W_RestablecerContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_RestablecerContrasena.aspx.designer.cs">
+      <DependentUpon>W_RestablecerContrasena.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
