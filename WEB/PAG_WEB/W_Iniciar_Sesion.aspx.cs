@@ -74,7 +74,7 @@ namespace WEB.PAG_WEB
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/PAG_WEB/W_RegistrarParticipante.aspx");
+            Response.Redirect("~/PAG_WEB/W_Registrar_Participante.aspx");
         }
 
         protected void btnForgotPassword_Click(object sender, EventArgs e)

@@ -15,14 +15,14 @@ namespace CTR
         {
             objDaoMarinera = new DaoMarinera();
         }
-        public string devolverMarineraAleatoria(int dific)
+        public void devolverMarineraAleatoria(int dific, int tanda)
         {
-            return objDaoMarinera.Elegir_Marinera(dific);
+            objDaoMarinera.Elegir_Marinera(dific,tanda);
         }
 
-        public int devolverCodMar(int dific)
+        public string devolverCodMar(int tanda)
         {
-            return objDaoMarinera.obtenerCodMarinera(dific);
+            return objDaoMarinera.obtenerMarinera(tanda);
         }
     }
 }

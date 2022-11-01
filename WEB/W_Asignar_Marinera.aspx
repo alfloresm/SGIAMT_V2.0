@@ -83,5 +83,61 @@
                 </div>
             </div>
         </div>
+        <div class="modal modal-backdrop" id="loading">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <div class="spinner-border text-primary"></div>
+                            <span class="sr-only">Eligiendo...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="marineraModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notice">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                        <h2 class="modal-title" id="H1" runat="server">La marinera elegida es ...
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false">
+                            <ContentTemplate>
+                                <h4 id="h2" runat="server"></h4>
+                                <asp:Label ID="lblMarinera" runat="server" Text=""></asp:Label>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
+    <script>
+
+        function Load() {
+            setTimeout(function () {
+                $('#loading').modal('hide');
+                $('#marineraModal').modal('show');
+            }, 5000)
+        };
+        function showMessage(from, align, message, type) {
+            $.notify({
+                icon: "notifications",
+                message: message
+            }, {
+                    type: type,
+                    timer: 3000,
+                    placement: {
+                        from: from,
+                        align: align
+                    }
+                });
+        }
+    </script>
 </asp:Content>
