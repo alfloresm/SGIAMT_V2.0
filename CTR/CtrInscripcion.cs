@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAO;
+using System.Data;
 
 namespace CTR
 {
@@ -18,6 +19,18 @@ namespace CTR
         public void RegistrarInscripcionP(DtoInscripcion objdtoinscripcion)
         {
             objdaoinscripcion.registrarInscripcionP(objdtoinscripcion);
+        }
+        public DataTable ListarModalidadPorConcurso(int id)
+        {
+            return objdaoinscripcion.ListarModalidadesbyconcurso(id);
+        }
+        public void RegistrarInscripcionV(DtoInscripcion objdtoinscripcion)
+        {
+            objdaoinscripcion.registrarInscripcionV(objdtoinscripcion);
+        }
+        public void RegistrarImgVoucherInscripcion(byte[] bytes, int id)
+        {
+            objdaoinscripcion.RegistrarImgVoucherInscripcion(bytes, id);
         }
     }
 }

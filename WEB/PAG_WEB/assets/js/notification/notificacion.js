@@ -89,10 +89,10 @@ function showErrorMessageLogin() {
         text: 'Su usuario o contraseña es incorrecta o no existe'
     })
 };
-function showErrorMessagecontrasena(mensaje) {
+function showErrorMessageInscripcion() {
     swal({
         title: 'ERROR!',
         icon: 'error',
-        text: mensaje
+        text: 'ya ha sido ganador en la modalidad'
     })
 };

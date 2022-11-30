@@ -64,7 +64,10 @@ namespace CTR
         {
             return objDaoUsuario.SelectUsuario_Gen(dtoUsuario, gen);
         }
-
+        public bool existeUsuarioGanador(string dni,int mod)
+        {
+            return objDaoUsuario.SelectUsuario_concursoParticipado(dni,mod);
+        }
         //Inscribir
         public void obtenerParticipante(DtoUsuario dtoUsuario, DtoCategoria objcat)
         {

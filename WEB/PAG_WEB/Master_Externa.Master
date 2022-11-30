@@ -149,9 +149,10 @@
                             </ul></div>
                         <div id="concurso" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
-                                <li><a href="W_Registrar_Participante.aspx">Inscribete aquí</a>
+                                <li><a href="W_Registrar_Participante.aspx">Registrate aquí</a>
                                 </li>
                                 <li><a href="W_Comprar_Entradas.aspx">Compra Entradas</a><li>
+                                <li><a href="W_Inscribir_Participante.aspx">Inscríbete a nuestro próximo concurso!</a><li>
                             </ul>
                         </div>
                         <div id="login" class="tab-pane in notika-tab-menu-bg animated flipInX">

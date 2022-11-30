@@ -550,6 +550,7 @@
     <Content Include="PAG_WEB\index.aspx" />
     <Content Include="PAG_WEB\index_Externo.html" />
     <Content Include="PAG_WEB\W_ActivarCuenta.aspx" />
+    <Content Include="PAG_WEB\W_Forgot_Password.aspx" />
     <Content Include="PAG_WEB\W_Inscribir_Participante.aspx" />
     <Content Include="PAG_WEB\W_Mis_Entradas.aspx" />
     <Content Include="PAG_WEB\W_Comprar_Entradas.aspx" />
@@ -574,6 +575,9 @@
     <Content Include="W_Vender_Entradas.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PAG_WEB\ghUploadFileInscripciones.ashx.cs">
+      <DependentUpon>ghUploadFileInscripciones.ashx</DependentUpon>
+    </Compile>
     <Compile Include="PAG_WEB\ghUploadFile.ashx.cs">
       <DependentUpon>ghUploadFile.ashx</DependentUpon>
     </Compile>
@@ -604,6 +608,13 @@
     </Compile>
     <Compile Include="PAG_WEB\W_ActivarCuenta.aspx.designer.cs">
       <DependentUpon>W_ActivarCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Forgot_Password.aspx.cs">
+      <DependentUpon>W_Forgot_Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Forgot_Password.aspx.designer.cs">
+      <DependentUpon>W_Forgot_Password.aspx</DependentUpon>
     </Compile>
     <Compile Include="PAG_WEB\W_Inscribir_Participante.aspx.cs">
       <DependentUpon>W_Inscribir_Participante.aspx</DependentUpon>
@@ -834,6 +845,7 @@
     <Content Include="PAG_WEB\Ejemplo_Pagina\green-horizotal\fonts\notika-icon.woff" />
     <Content Include="PAG_WEB\ghUploadFile.ashx" />
     <None Include="packages.config" />
+    <Content Include="PAG_WEB\ghUploadFileInscripciones.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

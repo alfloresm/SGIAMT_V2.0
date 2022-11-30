@@ -9,6 +9,15 @@
     <link href="assets/js/SweetAlert/sweetalert.css" rel="stylesheet" />
     <script src="assets/js/SweetAlert/sweetalert.min.js" type='text/javascript'></script>
     <script src="assets/js/notification/notificacion.js" type='text/javascript'></script>
+    <script type='text/javascript'>
+        function showErrorMessagecontrasena() {
+            swal({
+                title: 'ERROR!',
+                icon: 'error',
+                text: 'No se ha encontrado una cuenta asociada a ese dni y ese email. Registrese, por favor'
+            })
+        };
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
@@ -91,4 +100,5 @@
             </div>
         </div>
     </form>
+    
 </asp:Content>

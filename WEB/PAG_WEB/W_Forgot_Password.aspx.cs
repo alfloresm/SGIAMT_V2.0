@@ -7,7 +7,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CTR;
 using DTO;
-
 namespace WEB.PAG_WEB
 {
     public partial class W_Forgot_Password : System.Web.UI.Page
@@ -25,6 +24,7 @@ namespace WEB.PAG_WEB
 
         protected void btnRes_Click(object sender, EventArgs e)
         {
+
             try
             {
                 if (RevDocumento.IsValid && RevCorreo.IsValid && RequDocumento.IsValid && RequCorreo.IsValid)
@@ -48,8 +48,7 @@ namespace WEB.PAG_WEB
                     }
                     else
                     {
-                        string m = "No se ha encontrado una cuenta asociada a ese dni y ese email. Registrese, por favor.";
-                        ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "showErrorMessagecontrasena(" + m + ")", true);
+                        ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", "showErrorMessagecontrasena();", true);
                     }
                 }
             }
@@ -57,8 +56,6 @@ namespace WEB.PAG_WEB
             {
                 _log.CustomWriteOnLog("Forgot_Password", "Error : " + ex.Message + "Stac" + ex.StackTrace);
             }
-
-
         }
     }
 }

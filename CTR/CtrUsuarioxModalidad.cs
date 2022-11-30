@@ -31,5 +31,17 @@ namespace CTR
         {
             return objdaouxm.existeUXM_conPareja(objdtouxm);
         }
+        public void registrarUXM_S_V(DtoUsuarioxModalidad objdtouxm)
+        {
+            objdaouxm.RegistrarUXM_S(objdtouxm);
+        }
+        public void registrarUXM_N_V(DtoUsuarioxModalidad objdtouxm)
+        {
+            objdaouxm.RegistrarUXM_N(objdtouxm);
+        }
+        public void ValidarRegistro(int id,int est)
+        {
+            objdaouxm.ValidarInscripcion(id,est);
+        }
     }
 }

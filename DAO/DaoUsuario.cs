@@ -174,7 +174,21 @@ namespace DAO
             conexion.Close();
             return hayRegistros;
         }
+        public bool SelectUsuario_concursoParticipado(string dni,int mod)//encuentra usuario con ese dni un concurso ganado
+        {
+            string Select = "select FK_VU_Dni from T_Usuario_X_Concurso_Participado where FK_VU_Dni ='" + dni + "' and IUCP_Puesto=1 and IUCP_Modalidad="+mod;
+            SqlCommand unComando = new SqlCommand(Select, conexion);
+            conexion.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                dni= (string)reader[0];
+            }
 
+            conexion.Close();
+            return hayRegistros;
+        }
 
         //metodo registrar usuario
         public void RegistrarUsuario(DtoUsuario obju)
