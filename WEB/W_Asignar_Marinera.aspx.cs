@@ -23,10 +23,24 @@ namespace WEB
         {
             if (!IsPostBack)
             {
-                LlenarConcursos();
-                GVTandaMarinera.DataSource = objctrtanda.Listar_Tanda_NC_EM();
-                GVTandaMarinera.DataBind();
-                GVTandaMarinera.HeaderRow.TableSection = TableRowSection.TableHeader;
+                try
+                {
+                    if (Session["DNIUsuario"] != null)
+                    {
+                        LlenarConcursos();
+                        GVTandaMarinera.DataSource = objctrtanda.Listar_Tanda_NC_EM();
+                        GVTandaMarinera.DataBind();
+                        GVTandaMarinera.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    }
+                    else
+                    {
+                        Response.Redirect("W_Login.aspx");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _log.CustomWriteOnLog("AsignarMarinera", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+                }
             }
         }
         public void LlenarConcursos()

@@ -26,7 +26,7 @@
     <script src="assets/js/notification/bootstrap-growl.min.js"></script>
     <script src="assets/js/dropzone/dropzone.js"></script>
     <script src="assets/js/notification/notificacion.js" type='text/javascript'></script>
-    <script src="assets/js/UploadFile.js" type='text/javascript'></script>
+    <script src="assets/js/UploadFileInscripcion.js" type='text/javascript'></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
@@ -118,6 +118,11 @@
                         </h2>
                     </div>
                     <div class="modal-body">
+                        <asp:UpdatePanel runat="server" ID="UpSelecion" UpdateMode="Conditional">
+                            <ContentTemplate>
+                                <asp:HiddenField ID="hfModalidad" runat="server" ClientIDMode="Static"/>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                         <div class="col-md-12">
                             </br>
                         </div>
@@ -267,6 +272,17 @@
             }
     </style>
     <script type='text/javascript'>
+        function showErrorCategoriaInscripcion() {
+            setTimeout(function () {
+                swal({
+                    title: "Actualice su categoría",
+                    text: "Actualice en su perfil la categoría a la que pertenece",
+                    type: "error"
+                }, function () {
+                    window.location = "W_Mi_Perfil.aspx";
+                });
+            }, 1000);
+        };
         function previewImage(event, querySelector) {
 
             //Recuperamos el input que desencadeno la acción

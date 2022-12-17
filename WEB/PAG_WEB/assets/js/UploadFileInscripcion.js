@@ -1,7 +1,5 @@
 ﻿
-
-
-function uploadFileDocuments(Codigo) {
+function uploadFileDocumentsInscripcion(Codigo) {
     var formData = new FormData();
     var varLstAnexo = ObtenerAnexos();
     debugger;
@@ -11,7 +9,7 @@ function uploadFileDocuments(Codigo) {
     });
     console.log("Codigo ingresado al JS es :" + Codigo);
     if (varLstAnexo != null) {
-        var urlConsultaRest = "ghUploadFile.ashx?Id=" + Codigo;
+        var urlConsultaRest = "ghUploadFileInscr.ashx?Id=" + Codigo;
         $.ajax({
             url: urlConsultaRest,
             type: "POST",

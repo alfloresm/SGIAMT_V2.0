@@ -19,10 +19,23 @@ namespace WEB
         {
             if (!IsPostBack)
             {
-
-                GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
-                GVConcurso.DataBind();
-                GVConcurso.HeaderRow.TableSection = TableRowSection.TableHeader;
+                try
+                {
+                    if (Session["DNIUsuario"] != null)
+                    {
+                        GVConcurso.DataSource = objctrConcurso.ListaConcursos_();
+                        GVConcurso.DataBind();
+                        GVConcurso.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    }
+                    else
+                    {
+                        Response.Redirect("W_Login.aspx");
+                    }
+                }
+                catch (Exception ex)
+                {
+                   _log.CustomWriteOnLog("gestionar concurso", ex.Message);
+                }
             }
         }
 

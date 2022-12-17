@@ -33,11 +33,11 @@ namespace CTR
         }
         public void registrarUXM_S_V(DtoUsuarioxModalidad objdtouxm)
         {
-            objdaouxm.RegistrarUXM_S(objdtouxm);
+            objdaouxm.RegistrarUXM_S_V(objdtouxm);
         }
         public void registrarUXM_N_V(DtoUsuarioxModalidad objdtouxm)
         {
-            objdaouxm.RegistrarUXM_N(objdtouxm);
+            objdaouxm.RegistrarUXM_N_V(objdtouxm);
         }
         public void ValidarRegistro(int id,int est)
         {

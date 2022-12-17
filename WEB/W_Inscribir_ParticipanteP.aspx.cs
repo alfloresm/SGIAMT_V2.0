@@ -26,13 +26,27 @@ namespace WEB
         {
             if (!Page.IsPostBack)
             {
-                LlenarConcursos();
-                LlenarModalidades();
-                pnlParticipantePareja.Visible = false;
-                pnlParticipanteIndividual.Visible = false;
-                H1.InnerText = "S/.";
-                lblMensaje1.Text = "";
-                lblmensaje2.Text = "";
+                try
+                {
+                    if (Session["DNIUsuario"] != null)
+                    {
+                        LlenarConcursos();
+                        LlenarModalidades();
+                        pnlParticipantePareja.Visible = false;
+                        pnlParticipanteIndividual.Visible = false;
+                        H1.InnerText = "S/.";
+                        lblMensaje1.Text = "";
+                        lblmensaje2.Text = "";
+                    }
+                    else
+                    {
+                        Response.Redirect("W_Login.aspx");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _log.CustomWriteOnLog("inscribir Participante presencial", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+                }
             }
 
         }

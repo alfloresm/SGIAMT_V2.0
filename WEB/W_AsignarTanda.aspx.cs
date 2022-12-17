@@ -22,12 +22,25 @@ namespace WEB
         {
             if (!Page.IsPostBack)
             {
-
-                HdIdConcurso.Value = Request.QueryString["ConcursoID"];
-                LlenarModalidades();
-                PanelIndividual.Visible = false;
-                PanelParejas.Visible = false;
-                btnReset.Visible = false;
+                try
+                {
+                    if (Session["DNIUsuario"] != null)
+                    {
+                        HdIdConcurso.Value = Request.QueryString["ConcursoID"];
+                        LlenarModalidades();
+                        PanelIndividual.Visible = false;
+                        PanelParejas.Visible = false;
+                        btnReset.Visible = false;
+                    }
+                    else
+                    {
+                        Response.Redirect("W_Login.aspx");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _log.CustomWriteOnLog("asignar tanda", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+                }
             }
 
         }

@@ -96,3 +96,49 @@ function showErrorMessageInscripcion() {
         text: 'ya ha sido ganador en la modalidad'
     })
 };
+function showErrorMessageInscripcion1() {
+    swal({
+        title: 'ERROR!',
+        icon: 'error',
+        text: 'No existe DNI'
+    })
+};
+function showErrorMessageInscripcion2() {
+    swal({
+        title: 'ERROR!',
+        icon: 'error',
+        text: 'Usuario no permitido'
+    })
+};
+function showErrorMessageInscripcion3() {
+    swal({
+        title: 'ERROR!',
+        icon: 'error',
+        text: 'Usuario no petenece a genero diferente'
+    })
+};
+function showErrorMessageInscripcion4() {
+    swal({
+        title: 'ERROR!',
+        icon: 'error',
+        text: 'Existe Registro'
+    })
+};
+function showErrorMessageInscripcion5() {
+    swal({
+        title: 'ERROR!',
+        icon: 'error',
+        text: 'No puede inscribirse con pareja que no es de su categoría'
+    })
+};
+function showErrorCategoriaInscripcion() {
+    setTimeout(function () {
+        swal({
+            title: "Actualice su categoría",
+            text: "Actualice en su perfil la categoría a la que pertenece",
+            type: "error"
+        }, function () {
+            window.location = "W_Mi_Perfil.aspx";
+        });
+    }, 1000);
+};

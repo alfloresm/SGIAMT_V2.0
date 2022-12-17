@@ -342,6 +342,7 @@
     <Content Include="PAG_WEB\assets\js\tawk-chat.js" />
     <Content Include="PAG_WEB\assets\js\todo\jquery.todo.js" />
     <Content Include="PAG_WEB\assets\js\UploadFile.js" />
+    <Content Include="PAG_WEB\assets\js\UploadFileInscripcion.js" />
     <Content Include="PAG_WEB\assets\js\vendor\jquery-1.12.4.min.js" />
     <Content Include="PAG_WEB\assets\js\vendor\modernizr-2.8.3.min.js" />
     <Content Include="PAG_WEB\assets\js\wave\wave-active.js" />
@@ -557,6 +558,7 @@
     <Content Include="PAG_WEB\W_Iniciar_Sesion.aspx" />
     <Content Include="PAG_WEB\W_Mis_Inscripciones.aspx" />
     <Content Include="PAG_WEB\W_AvisoMailContrasena.aspx" />
+    <Content Include="PAG_WEB\W_Mi_Perfil.aspx" />
     <Content Include="PAG_WEB\W_Pagina_Inicio.aspx" />
     <Content Include="PAG_WEB\W_RestablecerContrasena.aspx" />
     <Content Include="Web.config" />
@@ -566,17 +568,17 @@
     <Content Include="W_Gestionar_Concurso.aspx" />
     <Content Include="W_Gestionar_Tanda.aspx" />
     <Content Include="W_Inscribir_ParticipanteP.aspx" />
-    <Content Include="W_Listar_Tandas_Marinera.aspx" />
     <Content Include="W_Login.aspx" />
     <Content Include="W_Mostrar_Resultado.aspx" />
     <Content Include="W_RegistrarConcurso.aspx" />
     <Content Include="PAG_WEB\W_Registrar_Participante.aspx" />
     <Content Include="W_Validar_Entradas.aspx" />
+    <Content Include="W_Validar_Inscripcion.aspx" />
     <Content Include="W_Vender_Entradas.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PAG_WEB\ghUploadFileInscripciones.ashx.cs">
-      <DependentUpon>ghUploadFileInscripciones.ashx</DependentUpon>
+    <Compile Include="PAG_WEB\ghUploadFileInscr.ashx.cs">
+      <DependentUpon>ghUploadFileInscr.ashx</DependentUpon>
     </Compile>
     <Compile Include="PAG_WEB\ghUploadFile.ashx.cs">
       <DependentUpon>ghUploadFile.ashx</DependentUpon>
@@ -658,6 +660,13 @@
     <Compile Include="PAG_WEB\W_AvisoMailContrasena.aspx.designer.cs">
       <DependentUpon>W_AvisoMailContrasena.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PAG_WEB\W_Mi_Perfil.aspx.cs">
+      <DependentUpon>W_Mi_Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAG_WEB\W_Mi_Perfil.aspx.designer.cs">
+      <DependentUpon>W_Mi_Perfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PAG_WEB\W_Pagina_Inicio.aspx.cs">
       <DependentUpon>W_Pagina_Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -722,13 +731,6 @@
     <Compile Include="W_Inscribir_ParticipanteP.aspx.designer.cs">
       <DependentUpon>W_Inscribir_ParticipanteP.aspx</DependentUpon>
     </Compile>
-    <Compile Include="W_Listar_Tandas_Marinera.aspx.cs">
-      <DependentUpon>W_Listar_Tandas_Marinera.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="W_Listar_Tandas_Marinera.aspx.designer.cs">
-      <DependentUpon>W_Listar_Tandas_Marinera.aspx</DependentUpon>
-    </Compile>
     <Compile Include="W_Login.aspx.cs">
       <DependentUpon>W_Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -763,6 +765,13 @@
     </Compile>
     <Compile Include="W_Validar_Entradas.aspx.designer.cs">
       <DependentUpon>W_Validar_Entradas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="W_Validar_Inscripcion.aspx.cs">
+      <DependentUpon>W_Validar_Inscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="W_Validar_Inscripcion.aspx.designer.cs">
+      <DependentUpon>W_Validar_Inscripcion.aspx</DependentUpon>
     </Compile>
     <Compile Include="W_Vender_Entradas.aspx.cs">
       <DependentUpon>W_Vender_Entradas.aspx</DependentUpon>
@@ -845,7 +854,7 @@
     <Content Include="PAG_WEB\Ejemplo_Pagina\green-horizotal\fonts\notika-icon.woff" />
     <Content Include="PAG_WEB\ghUploadFile.ashx" />
     <None Include="packages.config" />
-    <Content Include="PAG_WEB\ghUploadFileInscripciones.ashx" />
+    <Content Include="PAG_WEB\ghUploadFileInscr.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

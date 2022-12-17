@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WEB.PAG_WEB {
+namespace WEB {
     
     
-    public partial class W_Inscribir_Participante {
+    public partial class W_Validar_Inscripcion {
         
         /// <summary>
         /// Control form1.
@@ -40,6 +40,15 @@ namespace WEB.PAG_WEB {
         protected global::System.Web.UI.WebControls.DropDownList ddlConcurso;
         
         /// <summary>
+        /// Control UpBtnIr.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpBtnIr;
+        
+        /// <summary>
         /// Control btnIr.
         /// </summary>
         /// <remarks>
@@ -49,22 +58,22 @@ namespace WEB.PAG_WEB {
         protected global::System.Web.UI.WebControls.LinkButton btnIr;
         
         /// <summary>
-        /// Control UPTable.
+        /// Control upLista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UPTable;
+        protected global::System.Web.UI.UpdatePanel upLista;
         
         /// <summary>
-        /// Control GVInscribir.
+        /// Control GVInscripciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVInscribir;
+        protected global::System.Web.UI.WebControls.GridView GVInscripciones;
         
         /// <summary>
         /// Control H1.
@@ -76,147 +85,183 @@ namespace WEB.PAG_WEB {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl H1;
         
         /// <summary>
-        /// Control UpSelecion.
+        /// Control upDatos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpSelecion;
+        protected global::System.Web.UI.UpdatePanel upDatos;
         
         /// <summary>
-        /// Control hfModalidad.
+        /// Control txtModalidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfModalidad;
+        protected global::System.Web.UI.WebControls.TextBox txtModalidad;
         
         /// <summary>
-        /// Control upPareja.
+        /// Control txtMonto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upPareja;
+        protected global::System.Web.UI.WebControls.TextBox txtMonto;
         
         /// <summary>
-        /// Control PanelPareja.
+        /// Control UPImagen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelPareja;
+        protected global::System.Web.UI.UpdatePanel UPImagen;
         
         /// <summary>
-        /// Control txtDni.
+        /// Control Image1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDni;
+        protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
-        /// Control upnBotonBuscar2.
+        /// Control upValidacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnBotonBuscar2;
+        protected global::System.Web.UI.UpdatePanel upValidacion;
         
         /// <summary>
-        /// Control btnBuscar.
+        /// Control btnAprobar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnBuscar;
+        protected global::System.Web.UI.WebControls.LinkButton btnAprobar;
         
         /// <summary>
-        /// Control updPanel2.
+        /// Control btnRechazar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updPanel2;
+        protected global::System.Web.UI.WebControls.LinkButton btnRechazar;
         
         /// <summary>
-        /// Control txtNombre2.
+        /// Control H3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl H3;
         
         /// <summary>
-        /// Control txtCategoria2.
+        /// Control h4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCategoria2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h4;
         
         /// <summary>
-        /// Control txtCodCatN.
+        /// Control upAprobar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodCatN;
+        protected global::System.Web.UI.UpdatePanel upAprobar;
         
         /// <summary>
-        /// Control upCosto.
+        /// Control btnAceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upCosto;
+        protected global::System.Web.UI.WebControls.LinkButton btnAceptar;
         
         /// <summary>
-        /// Control lblCosto.
+        /// Control H5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCosto;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl H5;
         
         /// <summary>
-        /// Control FileUpload1.
+        /// Control h6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile FileUpload1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h6;
         
         /// <summary>
-        /// Control UpRegistrarVoucher.
+        /// Control upRechazar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpRegistrarVoucher;
+        protected global::System.Web.UI.UpdatePanel upRechazar;
         
         /// <summary>
-        /// Control btnGuardar1.
+        /// Control RechazarButton1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnGuardar1;
+        protected global::System.Web.UI.WebControls.LinkButton RechazarButton1;
+        
+        /// <summary>
+        /// Control upHiddenfields.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upHiddenfields;
+        
+        /// <summary>
+        /// Control hfCod.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfCod;
+        
+        /// <summary>
+        /// Control hfEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfEstado;
+        
+        /// <summary>
+        /// Control hfEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfEmail;
     }
 }

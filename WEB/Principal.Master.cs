@@ -88,9 +88,6 @@ namespace WEB
                                 <li>
                                     <a href = 'W_Inscribir_ParticipanteP.aspx' > Inscribir Participante</a>
                                 </li>
-                                <li>
-                                    <a href = '#' > Adminitrar Participante</a>
-                                </li>
                             </ul>
                         </div>
                     </li>
@@ -114,22 +111,35 @@ namespace WEB
                     <li>
                         <a data-toggle='collapse' href='#gestionConcurso'>
                             <i class='material-icons'>emoji_events</i>
-                            <p>
-                                Gestion Concurso
-
-                                <b class='caret'></b>
-                            </p>
+                            <p> Gestion Concurso<b class='caret'></b></p>
                         </a>
                         <div class='collapse' id='gestionConcurso'>
                             <ul class='nav'>
+
                                 <li>
                                     <a href = 'W_Inscribir_ParticipanteP.aspx'> Inscribir Participante</a>
                                 </li>
                                 <li>
-                                    <a href = '#' > Adminitrar Participante</a>
+                                    <a href = 'W_Validar_Inscripcion.aspx'> Validar Inscripción</a>
                                 </li>
                                 <li>
-                                    <a href = 'W_Gestionar_Tanda.aspx' > Gestionar Tandas</a>
+                                    <a href = 'W_Gestionar_Tanda.aspx'> Gestionar Tandas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a data-toggle='collapse' href='#gestionEntradas'>
+                            <i class='material-icons'>emoji_events</i>
+                            <p> Gestion Entradas<b class='caret'></b></p>
+                        </a>
+                            <div class='collapse' id='gestionEntradas'>
+                            <ul class='nav'>
+                                <li>
+                                    <a href = 'W_Validar_Entradas.aspx'> Validar Entradas</a>
+                                </li>
+                                <li>
+                                    <a href = 'W_Vender_Entradas.aspx'> Vender Entradas</a>
                                 </li>
                             </ul>
                         </div>
@@ -162,7 +172,7 @@ namespace WEB
                         <div class='collapse' id='gestionConcurso'>
                             <ul class='nav'>
                                 <li>
-                                    <a href = 'W_Calificar_Participante.aspx' > Calificar Participante</a>
+                                    <a href = 'W_Calificar_Participante.aspx'> Calificar Participante</a>
                                 </li>
                                 
                             </ul>
@@ -196,7 +206,10 @@ namespace WEB
                         <div class='collapse' id='gestionConcurso'>
                             <ul class='nav'>
                                 <li>
-                                    <a href = 'W_Mostrar_Resultado.aspx' > Mostrar Resultado</a>
+                                    <a href = 'W_Mostrar_Resultado.aspx'> Mostrar Resultado</a>
+                                </li>
+                                <li>
+                                    <a href = 'W_Asignar_Marinera.aspx'> Asignar Marinera</a>
                                 </li>
                            </ul>
                         </div>

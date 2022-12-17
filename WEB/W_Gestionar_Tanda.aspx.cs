@@ -21,10 +21,24 @@ namespace WEB
         {
             if (!IsPostBack)
             {
-                LlenarConcursos();
-                GVTanda.DataSource = objctrtanda.listar_Tanda_NC();
-                GVTanda.DataBind();
-                GVTanda.HeaderRow.TableSection = TableRowSection.TableHeader;
+                try
+                {
+                    if (Session["DNIUsuario"] != null)
+                    {
+                        LlenarConcursos();
+                        GVTanda.DataSource = objctrtanda.listar_Tanda_NC();
+                        GVTanda.DataBind();
+                        GVTanda.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    }
+                    else
+                    {
+                        Response.Redirect("W_Login.aspx");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _log.CustomWriteOnLog("Gestionar_Tanda", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+                }
             }
         }
 

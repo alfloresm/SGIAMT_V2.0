@@ -24,13 +24,42 @@ namespace CTR
         {
             return objdaoinscripcion.ListarModalidadesbyconcurso(id);
         }
-        public void RegistrarInscripcionV(DtoInscripcion objdtoinscripcion)
+        public int RegistrarInscripcionV(DtoInscripcion objdtoinscripcion)
         {
-            objdaoinscripcion.registrarInscripcionV(objdtoinscripcion);
+            return objdaoinscripcion.registrarInscripcionV(objdtoinscripcion);
         }
         public void RegistrarImgVoucherInscripcion(byte[] bytes, int id)
         {
             objdaoinscripcion.RegistrarImgVoucherInscripcion(bytes, id);
+        }
+        public DataSet DesplegableConcursoNoRealizado()
+        {
+            return objdaoinscripcion.desplegableConcursoNoRealizado();
+        }
+        //Listar inscripciones por concurso
+        public DataTable ListarInscripcionesByConcurso(int id)
+        {
+            return objdaoinscripcion.ListarInscripcionesByConcurso(id);
+        }
+        //Listar inscripciones por concurso first
+        public DataTable ListarInscripcionesByConcurso()
+        {
+            return objdaoinscripcion.ListarInscripcionesByConcurso();
+        }
+        //validar Inscripcion
+        public void ValidarInscripcion(int id, int estado)
+        {
+            objdaoinscripcion.ValidarInscripcion(id, estado);
+        }
+        //Listar inscripciones por DNI
+        public DataTable ListarInscripcionesByDni(string dni)
+        {
+            return objdaoinscripcion.ListarInscripcionesBydni(dni);
+        }
+        //Listar Concursos participados por dni
+        public DataTable ListarConcursosParticipadosByDni(string dni)
+        {
+            return objdaoinscripcion.ListarConcursosParticipadosBydni(dni);
         }
     }
 }

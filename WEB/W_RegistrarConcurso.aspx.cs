@@ -22,25 +22,39 @@ namespace WEB
         {
             if (!Page.IsPostBack)
             {
-                if (Request.Params["Id"] != null)
+                try
                 {
+                    if (Session["DNIUsuario"] != null)
+                    {
+                        if (Request.Params["Id"] != null)
+                        {
 
-                    txtPagina.InnerText = "Actualizar Concurso";
-                    btnRegistrar.Text = "Actualizar";
-                    Panel1.Visible = true;
-                    Panel2.Visible = true;
-                    hfIdConcurso.Value = Convert.ToInt32(Request.Params["Id"]).ToString();
-                    obtenerConcurso(Request.Params["Id"]);
-                    tablaPreciosporConcurso();
-                    llenarPrecios();
+                            txtPagina.InnerText = "Actualizar Concurso";
+                            btnRegistrar.Text = "Actualizar";
+                            Panel1.Visible = true;
+                            Panel2.Visible = true;
+                            hfIdConcurso.Value = Convert.ToInt32(Request.Params["Id"]).ToString();
+                            obtenerConcurso(Request.Params["Id"]);
+                            tablaPreciosporConcurso();
+                            llenarPrecios();
+                        }
+                        else
+                        {
+                            txtPagina.InnerText = "Registrar Concurso";
+                            btnRegistrar.Text = "Registrar";
+                            Panel1.Visible = false;
+                            Panel2.Visible = false;
+                            llenarPrecios();
+                        }
+                    }
+                    else
+                    {
+                        Response.Redirect("W_Login.aspx");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    txtPagina.InnerText = "Registrar Concurso";
-                    btnRegistrar.Text = "Registrar";
-                    Panel1.Visible = false;
-                    Panel2.Visible = false;
-                    llenarPrecios();
+                    _log.CustomWriteOnLog("RegistrarConcurso", "Error : " + ex.Message + "Stac" + ex.StackTrace);
                 }
             }
         }

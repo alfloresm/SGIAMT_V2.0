@@ -25,8 +25,21 @@ namespace WEB
         {
             if (!IsPostBack)
             {
-                LlenarConcursos();
-                //LlenarFechasConcurso();
+                try
+                {
+                    if (Session["DNIUsuario"] != null)
+                    {
+                        LlenarConcursos();
+                    }
+                    else
+                    {
+                        Response.Redirect("W_Login.aspx");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _log.CustomWriteOnLog("Vender entradas", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+                }
             }
         }
         public void LlenarConcursos()
@@ -81,7 +94,6 @@ namespace WEB
             {
                 _log.CustomWriteOnLog("Vender entradas", "Error : " + ex.Message + "Stac" + ex.StackTrace);
             }
-
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)

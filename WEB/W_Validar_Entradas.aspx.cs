@@ -24,10 +24,24 @@ namespace WEB
         {
             if (!IsPostBack)
             {
-                GVEntrada.DataSource = objctrentrada.ListarEntradasbyConcurso();
-                GVEntrada.DataBind();
-                GVEntrada.HeaderRow.TableSection = TableRowSection.TableHeader;
-                LlenarConcursos();
+                try
+                {
+                    if (Session["DNIUsuario"] != null)
+                    {
+                        GVEntrada.DataSource = objctrentrada.ListarEntradasbyConcurso();
+                        GVEntrada.DataBind();
+                        GVEntrada.HeaderRow.TableSection = TableRowSection.TableHeader;
+                        LlenarConcursos();
+                    }
+                    else
+                    {
+                        Response.Redirect("W_Login.aspx");
+                    }
+                }
+                catch (Exception ex)
+                {
+                   _log.CustomWriteOnLog("ValidarEntradas", "Error : " + ex.Message + "Stac" + ex.StackTrace);
+                }
             }
         }
 

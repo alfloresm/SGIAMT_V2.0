@@ -6,15 +6,13 @@ using DTO;
 using CTR;
 using System.IO;
 
-namespace WEB
+namespace WEB.PAG_WEB
 {
     /// <summary>
-    /// Descripción breve de ghUploadFile
+    /// Descripción breve de ghUploadFileInscr
     /// </summary>
-    public class ghUploadFileInscripciones : IHttpHandler
+    public class ghUploadFileInscr : IHttpHandler
     {
-
-        
         Log _Log = new Log();
         public void ProcessRequest(HttpContext context)
         {
@@ -47,7 +45,6 @@ namespace WEB
             {
                 _Log.CustomWriteOnLog("subirVoucheInscripcion", "Error" + ex.Message);
             }
-
         }
 
         public bool IsReusable
