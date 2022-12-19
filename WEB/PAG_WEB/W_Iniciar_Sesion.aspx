@@ -74,7 +74,7 @@
                     <div class="input-group mg-t-15">
                         <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-edit"></i></span>
                         <div class="nk-int-st">
-                            <asp:TextBox ID="TextBox1" runat="server" TextMode="Password" class="form-control" placeholder="Password"></asp:TextBox>
+                            <asp:TextBox ID="TextBox1" runat="server" TextMode="Password" class="form-control" placeholder="Password" MinLength="8" MaxLength="8"></asp:TextBox>
                         </div>
                     </div>
                     <asp:LinkButton ID="btnLogin" runat="server" class="btn btn-login btn-success btn-float" OnClick="btnLogin_Click"><i class="notika-icon notika-right-arrow right-arrow-ant"></i></asp:LinkButton>

@@ -108,7 +108,7 @@
                                     <i class="notika-icon notika-support"></i>
                                 </div>
                                 <div class="nk-int-st">
-                                    <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" TextMode="Number" size="8" placeholder="DNI"></asp:TextBox>
+                                    <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" TextMode="Number" size="8" placeholder="DNI" MinLength="8" MaxLength="8"></asp:TextBox>
                                     <asp:Label ID="lblDoc" runat="server" Text="" ForeColor="#CC0000"></asp:Label>
                                 </div>
                             </div>

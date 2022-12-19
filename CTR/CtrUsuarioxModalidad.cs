@@ -43,5 +43,9 @@ namespace CTR
         {
             objdaouxm.ValidarInscripcion(id,est);
         }
+        public void actualizarEstadoParticipante(DtoTanda obj)
+        {
+            objdaouxm.actualizar_estadoParticipantes(obj);
+        }
     }
 }

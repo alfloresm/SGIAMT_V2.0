@@ -110,9 +110,6 @@ namespace DAO
             while (reader.Read())
             {
                 objTanda.PK_IT_CodTan = Convert.ToInt32(reader[0].ToString());
-                objTanda.IT_GanadorA = Convert.ToInt32(reader[1].ToString());
-                objTanda.IT_GanadorB = Convert.ToInt32(reader[2].ToString());
-                objTanda.IT_GanadorC = Convert.ToInt32(reader[3].ToString());
                 objTanda.VT_TipoTanda = Convert.ToInt32(reader[4].ToString());
                 objTanda.VT_Estado = reader[5].ToString();
                 objTanda.VT_Descripcion = reader[6].ToString();
@@ -229,9 +226,19 @@ namespace DAO
             while (reader.Read())
             {
                 objTanda.PK_IT_CodTan = Convert.ToInt32(reader[0].ToString());
-                objTanda.IT_GanadorA= Convert.ToInt32(reader[1].ToString());
-                objTanda.IT_GanadorB = Convert.ToInt32(reader[2].ToString());
-                objTanda.IT_GanadorC = Convert.ToInt32(reader[3].ToString());
+                //if (reader[1].ToString() != null)
+                //{
+                //    objTanda.IT_GanadorA = Convert.ToInt32(reader[1].ToString());
+                //}
+                //if (reader[2].ToString()!= null)
+                //{
+                //    objTanda.IT_GanadorB = Convert.ToInt32(reader[2].ToString());
+                //}
+                //if (reader[3].ToString() != null)
+                //{
+                //    objTanda.IT_GanadorC = Convert.ToInt32(reader[3].ToString());
+                //}
+
                 objTanda.VT_TipoTanda = Convert.ToInt32(reader[4].ToString());
                 objTanda.VT_Estado = reader[5].ToString();
                 objTanda.VT_Descripcion = reader[6].ToString();

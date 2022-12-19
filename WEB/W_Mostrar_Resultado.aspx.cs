@@ -84,6 +84,9 @@ namespace WEB
                             ctrT.actualizarEstadoT(objdtotanda);
                             //Actualiza Ganador
                             ctrT.actualizarganadorT(objdtotanda);
+                            //Actualiza los participantes a participado
+                            CtrUsuarioxModalidad objCtrUXM = new CtrUsuarioxModalidad();
+                            objCtrUXM.actualizarEstadoParticipante(objdtotanda);
                         }
                         // Presentar resultados Seriado
                         BuildCards(objdtotanda.PK_IT_CodTan);
@@ -195,14 +198,15 @@ namespace WEB
         }
         public void BuildCards(int idTanda)
         {
+            CtrTanda objctrTanda1 = new CtrTanda();
             objdtotanda.PK_IT_CodTan = idTanda;
-            objctrTanda.obtenerTandaP(objdtotanda);
+            objctrTanda1.obtenerTandaP(objdtotanda);
             int ganadorA = objdtotanda.IT_GanadorA;
             int ganadorB = objdtotanda.IT_GanadorB;
             int ganadorC = objdtotanda.IT_GanadorC;
 
             DataTable dt = new DataTable();
-            dt = objctrTanda.ObtenertandaXBloque(idTanda);
+            dt = objctrTanda1.ObtenertandaXBloque(idTanda);
 
             int cont = 0;
             StringBuilder cardParticipante = new StringBuilder();
@@ -239,7 +243,7 @@ namespace WEB
                 cardParticipante.Append("<table class='table'>");
                 cardParticipante.Append("<tbody>");
                 DataTable dtpuntaje = new DataTable();
-                dtpuntaje = objctrTanda.ObtenerPuntajesPorParticipante(row["PK_IUMT_CodUsuModTan"].ToString());
+                dtpuntaje = objctrTanda1.ObtenerPuntajesPorParticipante(row["PK_IUMT_CodUsuModTan"].ToString());
                 int i = 0;
                 foreach (DataRow rowpuntaje in dtpuntaje.Rows)
                 {

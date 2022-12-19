@@ -225,6 +225,7 @@ namespace WEB
                 objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista1.Text);
                 objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
                 objumt.PK_IUMT_CodUsuModTan = txtCodPista1.Text + HFidTanda.Value;
+                objumt.VUMT_Bloque = "0";
                 objctrtanda.registrarUMT(objumt);
                 _log.CustomWriteOnLog("asignar tanda", "registra 1");
                 string m = "Se registro Correctamente";
@@ -246,6 +247,7 @@ namespace WEB
                 objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista2.Text);
                 objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
                 objumt.PK_IUMT_CodUsuModTan = txtCodPista2.Text + HFidTanda.Value;
+                objumt.VUMT_Bloque = "0";
                 objctrtanda.registrarUMT(objumt);
                 _log.CustomWriteOnLog("asignar tanda", "registra 2");
                 string m = "Se registro Correctamente";
@@ -267,6 +269,7 @@ namespace WEB
                 objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista3.Text);
                 objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
                 objumt.PK_IUMT_CodUsuModTan = txtCodPista3.Text + HFidTanda.Value;
+                objumt.VUMT_Bloque = "0";
                 objctrtanda.registrarUMT(objumt);
                 _log.CustomWriteOnLog("asignar tanda", "registra 3");
                 string m = "Se registro Correctamente";
@@ -287,7 +290,8 @@ namespace WEB
                 objumt.IUMT_Pista = "4";
                 objumt.FK_IUM_CodUM = Convert.ToInt32(txtCodPista4.Text);
                 objumt.FK_IT_CodTan = Convert.ToInt32(HFidTanda.Value);
-                objumt.PK_IUMT_CodUsuModTan = txtCodPista3.Text + HFidTanda.Value;
+                objumt.PK_IUMT_CodUsuModTan = txtCodPista4.Text + HFidTanda.Value;
+                objumt.VUMT_Bloque = "0";
                 objctrtanda.registrarUMT(objumt);
                 _log.CustomWriteOnLog("asignar tanda", "registra 4");
                 string m = "Se registro Correctamente";

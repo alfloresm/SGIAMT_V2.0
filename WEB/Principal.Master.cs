@@ -86,6 +86,9 @@ namespace WEB
                                     <a href = 'W_Gestionar_Concurso.aspx' > Gestionar Concurso</a>
                                 </li>
                                 <li>
+                                    <a href = 'W_Administrar_Perfil.aspx' > Administrar Perfiles</a>
+                                </li>
+                                <li>
                                     <a href = 'W_Inscribir_ParticipanteP.aspx' > Inscribir Participante</a>
                                 </li>
                             </ul>

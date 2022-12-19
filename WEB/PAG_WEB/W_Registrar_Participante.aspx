@@ -54,7 +54,7 @@
                                             <i class="notika-icon notika-support"></i>
                                         </div>
                                         <div class="nk-int-st">
-                                            <asp:TextBox ID="TextBoxDni" runat="server" CssClass="form-control" TextMode="Number" size="8" placeholder="DNI"></asp:TextBox>
+                                            <asp:TextBox ID="TextBoxDni" runat="server" CssClass="form-control" TextMode="Number" size="8" placeholder="DNI" onkeypress="return this.value.length<=7"></asp:TextBox>
                                             <asp:RegularExpressionValidator ID="RevDocumento" runat="server" ErrorMessage="Por favor ingrese solo numeros" ControlToValidate="TextBoxDni" ForeColor="#CC0000" ValidationExpression="([0-9]{1,})" SetFocusOnError="True" Display="Dynamic"></asp:RegularExpressionValidator>
                                             <asp:RequiredFieldValidator ID="RequDocumento" runat="server" ErrorMessage="ingrese Documento" ControlToValidate="TextBoxDni" ForeColor="#CC0000" SetFocusOnError="True" Display="Dynamic"></asp:RequiredFieldValidator>
                                             <asp:Label ID="lblDoc" runat="server" Text="" ForeColor="#CC0000"></asp:Label>

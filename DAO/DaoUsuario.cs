@@ -284,25 +284,49 @@ namespace DAO
 
             return valor_retornado;
         }
-        //metodo registrar imagen usuario
-        //public void RegistrarImgUsuario(byte[] bytes, string id)
-        //{
-        //    try
-        //    {
-        //        SqlCommand command = new SqlCommand("SP_Registrar_Img_Usuario", conexion); //falta este procedure
-        //        command.CommandType = CommandType.StoredProcedure;
-        //        command.Parameters.AddWithValue("@id", id);
-        //        command.Parameters.AddWithValue("@imagen", bytes);
-        //        conexion.Open();
-
-        //        command.ExecuteNonQuery();
-        //        conexion.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw;
-        //    }
-
-        //}
+        public DataTable ListarPerfiles()
+        {
+            DataTable dtEntradas = null;
+            conexion.Open();
+            SqlCommand command = new SqlCommand("SP_Listar_Registros_Perfiles", conexion);
+            SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
+            command.CommandType = CommandType.StoredProcedure;
+            dtEntradas = new DataTable();
+            daAdaptador.Fill(dtEntradas);
+            conexion.Close();
+            return dtEntradas;
+        }
+        public void RegistrarPerfil(DtoUsuario obju)
+        {
+                SqlCommand command = new SqlCommand("SP_Registrar_Perfil", conexion); //falta este procedure
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@dni", obju.PK_VU_DNI); //
+                command.Parameters.AddWithValue("@nombre", obju.VU_Nombre);
+                command.Parameters.AddWithValue("@apellidoP", obju.VU_APaterno);
+                command.Parameters.AddWithValue("@apellidoM", obju.VU_AMaterno);
+                command.Parameters.AddWithValue("@contrasenia", obju.VU_Contrasenia);
+                command.Parameters.AddWithValue("@correo", obju.VU_Correo);
+                command.Parameters.AddWithValue("@celular", obju.VU_Celular);
+                command.Parameters.AddWithValue("@tipoUsuario", obju.FK_ITU_TipoUsuario);
+                conexion.Open();
+                command.ExecuteNonQuery();
+                conexion.Close();
+        }
+        public void ActualizarPerfil(DtoUsuario obju)
+        {
+            SqlCommand command = new SqlCommand("SP_Actualizar_Perfil", conexion); //falta este procedure
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@dni", obju.PK_VU_DNI); //
+            command.Parameters.AddWithValue("@nombre", obju.VU_Nombre);
+            command.Parameters.AddWithValue("@apellidoP", obju.VU_APaterno);
+            command.Parameters.AddWithValue("@apellidoM", obju.VU_AMaterno);
+            command.Parameters.AddWithValue("@contrasenia", obju.VU_Contrasenia);
+            command.Parameters.AddWithValue("@correo", obju.VU_Correo);
+            command.Parameters.AddWithValue("@celular", obju.VU_Celular);
+            command.Parameters.AddWithValue("@tipoUsuario", obju.FK_ITU_TipoUsuario);
+            conexion.Open();
+            command.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

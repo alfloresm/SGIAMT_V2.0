@@ -147,5 +147,14 @@ namespace DAO
             command.ExecuteNonQuery();
             conexion.Close();
         }
+        public void actualizar_estadoParticipantes(DtoTanda objT)
+        {
+            SqlCommand command = new SqlCommand("SP_Actualiza_Estado_Participantes", conexion);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", objT.PK_IT_CodTan);
+            conexion.Open();
+            command.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

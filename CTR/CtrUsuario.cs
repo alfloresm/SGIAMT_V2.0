@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,18 @@ namespace CTR
         public string devolverCodJurado(string dni)
         {
             return objDaoUsuario.ObtenerCodJurado(dni);
+        }
+        public DataTable listarPerfiles()
+        {
+            return objDaoUsuario.ListarPerfiles();
+        }
+        public void registrarPerfil(DtoUsuario dtoUsuario)
+        {
+            objDaoUsuario.RegistrarPerfil(dtoUsuario);
+        }
+        public void ActualizarPerfil(DtoUsuario dtoUsuario)
+        {
+            objDaoUsuario.ActualizarPerfil(dtoUsuario);
         }
         //public void registrarImgP(byte[] bytes, string id)
         //{
