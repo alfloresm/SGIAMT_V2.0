@@ -54,7 +54,7 @@
                                     <asp:GridView ID="GVTandaMarinera" runat="server" AutoGenerateColumns="False"
                                         DataKeyNames="PK_IT_CodTan,VM_NombreMod,VT_Descripcion,VT_Estado,FK_IM_CodMar"
                                         CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable" OnRowCommand="GVTandaMarinera_RowCommand"
-                                        AllowPaging="True" Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small" EmptyDataText="No hay Registros">
+                                        Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small" EmptyDataText="No hay Registros">
                                         <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
                                         <Columns>
                                             <asp:BoundField DataField="PK_IT_CodTan" HeaderText="Codigo" />

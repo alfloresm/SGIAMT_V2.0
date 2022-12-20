@@ -189,7 +189,7 @@
                         </asp:UpdatePanel>
                         <div class="row">
                             <div class="col-lg-12 col-md-12 text-center">
-                                <p>Subir la imagen del boucher: <span class="bread-ntd"></span></p>
+                                <p>Subir la imagen del Voucher: <span class="bread-ntd"></span></p>
                             </div>
                             <div class="col-lg-12 col-md-12 text-center">
                                 <%--<asp:UpdatePanel runat="server">

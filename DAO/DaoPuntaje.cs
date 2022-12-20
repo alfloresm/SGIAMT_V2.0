@@ -83,7 +83,7 @@ namespace DAO
                 if (hayRegistros)
                 {
 
-                    bloque= Convert.ToInt32(reader[0].ToString());
+                    bloque= Convert.ToInt32(reader[1].ToString());
                 }
                 else
                 {

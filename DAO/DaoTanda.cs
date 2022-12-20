@@ -209,6 +209,31 @@ namespace DAO
                 throw;
             }
         }
+        public void ObtenerTandaP_SG(DtoTanda objTanda)
+        {
+
+            SqlCommand command = new SqlCommand("SP_Buscar_Tanda_P_SG", _conn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", objTanda.PK_IT_CodTan);
+            DataSet ds = new DataSet();
+            _conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.Fill(ds);
+            da.Dispose();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                objTanda.PK_IT_CodTan = Convert.ToInt32(reader[0].ToString());
+                objTanda.VT_TipoTanda = Convert.ToInt32(reader[1].ToString());
+                objTanda.VT_Estado = reader[2].ToString();
+                objTanda.VT_Descripcion = reader[3].ToString();
+                objTanda.IT_CodigoConcurso= Convert.ToInt32(reader[4].ToString());
+            }
+            _conn.Close();
+            _conn.Dispose();
+        }
         public void ObtenerTandaP(DtoTanda objTanda)
         {
             
@@ -226,18 +251,18 @@ namespace DAO
             while (reader.Read())
             {
                 objTanda.PK_IT_CodTan = Convert.ToInt32(reader[0].ToString());
-                //if (reader[1].ToString() != null)
-                //{
-                //    objTanda.IT_GanadorA = Convert.ToInt32(reader[1].ToString());
-                //}
-                //if (reader[2].ToString()!= null)
-                //{
-                //    objTanda.IT_GanadorB = Convert.ToInt32(reader[2].ToString());
-                //}
-                //if (reader[3].ToString() != null)
-                //{
-                //    objTanda.IT_GanadorC = Convert.ToInt32(reader[3].ToString());
-                //}
+                if (!string.IsNullOrEmpty(reader[1].ToString()))
+                {
+                    objTanda.IT_GanadorA = Convert.ToInt32(reader[1].ToString());
+                }
+                if (!string.IsNullOrEmpty(reader[2].ToString()))
+                {
+                    objTanda.IT_GanadorB = Convert.ToInt32(reader[2].ToString());
+                }
+                if (!string.IsNullOrEmpty(reader[3].ToString()))
+                {
+                    objTanda.IT_GanadorC = Convert.ToInt32(reader[3].ToString());
+                }
 
                 objTanda.VT_TipoTanda = Convert.ToInt32(reader[4].ToString());
                 objTanda.VT_Estado = reader[5].ToString();

@@ -122,72 +122,80 @@ namespace WEB
                 CtrTanda ctrT = new CtrTanda();
                 DataTable dt = new DataTable();
                 dt = ctrT.obtenerParticipantesxTanda(objdtoUMT);
-                if (objdtotanda.VT_TipoTanda == 1)
+                if (dt.Rows.Count != 0)
                 {
-                    //SERIADO
-                    int valor = 0;
-                    foreach (DataRow row in dt.Rows)
+                    if (objdtotanda.VT_TipoTanda == 1)
                     {
-                        objdtoUMT.FK_IUM_CodUM = Convert.ToInt32(row["FK_IUM_CodUM"].ToString());
-                        objdtoUMT.IUMT_Estado = Convert.ToInt32(row["IUMT_Estado"].ToString());
-                        if (objdtoUMT.IUMT_Estado == 3)
+                        //SERIADO
+                        int valor = 0;
+                        foreach (DataRow row in dt.Rows)
                         {
-                            valor++;
+                            objdtoUMT.FK_IUM_CodUM = Convert.ToInt32(row["FK_IUM_CodUM"].ToString());
+                            objdtoUMT.IUMT_Estado = Convert.ToInt32(row["IUMT_Estado"].ToString());
+                            if (objdtoUMT.IUMT_Estado == 3)
+                            {
+                                valor++;
+                            }
+                            else
+                            {
+                                valor = valor + 0;
+                            }
+                            _log.CustomWriteOnLog("mostrar resultado", "valor=" + valor.ToString());
+                        }
+                        int cfilas = dt.Rows.Count;
+                        if (cfilas == valor)
+                        {
+                            _log.CustomWriteOnLog("mostrar resultado", "VALIDACION TRUE");
+                            return true;
                         }
                         else
                         {
-                            valor = valor + 0;
+                            _log.CustomWriteOnLog("mostrar resultado", "VALIDACION FALSE");
+                            return false;
                         }
-                        _log.CustomWriteOnLog("mostrar resultado", "valor=" + valor.ToString());
-                    }
-                    int cfilas = dt.Rows.Count;
-                    if (cfilas == valor)
-                    {
-                        _log.CustomWriteOnLog("mostrar resultado", "VALIDACION TRUE");
-                        return true;
-                    }
-                    else
-                    {
-                        _log.CustomWriteOnLog("mostrar resultado", "VALIDACION FALSE");
-                        return false;
-                    }
 
-                }
-                else if (objdtotanda.VT_TipoTanda == 2)
-                {
-                    //NOVEL Abierto, Novel Novel y Nacional
-                    int valor = 0;
-                    int cfilas = dt.Rows.Count;
-                    foreach (DataRow row in dt.Rows)
+                    }
+                    else if (objdtotanda.VT_TipoTanda == 2)
                     {
-                        objdtoUMT.FK_IUM_CodUM = Convert.ToInt32(row["FK_IUM_CodUM"].ToString());
-                        objdtoUMT.IUMT_Estado = Convert.ToInt32(row["IUMT_Estado"].ToString());
-                        if (objdtoUMT.IUMT_Estado == 6)
+                        //NOVEL Abierto, Novel Novel y Nacional
+                        int valor = 0;
+                        int cfilas = dt.Rows.Count;
+                        foreach (DataRow row in dt.Rows)
                         {
-                            valor++;
+                            objdtoUMT.FK_IUM_CodUM = Convert.ToInt32(row["FK_IUM_CodUM"].ToString());
+                            objdtoUMT.IUMT_Estado = Convert.ToInt32(row["IUMT_Estado"].ToString());
+                            if (objdtoUMT.IUMT_Estado == 6)
+                            {
+                                valor++;
+                            }
+                            else
+                            {
+                                valor = valor + 0;
+                            }
+                        }
+                        if (cfilas == valor)
+                        {
+                            _log.CustomWriteOnLog("mostrar resultado", "VALIDACION TRUE");
+                            return true;
                         }
                         else
                         {
-                            valor = valor + 0;
+                            _log.CustomWriteOnLog("mostrar resultado", "VALIDACION FALSE");
+                            return false;
                         }
-                    }
-                    if (cfilas == valor)
-                    {
-                        _log.CustomWriteOnLog("mostrar resultado", "VALIDACION TRUE");
-                        return true;
                     }
                     else
                     {
-                        _log.CustomWriteOnLog("mostrar resultado", "VALIDACION FALSE");
+                        _log.CustomWriteOnLog("mostrar resultado", "VALIDACION ninguna"); 
                         return false;
                     }
                 }
                 else
                 {
-                    _log.CustomWriteOnLog("mostrar resultado", "VALIDACION ninguna");
+                    _log.CustomWriteOnLog("mostrar resultado", "VALIDACION FALSE");
                     return false;
                 }
-
+                
             }
             catch (Exception ex)
             {

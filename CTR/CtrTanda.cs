@@ -72,6 +72,10 @@ namespace CTR
         {
             objDaoTanda.ObtenerTandaP(objtanda);
         }
+        public void obtenerTandaP_SG(DtoTanda objtanda)
+        {
+            objDaoTanda.ObtenerTandaP_SG(objtanda);
+        }
         public string obtenerModalidad(int id)
         {
             return objDaoTanda.ObtenerModalidad(id);
