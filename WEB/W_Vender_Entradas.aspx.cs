@@ -73,15 +73,16 @@ namespace WEB
             try
             {
                 objdtoespectador.VES_Dni = txtDni.Text;
+                objdtoespectador.FK_IC_IdConcurso = Convert.ToInt32(ddlConcurso.SelectedValue);
                 objdtoespectador.VES_NombreCompleto = txtNombreCompleto.Text;
                 objdtoespectador.VES_Email = txtCorreo.Text;
                 objdtoespectador.IES_NumEntrada = Convert.ToInt32(txtCantEntradas.Text);
-                //if (ddlFecha.SelectedValue == "Fecha 1")
-                //    //objdtoespectador.VES_TipoFecha = ;
-                //if (ddlFecha.SelectedValue == "Fecha 2")
-                //    //objdtoespectador.VES_TipoFecha = ;
-                    
-                //objctrentrada.RegistrarVenderEntrada(objdtoespectador.PK_VES_Dni); --revisar
+                if (ddlFechaConcurso.SelectedValue == "1") objdtoespectador.VES_TipoFecha = "fecha1";
+                else if (ddlFechaConcurso.SelectedValue == "2") objdtoespectador.VES_TipoFecha = "fecha2";
+                //else {
+                //    String Me = "Elija una fecha";
+                //    Utils.AddScriptClientUpdatePanel(upBotonEnviar, "showMessage('top','center','" + Me + "','Error')"); }
+                objctrentrada.RegistrarVentaEntrada(objdtoespectador);
                 _log.CustomWriteOnLog("Vender entradas", objdtoespectador.VES_Dni);
                 string m = "Se Registró correctamente";
 

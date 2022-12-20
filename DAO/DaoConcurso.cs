@@ -85,7 +85,7 @@ namespace DAO
                 objConcurso.DTC_FechaI = Convert.ToDateTime(reader[3].ToString());
                 objConcurso.DTC_FechaF = Convert.ToDateTime(reader[4].ToString());
                 objConcurso.IC_Capacidad1 = Convert.ToInt32(reader[5].ToString());
-                objConcurso.VC_Estado = reader[6].ToString();
+                objConcurso.VC_Estado = reader[7].ToString();
             }
             conexion.Close();
             conexion.Dispose();

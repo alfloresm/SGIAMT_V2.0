@@ -92,7 +92,7 @@ namespace WEB
                         objDtoConcurso.VC_NombreCon = txtNombre.Text;
                         objDtoConcurso.VC_LugarCon = txtlugar.Text;
                         objDtoConcurso.DTC_FechaI = Convert.ToDateTime(txtFechaI.Text);
-                        objDtoConcurso.DTC_FechaF = Convert.ToDateTime(txtFechaI.Text);
+                        objDtoConcurso.DTC_FechaF = Convert.ToDateTime(txtFechaF.Text);
                         objDtoConcurso.IC_Capacidad1 = Convert.ToInt32(txtcant.Text);
                         hfIdConcurso.Value = objCtrConcurso.RegistrarConcurso(objDtoConcurso).ToString();
                         _log.CustomWriteOnLog("regConcurso", objDtoConcurso.PK_IC_IdConcurso.ToString());

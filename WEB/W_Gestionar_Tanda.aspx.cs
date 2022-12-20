@@ -58,23 +58,5 @@ namespace WEB
             Response.Redirect("~/W_AsignarTanda.aspx?ConcursoID="+ddlConcurso.SelectedValue);
         }
 
-        protected void btnElegirM_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/W_Elegir_Marinera.aspx");
-        }
-
-        //agregado para elegir marinera
-
-        //protected void btnElegirM_Click(object sender, EventArgs e)
-        //{
-        //    if (e.CommandName == "Elegir")
-        //    {
-        //        int index = Convert.ToInt32(e.CommandArgument);
-        //        var colsNoVisible = GVTanda.DataKeys[index].Values;
-        //        string id = colsNoVisible[0].ToString();
-        //        Response.Redirect("~/W_Elegir_Marinera.aspx?ID=" + id);
-        //    }
-
-        //}
     }
 }

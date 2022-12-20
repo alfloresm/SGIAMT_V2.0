@@ -30,8 +30,8 @@
                                                 <label class="control-label"></label>
                                                 <asp:DropDownList ID="ddlFechaConcurso" runat="server" CssClass="selectpicker">
                                                     <asp:ListItem Text="Seleccione" Value="0" Selected="True"></asp:ListItem>
-                                                    <asp:ListItem Text="Fecha 1" Value="fecha1"></asp:ListItem>
-                                                    <asp:ListItem Text="Fecha 2" Value="fecha2"></asp:ListItem>
+                                                    <asp:ListItem Text="Fecha 1" Value="1"></asp:ListItem>
+                                                    <asp:ListItem Text="Fecha 2" Value="2"></asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
                                         </div>

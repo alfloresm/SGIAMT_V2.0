@@ -50,21 +50,15 @@
                         <div class="row">
                             <div class="card-content">
                                 <div class="col-md-10 col-md-offset-1 table-responsive">
-                                    <asp:GridView ID="GVTanda" runat="server" AutoGenerateColumns="False"
+                                    <asp:GridView ID="GVTanda" runat="server"
                                         DataKeyNames="PK_IT_CodTan,VT_Tipo_Tanda,VT_Descripcion"
                                         CssClass="table table-responsive table-bordered table-hover js-basic-example dataTable"
-                                        AllowPaging="True" Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small" EmptyDataText="No hay Registros">
+                                        Font-Size="Small" HeaderStyle-ForeColor="#FF5050" HeaderStyle-CssClass="small">
                                         <RowStyle HorizontalAlign="center" CssClass="table table-striped table-bordered" />
                                         <Columns>
                                             <asp:BoundField DataField="PK_IT_CodTan" HeaderText="Codigo" />
                                             <asp:BoundField DataField="VT_Tipo_Tanda" HeaderText="Tipo Tanda" />
                                             <asp:BoundField DataField="VT_Descripcion" HeaderText="Categoría" />
-                                            <asp:TemplateField HeaderText="Elegir Marinera">
-                                                <ItemTemplate>
-                                                    <asp:Button runat="server" ID="btnElegirM" Text="↪" CommandName="Elegir" CommandArgument='<%# Container.DataItemIndex %>'
-                                                        CssClass="btn btn-sm btn-success" OnClick="btnElegirM_Click" />
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
                                         </Columns>
                                     </asp:GridView>
                                 </div>

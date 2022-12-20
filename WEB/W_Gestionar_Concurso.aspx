@@ -109,21 +109,21 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <label class="col-md-2 label-on-left">fecha: </label>
+                                    <label class="col-md-2 label-on-left">Fecha 1: </label>
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label"></label>
                                         <asp:TextBox ID="txtFechaI" runat="server" class="form-control " Enabled="False"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <label class="col-md-2 label-on-left">Precio inscripcion Seriado: </label>
+                                    <label class="col-md-2 label-on-left">Fecha 2: </label>
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label"></label>
                                         <asp:TextBox ID="txtFechaF" runat="server" class="form-control " Enabled="False"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <label class="col-md-2 label-on-left">Precio inscripcion Novel: </label>
+                                    <label class="col-md-2 label-on-left">Capacidad: </label>
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label"></label>
                                         <asp:TextBox ID="txtCant" runat="server" class="form-control " Enabled="False"></asp:TextBox>
